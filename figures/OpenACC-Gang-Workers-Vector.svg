@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg84"
+   width="1047.1025"
+   height="795.48035"
+   viewBox="0 0 1047.1019 795.48018"
+   sodipodi:docname="Screenshot from 2023-09-16 21-41-46.png"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs88">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1159">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.53827"
+         id="rect1161"
+         width="1033.1255"
+         height="781.68805"
+         x="1337.3715"
+         y="382.28027"
+         clip-path="none" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview86"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     units="px"
+     height="795.48035px"
+     width="1047.1025px"
+     inkscape:zoom="0.71773256"
+     inkscape:cx="585.87282"
+     inkscape:cy="385.24099"
+     inkscape:window-width="3370"
+     inkscape:window-height="1376"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g90" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g90">
+    <image
+       width="3440"
+       height="1440"
+       preserveAspectRatio="none"
+       xlink:href="Screenshot%20from%202023-09-16%2021-41-46.png"
+       id="image92"
+       clip-path="url(#clipPath1159)"
+       transform="translate(-1328.8075,-376.99018)" />
+  </g>
+</svg>
