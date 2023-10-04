@@ -1,1 +1,5 @@
 *.DS_Store
+*.md.bak
+*.md-buffer
+*.css~
+*.yml~
