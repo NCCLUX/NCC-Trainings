@@ -128,6 +128,8 @@ theme:
 #    - navigation.instant
     - navigation.tabs
     - navigation.footer
+    - content.action.edit
+    - content.action.view
 
   icon:
     admonition:
@@ -265,5 +267,5 @@ copyright: Copyright &copy; 2023 <a href="https://ezhilmathik.github.io/personal
 
 
 repo_name: NCCLUX/NCC-Trainings
-repo_url: https://github.com/NCCLUX/NCC-Trainings.git
-edit_uri: -/edit/master/NCC-Trainings/
+repo_url: https://github.com/NCCLUX/NCC-Trainings
+edit_uri: edit/main/Courses/docs
