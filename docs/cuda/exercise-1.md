@@ -1,8 +1,8 @@
-Now our first exercise would be to print out the hello world from GPU.
+Now, our first exercise would be to print out the Hello World from GPU.
 To do that, we need to do the following things:
 
  - Run a part or entire application on the GPU
- - Call cuda function on device
+ - Call the CUDA function on a device
  - It should be called using function qualifier **`__global__`**
  - Calling the device function on the main program:
  - C/C++ example, **`c_function()`**
@@ -49,7 +49,7 @@ To do that, we need to do the following things:
         #include<stdio.h>
         #include<cuda.h>
         
-        // device function will be executed on device (GPU) 
+        // device function will be executed on the device (GPU) 
         __global__ void cuda_function()
         {
           printf("Hello World from GPU!\n");
