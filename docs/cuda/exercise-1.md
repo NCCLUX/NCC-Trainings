@@ -1,4 +1,4 @@
-Now, our first exercise would be to print out "Hello World" from the GPU.
+Our first exercise would be to print out "Hello World" from the GPU.
 To do that, we need to do the following things:
 
 - Run a part or the entire application on the GPU.
