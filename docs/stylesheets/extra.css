@@ -73,6 +73,10 @@ th, td {
     border-right: none;
 }
 
+.md-content {
+  --md-typeset-a-color: #09BFFF;
+}
+
 :root {
   --md-primary-fg-color:        #022658;
   --md-primary-fg-color--light: #ECB7B7;
