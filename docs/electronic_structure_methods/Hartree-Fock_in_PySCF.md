@@ -51,7 +51,7 @@ print (mol.basis)
 
 The second one is to assign the geometry, basis, to the `Mole` object, followed by calling the `build()` method:
 
-```console
+```python
 from pyscf import gto
 mol = gto.Mole()
 mol.atom = 'O 0 0 0; H 0 1 0; H 0 0 1'
