@@ -14,9 +14,9 @@ nav:
 #           - Introduction: 'julia/index.md'
 #       - Numerical Libraries:
 #           - Quantum Espresso:
-#               - Introduction: 'openacc/index.md'              
+#               - Introduction: 'openacc/index.md'
 #       - Other Accelerators:
-#           - Introduction: 'openacc/index.md'        
+#           - Introduction: 'openacc/index.md'
         - Parallel Programming:
             - CPU:
                 - OpenMP:
@@ -74,7 +74,7 @@ nav:
           - Future Events: 'calendar/future.md'
           - Past Events: 'calendar/past.md'
     - Other Training Events: 'other-training/othertraining.md'
-        
+
 markdown_extensions:
     - attr_list
     - md_in_html
