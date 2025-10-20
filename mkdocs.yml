@@ -55,6 +55,7 @@ nav:
         - Electronic structure methods: 
             - Introduction: 'electronic_structure_methods/index.md'
             - Hartree-Fock calculations in PySCF: 'electronic_structure_methods/Hartree-Fock_in_PySCF.md'
+            - Hartree-Fock calculations in PySCF: 'electronic_structure_methods/DFT_in_PySCF.md'
         - Environment management and containers:
             - Introduction: 'courses/containerization/index.md'
             - Containers: 'courses/containerization/containers.md'

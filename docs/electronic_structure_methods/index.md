@@ -1,4 +1,4 @@
-# Electronic structure methods (Hartree-Fock) used in industry from pharmaceuticals materials and beyond
+# Electronic structure methods used in industry from pharmaceuticals materials and beyond
 
 > Author: [Ariadni Boziki](https://www.uni.lu/fstm-en/people/ariadni-boziki/)<br>
 > email: [ariadni.boziki@uni.lu](mailto:ariadni.boziki@uni.lu)
@@ -17,7 +17,16 @@
 
 ## Hands-on session
 
+### Hartree-Fock calculations in PySCF
+
 You can follow the hands-on session on "Hartree-Fock calculations in PySCF" either
 
 - [online](Hartree-Fock_in_PySCF), or
 - downloading the [PDF version](files/Hartree_Fock_Hands_on.pdf).
+
+### DFT calculations in PySCF
+
+You can follow the hands-on session on "DFT calculations in PySCF" either
+
+- [online](DFT_in_PySCF), or
+- downloading the [PDF version](files/DFT_Hands_on.pdf).
