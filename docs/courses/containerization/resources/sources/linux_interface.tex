@@ -1,0 +1,210 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{
+%    shapes,
+%    arrows,
+%    shadows,
+  calc,
+%    positioning,
+%    shapes.symbols,
+%    quotes,
+  intersections,
+  decorations.text,
+  arrows.meta,
+  shapes.arrows
+%    fit,
+%    backgrounds
+}
+
+\usepackage{amsmath}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}
+
+\begin{document}
+\begin{tikzpicture}[baseline=(current bounding box.north)]
+  % Define coordinates
+  \def\Radius{6}
+  \def\AppsOuterRadious{\Radius}
+  \def\AppsInnerRadious{6*\Radius/8}
+  \def\AppsLabelRadious{6.5*\Radius/8}
+  \def\OSOuterRadious{5*\Radius/8}
+  \def\OSInnerRadious{3*\Radius/8}
+  \def\OSLabelRadious{3.5*\Radius/8}
+  \def\KernelRadious{2*\Radius/8}
+  \def\UserspaceConnection{5.5*\Radius/8}
+  \def\OSConnection{2.5*\Radius/8}
+  
+  % Draw semicircle
+  \path[draw,name path=apps_outer,fill=blue!20]
+    let
+      \p{apps_start_outer} = ($(0,0)+(45:\AppsOuterRadious)$),
+      \p{apps_end_inner} = ($(0,0)+(315:\AppsInnerRadious)$),
+      \p{os_start_outer} = ($(0,0)+(45:\OSOuterRadious)$),
+      \p{os_end_inner} = ($(0,0)+(315:\OSInnerRadious)$)
+    in
+    (\x{apps_start_outer},\y{apps_start_outer}) coordinate (apps_start_outer)
+      arc[start angle=45, end angle=315, radius=\AppsOuterRadious] coordinate (apps_end_outer)
+      to[out=-315,in=45] (\x{apps_end_inner}, \y{apps_end_inner}) coordinate (apps_end_inner)
+      arc[start angle=315, end angle=45, radius=\AppsInnerRadious] coordinate (apps_start_inner)
+      to[out=-45,in=315] coordinate[pos=0.5] (userspace_link) (apps_start_outer)
+      -- cycle
+    (\x{os_start_outer}, \y{os_start_outer}) coordinate (os_start_outer)
+      arc[start angle=45, end angle=315, radius=\OSOuterRadious] coordinate (os_end_outer)
+      to[out=-315,in=45] (\x{os_end_inner}, \y{os_end_inner}) coordinate (os_end_inner)
+      arc[start angle=315, end angle=45, radius=\OSInnerRadious] coordinate (os_start_inner)
+      to[out=-45,in=315] coordinate[pos=0.5] (os_link) (os_start_outer)
+      -- cycle
+    (0,0) coordinate (kernel) circle[radius=\KernelRadious]
+  ;
+  \path[]
+    let
+      \p{userspace_connection_0} = ($(0,0)+(90:\UserspaceConnection)$)
+    in
+    (\x{userspace_connection_0}, \y{userspace_connection_0}) coordinate (userspace_connection_0)
+         node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=90
+         ] (userspace_connection_arrow_0) {}
+       arc[start angle=90, end angle=180, radius=\UserspaceConnection] coordinate (userspace_connection_1)
+         node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=180
+         ] (userspace_connection_arrow_1) {}
+      arc[start angle=180, end angle=270, radius=\UserspaceConnection] coordinate (userspace_connection_2)
+        node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=270
+         ] (userspace_connection_arrow_2) {}
+  ;
+  \path[]
+    let
+      \p{os_connection_0} = ($(0,0)+(90:\OSConnection)$)
+    in
+    (\x{os_connection_0}, \y{os_connection_0}) coordinate (os_connection_0)
+         node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=90
+         ] (os_connection_arrow_0) {}
+       arc[start angle=90, end angle=180, radius=\OSConnection] coordinate (os_connection_1)
+         node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=180
+         ] (os_connection_arrow_1) {}
+      arc[start angle=180, end angle=270, radius=\OSConnection] coordinate (os_connection_2)
+        node[
+           double arrow,
+           draw=black,
+           fill=green,
+           minimum width = 6pt,
+           double arrow head extend=3pt,
+           minimum height=6mm,
+           rotate=270
+         ] (os_connection_arrow_2) {}
+  ;
+
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=4pt,
+      text={|\large\bfseries|User space}
+    }
+  }]
+    let
+      \p{apps_start_label} = ($(0,0)+(135:\AppsLabelRadious)$)
+    in
+    (\x{apps_start_label},\y{apps_start_label}) arc[start angle=135, end angle=45, radius=\AppsLabelRadious]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=4pt,
+      text={(about 2000 subroutines)}
+    }
+  }]
+    let
+      \p{apps_start_info} = ($(0,0)+(225:\OSOuterRadious)$)
+    in
+    (\x{apps_start_info},\y{apps_start_info}) arc[start angle=225, end angle=315, radius=\OSOuterRadious]
+  ;
+  \path[minimum height=1cm, postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=4pt,
+      text={|\large\bfseries|Operating system}
+    }
+  }]
+    let
+      \p{os_start_label} = ($(0,0)+(135:\OSLabelRadious)$)
+    in
+    (\x{os_start_label},\y{os_start_label}) arc[start angle=135, end angle=45, radius=\OSLabelRadious]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=4pt,
+      text={(about 380 system calls)}
+    }
+  }]
+    let
+      \p{os_start_info} = ($(0,0)+(200:\KernelRadious)$)
+    in
+    (\x{os_start_info},\y{os_start_info}) arc[start angle=200, end angle=340, radius=\KernelRadious]
+  ;
+  \path[]
+    (kernel) node[] (kernel_label) {\large\bfseries Kernel}
+  ;
+
+  \node[
+    draw,
+    fill=green!20,
+    rectangle,
+    rounded corners,
+    minimum height=6cm,
+    inner sep=12pt
+  ]
+    (application) at ($(1.2*\Radius,0)$) {\Large\bfseries Application}
+  ;
+
+  \path[draw,line width=4pt]
+    ($(application.west)!0.6!(application.north west)$) edge[>=latex,<->] (userspace_link)
+    ($(application.west)!0.3!(application.north west)$) edge[>=latex,<->] (os_link)
+    (application.west) edge[>=latex,<->] (\KernelRadious,0) node[] (kernel_link) {}
+  ;
+  
+\end{tikzpicture}
+\end{document}
