@@ -25,16 +25,17 @@
 \begin{document}
 \begin{tikzpicture}[baseline=(current bounding box.north)]
   % Define coordinates
-  \def\Radius{6}
+  \def\Radius{12}
+  \def\Sectors{16}
   \def\AppsOuterRadious{\Radius}
-  \def\AppsInnerRadious{6*\Radius/8}
-  \def\AppsLabelRadious{6.5*\Radius/8}
-  \def\OSOuterRadious{5*\Radius/8}
-  \def\OSInnerRadious{3*\Radius/8}
-  \def\OSLabelRadious{3.5*\Radius/8}
-  \def\KernelRadious{2*\Radius/8}
-  \def\UserspaceConnection{5.5*\Radius/8}
-  \def\OSConnection{2.5*\Radius/8}
+  \def\AppsInnerRadious{14*\Radius / \Sectors}
+  \def\AppsLabelRadious{15*\Radius / \Sectors}
+  \def\OSOuterRadious{10*\Radius / \Sectors}
+  \def\OSInnerRadious{8*\Radius / \Sectors}
+  \def\OSLabelRadious{9*\Radius / \Sectors}
+  \def\KernelRadious{2*\Radius / \Sectors}
+  \def\UserspaceConnection{13*\Radius / \Sectors}
+  \def\OSConnection{7*\Radius / \Sectors}
   
   % Draw semicircle
   \path[draw,name path=apps_outer,fill=blue!20]

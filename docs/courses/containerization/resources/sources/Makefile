@@ -10,7 +10,7 @@ SCRATCH_DIR=$(BUILD_DIR)/_scratch_
 LATEXMK=latexmk $(LATEXMK_FLAGS) -emulate-aux-dir -output-directory=$(OUTPUT_DIR) -aux-directory=$(AUXILIA_DIR)
 #LATEXMK=latexmk -jobname=$(OUTPUT_PATH) # Do not use to redirect output to new directory
 ARGS='$$pdflatex=q/xelatex %O -synctex=1 -shell-escape %S/'
-PREVIEW='$$pdf_previewer=q/start evince %S/'
+PREVIEW='$$pdf_previewer=q/start okular %S/'
 
 .PHONY: all
 all: $(TARGETS)
