@@ -33,35 +33,35 @@
   \def\OSOuterRadious{10*\Radius / \Sectors}
   \def\OSInnerRadious{8*\Radius / \Sectors}
   \def\OSLabelRadious{9*\Radius / \Sectors}
-  \def\KernelRadious{2*\Radius / \Sectors}
-  \def\UserspaceConnection{13*\Radius / \Sectors}
-  \def\OSConnection{7*\Radius / \Sectors}
+  \def\KernelRadious{4*\Radius / \Sectors}
+  \def\UserspaceConnection{12*\Radius / \Sectors}
+  \def\OSConnection{6*\Radius / \Sectors}
   
   % Draw semicircle
   \path[draw,name path=apps_outer,fill=blue!20]
     let
       \p{apps_start_outer} = ($(0,0)+(45:\AppsOuterRadious)$),
-      \p{apps_end_inner} = ($(0,0)+(315:\AppsInnerRadious)$),
+      \p{apps_end_inner} = ($(0,0)+(225:\AppsInnerRadious)$),
       \p{os_start_outer} = ($(0,0)+(45:\OSOuterRadious)$),
-      \p{os_end_inner} = ($(0,0)+(315:\OSInnerRadious)$)
+      \p{os_end_inner} = ($(0,0)+(225:\OSInnerRadious)$)
     in
     (\x{apps_start_outer},\y{apps_start_outer}) coordinate (apps_start_outer)
-      arc[start angle=45, end angle=315, radius=\AppsOuterRadious] coordinate (apps_end_outer)
-      to[out=-315,in=45] (\x{apps_end_inner}, \y{apps_end_inner}) coordinate (apps_end_inner)
-      arc[start angle=315, end angle=45, radius=\AppsInnerRadious] coordinate (apps_start_inner)
-      to[out=-45,in=315] coordinate[pos=0.5] (userspace_link) (apps_start_outer)
+      arc[start angle=45, end angle=225, radius=\AppsOuterRadious] coordinate (apps_end_outer)
+      to[out=-45,in=-45] (\x{apps_end_inner}, \y{apps_end_inner}) coordinate (apps_end_inner)
+      arc[start angle=225, end angle=45, radius=\AppsInnerRadious] coordinate (apps_start_inner)
+      to[out=-45,in=-45] coordinate[pos=0.5] (userspace_link) (apps_start_outer)
       -- cycle
     (\x{os_start_outer}, \y{os_start_outer}) coordinate (os_start_outer)
-      arc[start angle=45, end angle=315, radius=\OSOuterRadious] coordinate (os_end_outer)
-      to[out=-315,in=45] (\x{os_end_inner}, \y{os_end_inner}) coordinate (os_end_inner)
-      arc[start angle=315, end angle=45, radius=\OSInnerRadious] coordinate (os_start_inner)
-      to[out=-45,in=315] coordinate[pos=0.5] (os_link) (os_start_outer)
+      arc[start angle=45, end angle=225, radius=\OSOuterRadious] coordinate (os_end_outer)
+      to[out=-45,in=-45] (\x{os_end_inner}, \y{os_end_inner}) coordinate (os_end_inner)
+      arc[start angle=225, end angle=45, radius=\OSInnerRadious] coordinate (os_start_inner)
+      to[out=-45,in=-45] coordinate[pos=0.5] (os_link) (os_start_outer)
       -- cycle
     (0,0) coordinate (kernel) circle[radius=\KernelRadious]
   ;
   \path[]
     let
-      \p{userspace_connection_0} = ($(0,0)+(90:\UserspaceConnection)$)
+      \p{userspace_connection_0} = ($(0,0)+(180:\UserspaceConnection)$)
     in
     (\x{userspace_connection_0}, \y{userspace_connection_0}) coordinate (userspace_connection_0)
          node[
@@ -70,33 +70,13 @@
            fill=green,
            minimum width = 6pt,
            double arrow head extend=3pt,
-           minimum height=6mm,
-           rotate=90
-         ] (userspace_connection_arrow_0) {}
-       arc[start angle=90, end angle=180, radius=\UserspaceConnection] coordinate (userspace_connection_1)
-         node[
-           double arrow,
-           draw=black,
-           fill=green,
-           minimum width = 6pt,
-           double arrow head extend=3pt,
-           minimum height=6mm,
+           minimum height=12mm,
            rotate=180
-         ] (userspace_connection_arrow_1) {}
-      arc[start angle=180, end angle=270, radius=\UserspaceConnection] coordinate (userspace_connection_2)
-        node[
-           double arrow,
-           draw=black,
-           fill=green,
-           minimum width = 6pt,
-           double arrow head extend=3pt,
-           minimum height=6mm,
-           rotate=270
-         ] (userspace_connection_arrow_2) {}
+         ] (userspace_connection_arrow_0) {}
   ;
   \path[]
     let
-      \p{os_connection_0} = ($(0,0)+(90:\OSConnection)$)
+      \p{os_connection_0} = ($(0,0)+(180:\OSConnection)$)
     in
     (\x{os_connection_0}, \y{os_connection_0}) coordinate (os_connection_0)
          node[
@@ -105,29 +85,9 @@
            fill=green,
            minimum width = 6pt,
            double arrow head extend=3pt,
-           minimum height=6mm,
-           rotate=90
-         ] (os_connection_arrow_0) {}
-       arc[start angle=90, end angle=180, radius=\OSConnection] coordinate (os_connection_1)
-         node[
-           double arrow,
-           draw=black,
-           fill=green,
-           minimum width = 6pt,
-           double arrow head extend=3pt,
-           minimum height=6mm,
+           minimum height=12mm,
            rotate=180
-         ] (os_connection_arrow_1) {}
-      arc[start angle=180, end angle=270, radius=\OSConnection] coordinate (os_connection_2)
-        node[
-           double arrow,
-           draw=black,
-           fill=green,
-           minimum width = 6pt,
-           double arrow head extend=3pt,
-           minimum height=6mm,
-           rotate=270
-         ] (os_connection_arrow_2) {}
+         ] (os_connection_arrow_0) {}
   ;
 
   \path[postaction={
@@ -154,9 +114,9 @@
     }
   }]
     let
-      \p{apps_start_info} = ($(0,0)+(225:\OSOuterRadious)$)
+      \p{apps_start_info} = ($(0,0)+(135:\OSInnerRadious)$)
     in
-    (\x{apps_start_info},\y{apps_start_info}) arc[start angle=225, end angle=315, radius=\OSOuterRadious]
+    (\x{apps_start_info},\y{apps_start_info}) arc[start angle=135, end angle=45, radius=\OSInnerRadious]
   ;
   \path[minimum height=1cm, postaction={
     decorate,
@@ -195,7 +155,7 @@
     fill=green!20,
     rectangle,
     rounded corners,
-    minimum height=6cm,
+    minimum height=10cm,
     inner sep=12pt
   ]
     (application) at ($(1.2*\Radius,0)$) {\Large\bfseries Application}
