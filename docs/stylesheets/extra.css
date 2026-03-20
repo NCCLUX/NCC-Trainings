@@ -24,34 +24,34 @@ table {
 }
 
 .md-typeset table:not([class]) {
-	background-color: var(--md-default-bg-color);
+    background-color: var(--md-default-bg-color);
     border: 0.05rem solid var(--md-default-bg-color);
-	border-radius: 0.25rem;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.1);
-	touch-action: auto;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.1);
+    touch-action: auto;
 }
 
 .md-typeset table:not([class]) th {
     min-width: 300px;
-	padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
-	color: var(--md-default-bg-color);
-	vertical-align: top;
-	background-color: var(--md-default-fg-color--light);
+    padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
+    color: var(--md-default-bg-color);
+    vertical-align: top;
+    background-color: var(--md-default-fg-color--light);
     font-weight: normal;
 }
 
 .md-typeset table:not([class]) th a {
-	color: inherit;
+    color: inherit;
 }
 
 .md-typeset table:not([class]) td {
-	padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
-	vertical-align: top;
-	border-top: 1px solid var(--md-default-fg-color--lightest);
+    padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
+    vertical-align: top;
+    border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
 .md-typeset table:not([class]) tr:first-child td {
-	border-top: 0;
+    border-top: 0;
 }
 
 th, td {
