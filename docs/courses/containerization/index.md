@@ -1,23 +1,27 @@
 # Environment management and containers for HPC systems
 
-Environment management in shared computing resources like HPC systems and workstations involves a collection of techniques that allow users to install, configure and run the software they require on top of the base system. These techniques have expended over time to serve a number of needs such as
+Environment management and containerization in shared computing resources like HPC systems and workstations allow the installation and execution of programs in isolation of other system and user applications. Environment management and containerization encompass a collection of techniques base on features of the operating system and the kernel which are used for a diverse set of tasks such as
 
-- creating environments that are isolated from the base system and other environments to manage software with conflicting requirements,
-- source software from a variety of sources, and
-- create consistent and reproducible environments.
+- sourcing and installing software
+- managing conflicting dependencies of software, and
+- creating reproducible environments.
 
-The ability of environment management techniques to create reproducible environments in particular are particularly important in efforts to produce reproducible research results. Workflows for simulation and analysis of results can be encapsulated in a reproducible environment and distributed together with the environment.
+This course will start by providing and overview of the operating systems and kernel features that are used in environments and containers. Then, we cover the basic skills for creating environments and containers so that you can develop and deploy your software in shared systems. Finally, we cover the necessary techniques that allow the creation of reproducible environments and reproducible binaries for containers. Reproducibility is particularly important in scientific settings, where workflows for simulations and results analysis can be encapsulated and distributed in a single container or container recipe to ensure the reproducibility and traceability of results.
 
+## Target audience
 
-## Overview of the course
+The course targets users of HPC systems that need to develop or deploy applications in a consistent manner across multiple systems.
 
-The training is an overview of the technologies underlying environments and containers accompanied by demonstrations and examples.
+## Agenda
 
+- Overview of the kernel and operating system features used to manage software environments.
+- Basic software environments for software installation and dependency management.
+- Introduction to container for the creation and distribution of consistent software environments.
+- Advanced management of system resources in containers: accessing storage, networks, and accelerators.
+- Creating reproducible environments and containers.
 
-## Terms
+## Requirements
 
-_Environments_ modify the user space to provide access to different sets of executables and libraries without modifying globally installed tools. Environment management tools such as Environment Modules, Conda, and application specific tools such Python Virtual Environments (`venv`) rely on environment variables such as `PATH` and `LD_LIBRARY_PATH`.
-
-_Containers_ on top of user space modifications can also modify aspects of the operating system. Singularity containers for instance, can use a custom GNU C Library (`glibc`), a wrapper around the system calls of the Linux kernel. Containers rely on a variety of tools to control the environment, access to files, and access to resources such as cores and memory.
-
-Anything that requires customization of the kernel and drivers must use _virtualisation_, which is beyond the scope of most HPC applications.
+- Having an HPC account to access the cluster.
+- Basic shell usage skills.
+- Basic scripting skills and the ability to use a text editor in the cluster.

@@ -57,7 +57,8 @@ nav:
             - Hartree-Fock calculations in PySCF: 'electronic_structure_methods/Hartree-Fock_in_PySCF.md'
             - DFT calculations in PySCF: 'electronic_structure_methods/DFT_in_PySCF.md'
         - Environment management and containers:
-            - Introduction: 'courses/containerization/index.md'
+            - Course description: 'courses/containerization/index.md'
+            - Introduction: 'courses/containerization/introduction.md'
             - Containers: 'courses/containerization/containers.md'
             - Environment managers: 'courses/containerization/conda.md'
 #           - Package management in R: 'courses/containerization/R.md'
