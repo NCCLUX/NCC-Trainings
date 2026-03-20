@@ -215,7 +215,8 @@ markdown_extensions:
 plugins:
     - search:
 #        prebuild_index: false
-    - minify_html
+    - minify:
+        minify_html: true
 #   - info
     - glightbox
     - git-revision-date-localized:
