@@ -80,21 +80,6 @@ nav:
           - Past Events: 'calendar/past.md'
     - Other Training Events: 'other-training/othertraining.md'
 
-markdown_extensions:
-    - attr_list
-    - md_in_html
-    - pymdownx.superfences
-    - pymdownx.tabbed:
-        alternate_style: true
-    - pymdownx.highlight:
-        anchor_linenums: true
-        line_spans: __span
-        pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
-    - tables
-
 extra_javascript:
     - javascripts/feedback.js
     - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -151,11 +136,24 @@ theme:
         edit: material/pencil
         view: material/eye
 
-# Extensions
 markdown_extensions:
     - meta
     - attr_list
     - md_in_html
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.highlight:
+        linenums_style: pymdownx.inline
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - tables
     - footnotes
     - admonition
     - codehilite:
@@ -175,25 +173,10 @@ markdown_extensions:
     - pymdownx.tilde
     - pymdownx.tabbed:
         alternate_style: true
-    # code blocks with syntax highlighting, graphs
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:pymdownx.superfences.fence_code_format
-    # clickable details
     - pymdownx.details
-    # tabbed contents
     - toc:
         permalink: true
     - pymdownx.keys
-    - pymdownx.highlight:
-        linenums_style: pymdownx.inline
-        anchor_linenums: true
-        line_spans: __span
-        pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
     - pymdownx.arithmatex:
         generic: true
 
