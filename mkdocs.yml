@@ -117,27 +117,22 @@ theme:
         - content.code.copy
         - content.code.select
         - content.code.annotate
-#   palette:
-#       - primary: black
     language: en
-    palette:
-        primary: blue
-        accent: light blue
     palette:
         # Palette toggle for light mode
         - scheme: default
           toggle:
               icon: material/brightness-7
               name: Switch to dark mode
+          primary: dark blue
+          accent: blue
         # Palette toggle for dark mode
         - scheme: slate
           toggle:
               icon: material/brightness-4
               name: Switch to light mode
-    features:
-#       - navigation.instant
-        - navigation.tabs
-        - navigation.footer
+          primary: dark blue
+          accent: blue
     icon:
         admonition:
             note: octicons/tag-16
