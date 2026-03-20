@@ -96,7 +96,7 @@ markdown_extensions:
     - tables
 
 extra_javascript:
-    - javascripts/mathjax.js
+    - javascripts/feedback.js
     - https://polyfill.io/v3/polyfill.min.js?features=es6
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -122,7 +122,7 @@ theme:
     language: en
     palette:
         primary: blue
-        accent:  light blue
+        accent: light blue
     palette:
         # Palette toggle for light mode
         - scheme: default
@@ -230,8 +230,8 @@ plugins:
 
 # Extra stylesheets (incl. Twitter Bootstrap)
 extra_css:
-#   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
     - stylesheets/extra.css
+#   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
 #   - stylesheets/bootstrap.min.css
 #   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
 
