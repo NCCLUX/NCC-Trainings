@@ -84,6 +84,12 @@ th, td {
     border-color: var(--md-slate-structureal-elements);
 }
 
+[data-md-color-scheme="slate"] .md-button--primary {
+    color: rgba(255, 255, 255, 1);
+    background-color: var(--md-slate-structureal-elements);
+    border-color: var(--md-slate-structureal-elements);
+}
+
 /* Add emphasizing box arround active link*/
 /*
 .md-nav__link--active {
