@@ -77,14 +77,20 @@ th, td {
 
 [data-md-color-scheme="slate"] .md-button {
     color: var(--md-slate-structureal-elements);
-/*  background-color: #6212BD;*/
-    border-color: var(--md-slate-structureal-elements);
+    /*background-color: #6212BD;*/
+    /* New type element have no boarder */
+    /*border-color: var(--md-slate-structureal-elements);*/
 }
 
 [data-md-color-scheme="slate"] .md-button--primary {
     color: rgba(255, 255, 255, 1);
     background-color: var(--md-slate-structureal-elements);
-    border-color: var(--md-slate-structureal-elements);
+    /* New type element have no boarder */
+    /*border-color: var(--md-slate-structureal-elements);*/
+}
+
+[data-md-color-scheme="slate"] .md-button--primary:hover {
+    filter: brightness(0.7);
 }
 
 /* Add emphasizing box arround active link*/
