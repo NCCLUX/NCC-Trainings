@@ -1,22 +1,23 @@
-If you are an educator and would like to offer a course with us, please contact us:, <u>[please contact us <i class="fas fa-envelope"></i>](https://supercomputing.lu/contact-us)<u>:
+If you are an educator and would like to offer a course with us, then [please contact us](https://supercomputing.lu/contact-us).
  
 Please read the following instructions:
 
 The following are the website and Git repository for hosting the training events under EuroCC (Luxembourg).
 
-https://ncclux.github.io/NCC-Trainings <br /> 
-https://github.com/NCCLUX/NCC-Trainings
+- Git repository: https://ncclux.github.io/NCC-Trainings
+- Website: https://github.com/NCCLUX/NCC-Trainings
 
 Please create your own repository and store your training materials there. We will merge with the main branch (or publish your training materials) close to the event or earlier, whenever you are ready.
 
 We plan to allocate 2 hours for theory and 2 hours for practical (hands-on) exercises. Typically, the entire event lasts 5 hours; this extra 1 hour is dedicated to a dry-run to ensure registered participants can access the machine (in this case, MeluXina) and test the training materials (hands-on exercises) in advance.
-For example,
-```
-11:00-12:00 (dry-run),
-12:00-13:00 (lunch break),
-13:00-15:00 (lecture) and
-15:00-17:00 (hands-on exercise).
-```
+
+For example:
+
+- 11:00-12:00 (dry-run),
+- 12:00-13:00 (lunch break),
+- 13:00-15:00 (lecture) and
+- 15:00-17:00 (hands-on exercise).
+
 It would be helpful to categorize the hands-on exercises, for example, from basic to intermediate (or advanced) topics. Previous course examples are available here: https://ncclux.github.io/NCC-Trainings/cuda/exercise-1/
 
 For example, the Quantum Espresso course falls under Computational Chemistry (if you prefer another name, please let us know). Before the event, for promotional purposes, we need to publish the course introduction and learning outcomes. You might draw inspiration from this existing course: https://ncclux.github.io/NCC-Trainings/openmp/
