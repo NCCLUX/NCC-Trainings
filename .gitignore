@@ -1,2 +1,3 @@
 docs/assets/**
+**/__pycache__/
 **/build

@@ -80,6 +80,9 @@ nav:
           - Past Events: 'calendar/past.md'
     - Other Training Events: 'other-training/othertraining.md'
 
+hooks:
+  - scripts/extra.py
+
 extra_javascript:
     - javascripts/feedback.js
     - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -226,7 +229,7 @@ extra:
                       Thanks for your feedback! Help us improve this page by
                       using our <a href="https://github.com/NCCLUX/NCC-Trainings/issues/new?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
 
-copyright: Copyright &copy; 2023-2025 <a href="https://supercomputing.lu/">SuperComputing Luxembourg</a>
+copyright: Copyright &copy; 2023-{current_year} <a href="https://supercomputing.lu/">SuperComputing Luxembourg</a>
 
 repo_url: https://github.com/NCCLUX/NCC-Trainings/
 repo_name: NCCLUX/NCC-Trainings
