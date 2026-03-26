@@ -102,9 +102,25 @@ th, td {
 }
 */
 
+/* Add blue background to header */
+.md-header {
+    background-color: var(--md-primary-fg-color);
+}
+
+/* Change text/icon colors in header to maintain contrast */
+[data-md-color-scheme="default"]
+    .md-header__title,
+    .md-header__button,
+    .md-header__source,
+    .md-search__input::placeholder,
+    .md-search__input:not(:focus) ~ .md-search__icon svg
+{
+    color: #FFFFFF;
+}
+
 :root {
     --md-primary-fg-color: #022658;
     --md-primary-fg-color--light: #ECB7B7;
     --md-primary-fg-color--dark: #90030C;
-    --md-slate-structureal-elements: #0033CC;
+    --md-slate-structureal-elements: #0077FF;
 }
