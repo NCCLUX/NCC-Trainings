@@ -228,6 +228,6 @@ extra:
 
 copyright: Copyright &copy; 2023-2025 <a href="https://supercomputing.lu/">SuperComputing Luxembourg</a>
 
+repo_url: https://github.com/NCCLUX/NCC-Trainings/
 repo_name: NCCLUX/NCC-Trainings
-repo_url: https://github.com/NCCLUX/NCC-Trainings.git
-edit_uri: -/edit/master/NCC-Trainings/
+edit_uri: edit/main/docs/
