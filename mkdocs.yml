@@ -86,7 +86,7 @@ extra_javascript:
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 theme:
-    name: material
+    name: materialx
     logo: 'figures/Logo_SC_Luxembourg.png'
     features:
         - navigation.footer
@@ -187,15 +187,10 @@ plugins:
         minify_html: true
 #   - info
     - glightbox
-    - git-revision-date-localized:
+    - document-dates:
+        position: bottom
         type: datetime
-        custom_format: "%d. %B %Y"
-        timezone: Europe/Amsterdam
-        locale: en
-        fallback_to_build_date: false
-        enable_creation_date: true
-        enabled: true
-        strict: true
+        date_format: "%d %B %Y"
 
 # Extra stylesheets (incl. Twitter Bootstrap)
 extra_css:
