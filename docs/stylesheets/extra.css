@@ -70,7 +70,7 @@ th, td {
     --md-typeset-a-color: #09BFFF;
 }
 
-[data-md-color-scheme="slate"] .md-nav__link--active {
+[data-md-color-scheme="slate"] .md-nav .md-nav__link--active {
     color: var(--md-slate-structureal-elements);
     font-weight: 700;
 }
@@ -89,7 +89,7 @@ th, td {
 
 /* Add emphasizing box arround active link*/
 /*
-.md-nav__link--active {
+.md-nav .md-nav__link--active {
     background-color: rgba(0, 176, 255, 0.1);
     border-radius: 4px;
     padding-left: 10px;
