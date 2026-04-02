@@ -118,6 +118,16 @@ th, td {
     color: #FFFFFF;
 }
 
+.md-content-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.md-content-button {
+    font-size: 24px;
+}
+
 :root {
     --md-primary-fg-color: #022658;
     --md-primary-fg-color--light: #ECB7B7;
