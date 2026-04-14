@@ -78,7 +78,7 @@ nav:
     - Calendar:
           - Future Events: 'calendar/future.md'
           - Past Events: 'calendar/past.md'
-    - Other Training Events: 'other-training/othertraining.md'
+    - Other Events: 'other-events/index.md'
 
 hooks:
   - scripts/extra.py
