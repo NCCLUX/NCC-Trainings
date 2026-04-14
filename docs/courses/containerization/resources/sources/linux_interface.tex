@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage[T1]{fontenc}
+
 \usepackage{tikz}
 \usetikzlibrary{
 %    shapes,
@@ -25,11 +27,12 @@
 \begin{document}
 \begin{tikzpicture}[baseline=(current bounding box.north)]
   % Define coordinates
-  \def\Radius{12}
+  \def\Radius{8}
   \def\Sectors{16}
+  \def\filletradious{0.025*\Radius}
   \def\AppsOuterRadious{\Radius}
   \def\AppsInnerRadious{14*\Radius / \Sectors}
-  \def\AppsLabelRadious{15*\Radius / \Sectors}
+  \def\AppsLabelRadious{14.5*\Radius / \Sectors}
   \def\OSOuterRadious{10*\Radius / \Sectors}
   \def\OSInnerRadious{8*\Radius / \Sectors}
   \def\OSLabelRadious{9*\Radius / \Sectors}
@@ -59,6 +62,128 @@
       -- cycle
     (0,0) coordinate (kernel) circle[radius=\KernelRadious]
   ;
+
+  \path[draw,fill=yellow!30]
+    ($(0,0) + (45:\OSOuterRadious+\filletradious)$) coordinate (user_space_connection_0)
+      to[out=-45, in=-45] ($(0,0) + (45:\AppsInnerRadious-\filletradious)$) coordinate (user_space_connection_1)
+      arc[start angle=45, end angle=135, radius={\AppsInnerRadious-\filletradious}] ($(0,0) + (135:\AppsInnerRadious-\filletradious)$) coordinate (user_space_connection_2)
+      to[out=-135, in=-135] ($(0,0) + (135:\OSOuterRadious+\filletradious)$) coordinate (user_space_connection_3)
+      arc[start angle=135, end angle=45, radius={\OSOuterRadious+\filletradious}] (user_space_connection_0)
+      -- cycle
+    ($(0,0) + (45:\KernelRadious+\filletradious)$) coordinate (os_connection_0)
+      to[out=-45, in=-45] ($(0,0) + (45:\OSInnerRadious-\filletradious)$) coordinate (os_connection_1)
+      arc[start angle=45, end angle=135, radius={\OSInnerRadious-\filletradious}] ($(0,0) + (135:\OSInnerRadious-\filletradious)$) coordinate (os_connection_2)
+      to[out=-135, in=-135] ($(0,0) + (135:\KernelRadious+\filletradious)$) coordinate (os_connection_3)
+      arc[start angle=135, end angle=45, radius={\KernelRadious+\filletradious}] (os_connection_0)
+      -- cycle
+  ;
+
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={[\large\bfseries]Filesystem hierarchy [\large\bfseries\ttfamily](man hier)}
+    }
+  }]
+    let
+      \n{rad} = {\OSOuterRadious+0.7*(\AppsInnerRadious-\OSOuterRadious)}
+    in
+    ($(0,0)+(130:\n{rad})$) arc[start angle=130, end angle=40, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={left},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={[\ttfamily]PATH}
+    }
+  }]
+    let
+      \n{rad} = {\OSOuterRadious+0.5*(\AppsInnerRadious-\OSOuterRadious)-\filletradious}
+    in
+    ($(0,0)+(130:\n{rad})$) arc[start angle=130, end angle=90, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={left},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={[\ttfamily]LD{\char95}LIBRARY{\char95}PATH}
+    }
+  }]
+    let
+      \n{rad} = {\OSOuterRadious+0.3*(\AppsInnerRadious-\OSOuterRadious)-\filletradious}
+    in
+    ($(0,0)+(130:\n{rad})$) arc[start angle=130, end angle=90, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={left},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={[\ttfamily]Rpath/Runpath}
+    }
+  }]
+    let
+      \n{rad} = {\OSOuterRadious+0.5*(\AppsInnerRadious-\OSOuterRadious)-\filletradious}
+    in
+    ($(0,0)+(90:\n{rad})$) arc[start angle=90, end angle=50, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={left},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={symbolic/hard links}
+    }
+  }]
+    let
+      \n{rad} = {\OSOuterRadious+0.3*(\AppsInnerRadious-\OSOuterRadious)-\filletradious}
+    in
+    ($(0,0)+(90:\n{rad})$) arc[start angle=90, end angle=50, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={Subsystems: [\ttfamily]namespaces,cgroups}
+    }
+  }]
+    let
+      \n{rad} = {\KernelRadious+0.7*(\OSInnerRadious-\KernelRadious)-\filletradious}
+    in
+    ($(0,0)+(140:\n{rad})$) arc[start angle=140, end angle=40, radius={\n{rad}}]
+  ;
+  \path[postaction={
+    decorate,
+    decoration={
+      text along path,
+      text align={center, right indent=0em},
+      raise=0pt,
+      text format delimiters={[}{]},
+      text={Tools: [\ttfamily]chroot,fakeroot}
+    }
+  }]
+    let
+      \n{rad} = {\KernelRadious+0.4*(\OSInnerRadious-\KernelRadious)-\filletradious}
+    in
+    ($(0,0)+(140:\n{rad})$) arc[start angle=140, end angle=40, radius={\n{rad}}]
+  ;
+
   \path[]
     let
       \p{userspace_connection_0} = ($(0,0)+(180:\UserspaceConnection)$)
