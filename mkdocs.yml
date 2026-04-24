@@ -75,7 +75,6 @@ nav:
             - Introduction: 'Hackathons/hpda/introduction.md'
     - Instructions for Educators:
           - Introduction: 'education/introduction.md'
-          - Requirements: 'education/requirements.md'
     - Calendar:
           - Future Events: 'calendar/future.md'
           - Past Events: 'calendar/past.md'
