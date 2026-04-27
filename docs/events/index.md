@@ -1,6 +1,6 @@
 {%
 
-    include-markdown 'organization_of_trainings/index.md'
+    include-markdown 'organization/index.md'
     start='<!--Events_intro_start-->'
     end='<!--Events_intro_end-->'
 %}

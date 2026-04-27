@@ -3,6 +3,9 @@ site_url: https://ncclux.github.io/NCC-Trainings/
 
 nav:
     - Announcements: 'index.md'
+    - Organization:
+        - Organization: 'organization/index.md'
+        - Instructions for educators: 'organization/instructions_for_educators.md'
     - Courses:
         - Course catalogue: 'courses/index.md'
 #       - AI with HPC:
@@ -77,9 +80,6 @@ nav:
             - Introduction: 'hackathons/hpda/index.md'
     - Events:
         - Events: 'events/index.md'
-    - Organization of trainings:
-        - Organization of trainings: 'organization_of_trainings/index.md'
-        - Instructions for educators: 'organization_of_trainings/instructions_for_educators.md'
 
 hooks:
   - scripts/extra.py
