@@ -206,6 +206,7 @@ plugins:
         type: datetime
         date_format: "%d %B %Y"
     - include-markdown
+    - site-urls
 
 # Extra stylesheets (incl. Twitter Bootstrap)
 extra_css:

@@ -16,7 +16,7 @@ Courses are online trainings designed to be completed in one day. This format is
 The core courses focus on parallel programming on CPUs and GPUs and the acceleration of scientific software on supercomputers. Topics covered include include OpenMP, MPI, OpenACC, CUDA, and OpenMP offloading, using programming languages such as C/C++ and FORTRAN. Specialized courses cover programming in Python, R, Matlab, and Julia for HPC systems, as well as specialized applications such as tutorials on specific software such as GROMACS. There are also application specific courses in areas such as CFD and FEM software, material science, and bioinformatics.
 
 <div markdown class="md-content-button md-content-centered">
-[Course list](/courses/){ .md-button }
+[Course list](site:courses/){ .md-button }
 </div>
 
 ## Bootcamps
@@ -28,7 +28,7 @@ Bootcamps are one or two day events designed to teach scientists and researchers
 <!--Bootcamps_intro_end-->
 
 <div markdown class="md-content-button md-content-centered">
-[Bootcamps](/bootcamps/){ .md-button }
+[Bootcamps](site:bootcamps/){ .md-button }
 </div>
 
 ## Hackathons
@@ -40,7 +40,7 @@ Hackathons are held over a longer duration, typically lasting one or two months.
 <!--Hackathons_intro_end-->
 
 <div markdown class="md-content-button md-content-centered">
-[Hackathons](/hackathons/){ .md-button }
+[Hackathons](site:hackathons/){ .md-button }
 </div>
 
 ## Events
@@ -50,5 +50,5 @@ Hackathons are held over a longer duration, typically lasting one or two months.
 <!--Events_intro_end-->
 
 <div markdown class="md-content-button md-content-centered">
-[Events](/events/){ .md-button }
+[Events](site:events/){ .md-button }
 </div>
