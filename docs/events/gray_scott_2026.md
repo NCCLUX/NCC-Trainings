@@ -18,7 +18,7 @@ Through hands-on sessions, lectures, and regular technical webinars, the school 
 The University of Luxembourg [HPC facility](https://www.uni.lu/research-en/core-facilities/hpc/) is hosting a satellite site for the 2026 iteration of the school. 
 
 - Participants in the site will be given access to the HPC facility of the University of Luxembourg for the practical work.
-- There are 30 places available.
+- There are **30 places available**.
 - Participants can follow any number of training sessions.
 - CCFR will provide certificates of attendance for the session that a participant follows.
 

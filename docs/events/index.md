@@ -13,7 +13,7 @@ Some of our yearly held events are listed below.
 
 The Gray Scott School is an advanced training program dedicated to High-Performance Computing (HPC), led by experts from IJCLab, CNRS, Inria, LUPM, LPNHE & LISN. The training focusses on programming and optimization on Heterogeneous Architectures.
 
-This summer school, is organized yearly by Laboratoire d’Annecy de Physique des Particules (LAPP, CNRS – CNRS Nuclei & Particles), in collaboration with the CC-FR Competence Centre, and is entirely free of charge. Participants can attend the event on site in Annecy, France, on one of the satellite sites around the world, or online. The University of Luxembourg [HPC facility](https://www.uni.lu/research-en/core-facilities/hpc/) is hosting a satellite yearly.
+This summer school, is organized yearly by Laboratoire d’Annecy de Physique des Particules (LAPP, CNRS – CNRS Nuclei & Particles), in collaboration with the CC-FR Competence Centre, and is entirely free of charge. Participants can attend the event on site in Annecy, France, on one of the satellite sites around the world, or online. The University of Luxembourg [HPC facility](https://www.uni.lu/research-en/core-facilities/hpc/) is hosting a satellite site for the event every year.
 
 !!! info "Gray Scott satellite sites"
     Satellite sites allow for remote attendance of the Gray Scott school. Satellite sites provide

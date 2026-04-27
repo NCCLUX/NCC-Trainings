@@ -1,10 +1,10 @@
-Most of our courses are organised online.
+This webpage holds the materials of the training events organized by [SuperComputing Luxembourg](https://supercomputing.lu/), the National Competence Centre in High-Performance Computing. For organizational purposes, the training events are categorized into courses, bootcamps, hackathons, and general events.
 
 ## Courses
 
 <!--Courses_intro_start-->
 
-Courses are trainings designed to be completed in one day. This format is considered a more efficient way of learning for experienced professionals than spreading the training over multiple days. 
+Courses are online trainings designed to be completed in one day. This format is considered a more efficient way of learning for experienced professionals than spreading the training over multiple days.
 
 - The one-day training consists of three stages.
   - **Preparation:** ensuring that all participants have access to the HPC resources and any resources they need for the training.
@@ -28,7 +28,7 @@ Bootcamps are one or two day events designed to teach scientists and researchers
 <!--Bootcamps_intro_end-->
 
 <div markdown class="md-content-button md-content-centered">
-[Bootcamps](Bootcamps/ai/introduction){ .md-button }
+[Bootcamps](bootcamps/){ .md-button }
 </div>
 
 ## Hackathons
@@ -40,7 +40,7 @@ Hackathons are held over a longer duration, typically lasting one or two months.
 <!--Hackathons_intro_end-->
 
 <div markdown class="md-content-button md-content-centered">
-[Hackathons](Hackathons/hpda/introduction){ .md-button }
+[Hackathons](hackathons/){ .md-button }
 </div>
 
 ## Events
@@ -48,3 +48,7 @@ Hackathons are held over a longer duration, typically lasting one or two months.
 <!--Events_intro_start-->
 [SuperComputing Luxembourg](https://supercomputing.lu/) organizes a number of recurring and non-recurring events. Events have various formats and purposes, and take the forms of formal trainings, scientific presentations, and networking events.
 <!--Events_intro_end-->
+
+<div markdown class="md-content-button md-content-centered">
+[Events](events/){ .md-button }
+</div>
