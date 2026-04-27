@@ -222,7 +222,7 @@ extra:
         - icon: fontawesome/brands/linkedin
           link: https://www.linkedin.com/company/eurocc-luxembourg/
         - icon: fontawesome/solid/rss
-          link: /feed_rss_updated.xml
+          link: /NCC-Trainings/feed_rss_updated.xml
           name: RSS Feed
     version:
         provider: mike
