@@ -1,4 +1,6 @@
-## Gray Scott summer school 2026
+# Gray Scott summer school 2026
+
+<!--Gray_Scott_start-->
 
 {%
 
@@ -37,3 +39,5 @@ The registration process.
 - You will receive an email with the details of your account and the exact location of the training by **17:00 CEST, on Tuesday, the 16th of June, 2026**.
   - Reply to the email to confirm you registration, otherwise your account will be deactivated and you will not be able to follow the training.
   - If you do not receive an email by the Tuesday deadline, then please contact the [HPC team](mailto:hpc-team@uni.lu) immediately to have your account created.
+
+<!--Gray_Scott_end-->

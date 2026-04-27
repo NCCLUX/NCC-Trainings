@@ -197,6 +197,7 @@ plugins:
             as_creation: "date" # means from page.meta.date
             as_update: "git" # means from git log
             datetime_format: "%Y-%m-%d %H:%M"
+        image: figures/Logo_SC_Luxembourg.png
     - minify:
         minify_html: true
 #   - info

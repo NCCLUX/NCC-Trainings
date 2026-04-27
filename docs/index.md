@@ -4,12 +4,36 @@ Our upcoming events are listed below. For more information about our schedule an
 
 ---
 
+## [Gray Scott summer school 2026](site:events/gray_scott_2026/)
+
 {%
     include-markdown 'events/gray_scott_2026.md'
+    start='<!--Gray_Scott_start-->'
+    end='<!--Gray_Scott_end-->'
 %}
+
+## [Introduction to OpenACC for Heterogeneous Computing](site:courses/openacc/)
+
+{%
+    include-markdown 'courses/openacc/index.md'
+    start='<!--OpenACC_intro_start-->'
+    end='<!--OpenACC_intro_end-->'
+%}
+
+### Registration
+
+Please follow the link below to register.
+
+<div markdown class="md-content-button md-content-centered">
+[Register](https://events.eurocc.lu/introduction-to-openacc-heterogeneous-computing){ .md-button }
+</div>
+
+## [SCynergy 2026](site:events/scynergy_2026/)
 
 {%
     include-markdown 'events/scynergy_2026.md'
+    start='<!--SCynergy_start-->'
+    end='<!--SCynergy_end-->'
 %}
 
 </br>
