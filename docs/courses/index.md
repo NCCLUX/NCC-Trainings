@@ -1,10 +1,8 @@
-# Courses
+{%
 
-This page contains the course material. For more information about our schedule and upcoming trainings, please follow our [even calendar](https://supercomputing.lu/events).
+    include-markdown 'organization_of_trainings/index.md'
+    start='<!--Courses_intro_start-->'
+    end='<!--Courses_intro_end-->'
+%}
 
-Courses are primarily designed to be completed in just one day. This format is considered a more effective way of learning than spreading the training over multiple days. The one-day training consists of three stages:
-
-- __Preparation:__ Pre-preparation to follow up on the lecture and practicals
-- __Lecture:__ Introduction and focus on the course topic
-- __Practicals:__ Hands-on session
-
+In this page you can find the full calalogue of courses offeered and their material.

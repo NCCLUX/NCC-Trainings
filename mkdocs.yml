@@ -2,61 +2,61 @@ site_name: SuperComputing Luxembourg - National Competence Center
 site_url: https://ncclux.github.io/NCC-Trainings/
 
 nav:
-    - Trainings organization: 'index.md'
+    - Announcements: 'index.md'
     - Courses:
         - Course catalogue: 'courses/index.md'
 #       - AI with HPC:
 #           - Distributed Deep Learning:
-#               - Introduction: 'openacc/index.md'
+#               - Introduction: 'courses/openacc/index.md'
 #       - Computational Chemistry:
 #           - Quantum Espresso:
-#               - Introduction: 'openacc/index.md'
+#               - Introduction: 'courses/openacc/index.md'
 #       - Julia:
-#           - Introduction: 'julia/index.md'
+#           - Introduction: 'courses/julia/index.md'
 #       - Numerical Libraries:
 #           - Quantum Espresso:
-#               - Introduction: 'openacc/index.md'
+#               - Introduction: 'courses/openacc/index.md'
 #       - Other Accelerators:
-#           - Introduction: 'openacc/index.md'
-        - Parallel Programming:
+#           - Introduction: 'courses/openacc/index.md'
+        - Parallel programming:
             - CPU:
                 - OpenMP:
-                    - Introduction: 'openmp/index.md'
-                    - Preparation: 'openmp/preparation.md'
+                    - Introduction: 'courses/openmp/index.md'
+                    - Preparation: 'courses/openmp/preparation.md'
                     - Hands-On:
-                        - Parallel Region: 'openmp/exercise-1.md'
-                        - Data Sharing Attribute: 'openmp/exercise-2.md'
-                        - Work Sharing Constructs(loop): 'openmp/exercise-3.md'
-                        - Work Sharing Constructs(loop-scheduling): 'openmp/exercise-4.md'
-                        - Worksharing Constructs(others): 'openmp/exercise-5.md'
-                        - SIMD and Others: 'openmp/exercise-6.md'
-                        - Profiling and Performance: 'openmp/profiling.md'
+                        - Parallel Region: 'courses/openmp/exercise-1.md'
+                        - Data Sharing Attribute: 'courses/openmp/exercise-2.md'
+                        - Work Sharing Constructs(loop): 'courses/openmp/exercise-3.md'
+                        - Work Sharing Constructs(loop-scheduling): 'courses/openmp/exercise-4.md'
+                        - Worksharing Constructs(others): 'courses/openmp/exercise-5.md'
+                        - SIMD and Others: 'courses/openmp/exercise-6.md'
+                        - Profiling and Performance: 'courses/openmp/profiling.md'
             - GPU:
                 - CUDA:
-                    - Introduction: 'cuda/index.md'
-                    - Preparation: 'cuda/preparation.md'
-                    - Hands-On:
-                        - Hello World: 'cuda/exercise-1.md'
-                        - Vector Addition: 'cuda/exercise-2.md'
-                        - Matrix Multiplication: 'cuda/exercise-3.md'
-                        - Shared Memory: 'cuda/exercise-4.md'
-                        - Unified Memory: 'cuda/exercise-5.md'
-                        - Profiling and Performance: 'cuda/profiling.md'
+                    - Introduction: 'courses/cuda/index.md'
+                    - Preparation: 'courses/cuda/preparation.md'
+                    - Hands-on:
+                        - Hello world: 'courses/cuda/exercise-1.md'
+                        - Vector addition: 'courses/cuda/exercise-2.md'
+                        - Matrix multiplication: 'courses/cuda/exercise-3.md'
+                        - Shared memory: 'courses/cuda/exercise-4.md'
+                        - Unified memory: 'courses/cuda/exercise-5.md'
+                        - Profiling and performance: 'courses/cuda/profiling.md'
                 - OpenACC:
-                    - Introduction: 'openacc/index.md'
-                    - Preparation: 'openacc/preparation.md'
-                    - Hands-On:
-                        - Compute Constructs and Paralleize Loops: 'openacc/exercise-1.md'
-                        - Data Locality: 'openacc/exercise-2.md'
-                        - Optimize Loops: 'openacc/exercise-3.md'
-                        - Unified Memory: 'openacc/exercise-4.md'
-                        - Profiling and Performance: 'openacc/profiling.md'
+                    - Introduction: 'courses/openacc/index.md'
+                    - Preparation: 'courses/openacc/preparation.md'
+                    - Hands-on:
+                        - Compute constructs and parallelize loops: 'courses/openacc/exercise-1.md'
+                        - Data locality: 'courses/openacc/exercise-2.md'
+                        - Optimize loops: 'courses/openacc/exercise-3.md'
+                        - Unified memory: 'courses/openacc/exercise-4.md'
+                        - Profiling and performance: 'courses/openacc/profiling.md'
         - Python in the HPC:
-            - Jupyter server and parallel libraries: 'python/index.md'
+            - Jupyter server and parallel libraries: 'courses/python/index.md'
         - Electronic structure methods: 
-            - Introduction: 'electronic_structure_methods/index.md'
-            - Hartree-Fock calculations in PySCF: 'electronic_structure_methods/Hartree-Fock_in_PySCF.md'
-            - DFT calculations in PySCF: 'electronic_structure_methods/DFT_in_PySCF.md'
+            - Introduction: 'courses/electronic_structure_methods/index.md'
+            - Hartree-Fock calculations in PySCF: 'courses/electronic_structure_methods/Hartree-Fock_in_PySCF.md'
+            - DFT calculations in PySCF: 'courses/electronic_structure_methods/DFT_in_PySCF.md'
         - Environment management and containers:
             - Course description: 'courses/containerization/index.md'
             - Introduction: 'courses/containerization/introduction.md'
@@ -65,20 +65,21 @@ nav:
 #           - Package management in R: 'courses/containerization/R.md'
 #               - Best practices in environment management: 'environment/best-practises.md'
 #               - Containers in HPC systems:
-    - Bootcamp:
-        - AI:
-            - Introduction: 'Bootcamps/ai/introduction.md'
-            - Preparation: 'Bootcamps/ai/preparation.md'
-            - Hands-on: 'Bootcamps/ai/handson.md'
+    - Bootcamps:
+        - Bootcamps: 'bootcamps/index.md'
+        - AI for Science and Engineering:
+            - Introduction: 'bootcamps/ai/index.md'
+            - Preparation: 'bootcamps/ai/preparation.md'
+            - Hands-on: 'bootcamps/ai/handson.md'
     - Hackathons:
-        - HPDA:
-            - Introduction: 'Hackathons/hpda/introduction.md'
-    - Instructions for Educators:
-          - Introduction: 'education/introduction.md'
-    - Calendar:
-          - Future Events: 'calendar/future.md'
-          - Past Events: 'calendar/past.md'
-    - Other Events: 'other-events/index.md'
+        - Hackathons: 'hackathons/index.md'
+        - High Performacne Data Analytics (HPDA):
+            - Introduction: 'hackathons/hpda/index.md'
+    - Events:
+        - Events: 'events/index.md'
+    - Organization of trainings:
+        - Organization of trainings: 'organization_of_trainings/index.md'
+        - Instructions for educators: 'organization_of_trainings/instructions_for_educators.md'
 
 hooks:
   - scripts/extra.py
@@ -183,6 +184,8 @@ markdown_extensions:
     - pymdownx.keys
     - pymdownx.arithmatex:
         generic: true
+    - markdown_include.include:
+        base_path: docs
 
 plugins:
     - search:
@@ -195,6 +198,7 @@ plugins:
         position: bottom
         type: datetime
         date_format: "%d %B %Y"
+    - include-markdown
 
 # Extra stylesheets (incl. Twitter Bootstrap)
 extra_css:
