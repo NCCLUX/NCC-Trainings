@@ -1,4 +1,4 @@
-This webpage contains the training hosted by [Supercomputing Luxembourg](https://supercomputing.lu/), the National Competence Centre in High-Performance Computing. Trainings are hosted by our partner organizations, the [University of Luxembourg](https://www.uni.lu/research-en/core-facilities/hpc/) and [LuxProvide](https://www.luxprovide.lu/).
+This webpage contains the training hosted by [SuperComputing Luxembourg](https://supercomputing.lu/), the National Competence Centre in High-Performance Computing. Trainings are hosted by our partner organizations, the [University of Luxembourg](https://www.uni.lu/research-en/core-facilities/hpc/) and [LuxProvide](https://www.luxprovide.lu/).
 
 Our upcoming events are listed below. For more information about our schedule and upcoming trainings, please follow our [even calendar](https://supercomputing.lu/events).
 

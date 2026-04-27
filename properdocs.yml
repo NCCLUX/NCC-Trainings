@@ -1,4 +1,5 @@
 site_name: SuperComputing Luxembourg - National Competence Center
+site_description: Material of events hosted by SuperComputing Luxembourg, the National Competence Centre in High-Performance Computing
 site_url: https://ncclux.github.io/NCC-Trainings/
 
 nav:
@@ -190,6 +191,12 @@ markdown_extensions:
 plugins:
     - search:
 #        prebuild_index: false
+    - rss:
+        match_path: "^index\\.md$"
+        date_from_meta:
+            as_creation: "date" # means from page.meta.date
+            as_update: "git" # means from git log
+            datetime_format: "%Y-%m-%d %H:%M"
     - minify:
         minify_html: true
 #   - info
@@ -213,6 +220,9 @@ extra:
           link: https://twitter.com/EuroCC_Lux
         - icon: fontawesome/brands/linkedin
           link: https://www.linkedin.com/company/eurocc-luxembourg/
+        - icon: fontawesome/solid/rss
+          link: /feed_rss_updated.xml
+          name: RSS Feed
     version:
         provider: mike
         default: stable
