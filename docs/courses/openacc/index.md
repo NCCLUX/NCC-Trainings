@@ -1,7 +1,7 @@
 # Introduction to OpenACC for Heterogeneous Computing 
 
 <figure markdown>
-[![](../figures/OpenACC-Front-Page-2026-April.png)](https://github.com/NCCLUX/NCC-Trainings/blob/04533605e6dfea27550e9a4285455a1ae09ab45d/docs/openacc/Training_OpenACC_EuroCC_April_2026.pdf)
+[![Introduction to OpenACC programming](figures/OpenACC-Front-Page-2026-April.png)](files/Training_OpenACC_EuroCC_April_2026.pdf)
 
 <figcaption></figcaption>
 </figure>
