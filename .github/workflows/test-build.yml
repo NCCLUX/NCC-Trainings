@@ -1,0 +1,26 @@
+# documentation: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+#
+name: Test build NCC course material website
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Read Python version
+        id: pyversion
+        run: echo "PYTHON_VERSION=$(cat .python)" >> $GITHUB_ENV
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '${{ env.PYTHON_VERSION }}'
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --requirement requirements.txt
+          properdocs --version
+      - name: build ULHPC documentation
+        run: properdocs build --strict
