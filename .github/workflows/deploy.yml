@@ -10,12 +10,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Read Python version
         id: pyversion
         run: echo "PYTHON_VERSION=$(cat .python)" >> $GITHUB_ENV
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: '${{ env.PYTHON_VERSION }}'
           cache: 'pip'
