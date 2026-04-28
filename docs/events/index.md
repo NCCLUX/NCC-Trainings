@@ -18,10 +18,10 @@ This summer school, is organized yearly by Laboratoire d’Annecy de Physique de
 !!! info "Gray Scott satellite sites"
     Satellite sites allow for remote attendance of the Gray Scott school. Satellite sites provide
 
-    - an HPC platform where participants can run the practicals, and
+    - an HPC platform where participants can run the practical examples, and
     - a seminar room with bidirectional audiovisual link to the man site in Annecy,
 
-    to allow or seamless participation to the school activities.
+    to allow seamless participation to the school activities.
 
     It is also possible to follow the school online, but most practical examples require access to an HPC system.
 
