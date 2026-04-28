@@ -1,7 +1,15 @@
 # documentation: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 #
 name: Test build NCC course material website
-on: [push, pull_request]
+on:
+    - push:
+        branches-ignore:
+            - main
+            - production
+    - pull_request:
+        branches-ignore:
+            - main
+            - production
 jobs:
   test:
     runs-on: ubuntu-latest
