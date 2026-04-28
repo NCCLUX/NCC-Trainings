@@ -130,7 +130,7 @@ After work in an environment is complete, deactivate the environment,
 ```bash
 $ micromamba deactivate
 ```
-to ensure that it does not interfere with any other operations. In contrast to [modules](modules.md), Conda is designed to operate with a single environment active at a time. Create one environment for each project, and Conda will ensure that any package that is shared between multiple environments is installed once.
+to ensure that it does not interfere with any other operations. In contrast to modules, Conda is designed to operate with a single environment active at a time. Create one environment for each project, and Conda will ensure that any package that is shared between multiple environments is installed once.
 
 Micromamba supports almost all the subcommands of Conda. For more details see the [official documentation](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html).
 

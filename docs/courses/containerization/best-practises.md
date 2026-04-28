@@ -138,7 +138,7 @@ After work in an environment is complete, deactivate the environment,
 ```bash
 $ micromamba deactivate
 ```
-to ensure that it does not interfere with any other operations. In contrast to [modules](modules.md), Conda is designed to operate with a single environment active at a time. Create one environment for each project, and Conda will ensure that any package that is shared between multiple environments is installed once.
+to ensure that it does not interfere with any other operations. In contrast to modules, Conda is designed to operate with a single environment active at a time. Create one environment for each project, and Conda will ensure that any package that is shared between multiple environments is installed once.
 
 Micromamba supports almost all the subcommands of Conda. For more details see the [official documentation](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html).
 
@@ -274,7 +274,7 @@ You should now be in your normal operating system environment.
 
 ## Self management of work environments in UL HPC with Conda
 
-Conda is one of the systems for providing software in UL HPC systems, along with [modules](modules.md) and [containers](../../containers/). When starting a new project it is important to select the appropriate system.
+Conda is one of the systems for providing software in UL HPC systems, along with modules and [containers](../../containers/). When starting a new project it is important to select the appropriate system.
 
 Before installing any software yourself in user space you should contact the ULHPC High Level Support Team in the [service portal](https://service.uni.lu/sp?id=index) [Home > Research > HPC > Software environment > Request expertise] to check if we can install the software in our system. A system wide installation will not consume any of your storage quota, and it will be configured and tested to provide optimal efficiency.
 

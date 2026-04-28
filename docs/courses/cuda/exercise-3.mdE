@@ -2,7 +2,7 @@ We will now look into basic matrix multiplication.
 In this tutorial, we will explore the process of matrix multiplication, a fundamental operation in linear algebra. Matrix multiplication is executed through a nested loop structure, which is a common approach for numerous computational tasks involving matrices. Mastering this example will provide valuable insight and practical experience in handling nested loops, a crucial skill for solving complex problems in future applications. 
 
 <figure markdown>
-![](figures/mat.png){align=center width=500}
+![](../figures/mat.png){align=center width=500}
 <figcaption>b</figcaption>
 </figure>
 

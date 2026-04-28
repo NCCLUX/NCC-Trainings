@@ -85,7 +85,7 @@ Finally, we need to use the command line **`nsys-ui`** to open the GUI applicati
         ```
         
     <figure markdown>
-    ![](figures/Nsight-Profiling.png){align=center}
+    ![](../figures/Nsight-Profiling.png){align=center}
     <figcaption></figcaption>
     </figure>
     

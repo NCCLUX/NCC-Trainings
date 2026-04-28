@@ -4,7 +4,7 @@ In this hands-on session, we will delve into the fundamentals of vector addition
 
 
 <figure markdown>
-![](figures/vector_add-external.png){ align=middle}
+![](../figures/vector_add-external.png){ align=middle}
 <figcaption></figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ vector_add<<<dimGrid, dimBlock>>>(d_a, d_b, d_out, N);
             ```
 
 <figure markdown>
-![](figures/vector_add-external-modified.svg) 
+![](../figures/vector_add-external-modified.svg) 
 <figcaption></figcaption>
 </figure>
 

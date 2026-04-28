@@ -1,7 +1,7 @@
 In this tutorial, we will explore the concept of shared memory matrix multiplication. This technique involves partitioning the global matrix into smaller tiled matrices that are designed to fit into the shared memory of Nvidia GPUs. Utilizing shared memory is advantageous, as it offers significantly higher bandwidth compared to accessing global memory, thereby enhancing performance in computational tasks.
 
 
-![](figures/memory-2.png){align=middle}
+![](../figures/memory-2.png){align=middle}
 
 
  - This is very similar to the previous example; however, we just need to allocate the small block matrix into shared memory.
@@ -12,13 +12,13 @@ In this tutorial, we will explore the concept of shared memory matrix multiplica
   __shared__ int b_block[BLOCK_SIZE][BLOCK_SIZE];
 ```
 
-![](figures/memory-hierarchy-in-gpus-1.png){align=middle}
+![](../figures/memory-hierarchy-in-gpus-1.png){align=middle}
 
  - Then, we need to iterate elements within the block size and, finally, with the global index. 
 These can be achieved with CUDA threads. 
 
 <figure markdown>
-![](figures/matrix-multiplication-with-shared-memory.png){align=middle}
+![](../figures/matrix-multiplication-with-shared-memory.png){align=middle}
 <figcaption></figcaption>
 </figure>
 

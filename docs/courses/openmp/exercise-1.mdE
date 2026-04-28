@@ -5,7 +5,7 @@ First, however, this exercise is to create a parallel region and understand the 
 In later exercises, we will study how to parallelise the computational task within the parallel region.
 
 <figure markdown>
-![](figures/parallel-white.png){align=center width=500}
+![](../figures/parallel-white.png){align=center width=500}
 </figure>
 
 To create a parallel region, we use the following parallel constructs:
