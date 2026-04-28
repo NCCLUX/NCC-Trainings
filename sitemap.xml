@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/bootcamps/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/bootcamps/ai/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/bootcamps/ai/handson/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/bootcamps/ai/preparation/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/containerization/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/containerization/R/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2025-09-23</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -52,12 +52,12 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/containerization/containers/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2025-09-23</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/containerization/introduction/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -67,7 +67,7 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/cuda/exercise-1/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -92,47 +92,47 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/cuda/preparation/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/cuda/profiling/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/electronic_structure_methods/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/electronic_structure_methods/DFT_in_PySCF/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/electronic_structure_methods/Hartree-Fock_in_PySCF/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/julia/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/mpi-python/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/numerical-libraries/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/openacc/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -157,7 +157,7 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/openacc/preparation/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -202,7 +202,7 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/openmp/preparation/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -212,7 +212,7 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/courses/python/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -222,32 +222,32 @@
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/events/gray_scott_2026/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/events/scynergy_2026/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/hackathons/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/hackathons/hpda/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/organization/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://ncclux.github.io/NCC-Trainings/organization/instructions_for_educators/</loc>
-        <lastmod>2026-04-28</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>
