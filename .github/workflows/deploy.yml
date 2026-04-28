@@ -25,4 +25,4 @@ jobs:
           pip install --requirement requirements.txt
           properdocs --version
       - name: build ULHPC documentation
-        run: properdocs build && properdocs gh-deploy --force
+        run: properdocs build --strict && properdocs gh-deploy --force
