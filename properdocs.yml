@@ -1,247 +1,248 @@
+---
 site_name: SuperComputing Luxembourg - National Competence Center
 site_description: Material of events hosted by SuperComputing Luxembourg, the National Competence Centre in High-Performance Computing
 site_url: https://ncclux.github.io/NCC-Trainings/
 
 nav:
-    - Announcements: 'index.md'
-    - Organization:
-        - Organization: 'organization/index.md'
-        - Instructions for educators: 'organization/instructions_for_educators.md'
-    - Courses:
-        - Course catalogue: 'courses/index.md'
-#       - AI with HPC:
-#           - Distributed Deep Learning:
-#               - Introduction: 'courses/openacc/index.md'
-#       - Computational Chemistry:
-#           - Quantum Espresso:
-#               - Introduction: 'courses/openacc/index.md'
-#       - Julia:
-#           - Introduction: 'courses/julia/index.md'
-#       - Numerical Libraries:
-#           - Quantum Espresso:
-#               - Introduction: 'courses/openacc/index.md'
-#       - Other Accelerators:
+  - Announcements: 'index.md'
+  - Organization:
+      - Organization: 'organization/index.md'
+      - Instructions for educators: 'organization/instructions_for_educators.md'
+  - Courses:
+      - Course catalogue: 'courses/index.md'
+#     - AI with HPC:
+#         - Distributed Deep Learning:
 #           - Introduction: 'courses/openacc/index.md'
-        - Parallel programming:
-            - CPU:
-                - OpenMP:
-                    - Introduction: 'courses/openmp/index.md'
-                    - Preparation: 'courses/openmp/preparation.md'
-                    - Hands-On:
-                        - Parallel Region: 'courses/openmp/exercise-1.md'
-                        - Data Sharing Attribute: 'courses/openmp/exercise-2.md'
-                        - Work Sharing Constructs(loop): 'courses/openmp/exercise-3.md'
-                        - Work Sharing Constructs(loop-scheduling): 'courses/openmp/exercise-4.md'
-                        - Worksharing Constructs(others): 'courses/openmp/exercise-5.md'
-                        - SIMD and Others: 'courses/openmp/exercise-6.md'
-                        - Profiling and Performance: 'courses/openmp/profiling.md'
-            - GPU:
-                - CUDA:
-                    - Introduction: 'courses/cuda/index.md'
-                    - Preparation: 'courses/cuda/preparation.md'
-                    - Hands-on:
-                        - Hello world: 'courses/cuda/exercise-1.md'
-                        - Vector addition: 'courses/cuda/exercise-2.md'
-                        - Matrix multiplication: 'courses/cuda/exercise-3.md'
-                        - Shared memory: 'courses/cuda/exercise-4.md'
-                        - Unified memory: 'courses/cuda/exercise-5.md'
-                        - Profiling and performance: 'courses/cuda/profiling.md'
-                - OpenACC:
-                    - Introduction: 'courses/openacc/index.md'
-                    - Preparation: 'courses/openacc/preparation.md'
-                    - Hands-on:
-                        - Compute constructs and parallelize loops: 'courses/openacc/exercise-1.md'
-                        - Data locality: 'courses/openacc/exercise-2.md'
-                        - Optimize loops: 'courses/openacc/exercise-3.md'
-                        - Unified memory: 'courses/openacc/exercise-4.md'
-                        - Profiling and performance: 'courses/openacc/profiling.md'
-        - Python in the HPC:
-            - Jupyter server and parallel libraries: 'courses/python/index.md'
-        - Electronic structure methods: 
-            - Introduction: 'courses/electronic_structure_methods/index.md'
-            - Hartree-Fock calculations in PySCF: 'courses/electronic_structure_methods/Hartree-Fock_in_PySCF.md'
-            - DFT calculations in PySCF: 'courses/electronic_structure_methods/DFT_in_PySCF.md'
-        - Environment management and containers:
-            - Course description: 'courses/containerization/index.md'
-            - Introduction: 'courses/containerization/introduction.md'
-            - Containers: 'courses/containerization/containers.md'
-            - Environment managers: 'courses/containerization/conda.md'
-#           - Package management in R: 'courses/containerization/R.md'
-#               - Best practices in environment management: 'environment/best-practises.md'
-#               - Containers in HPC systems:
-    - Bootcamps:
-        - Bootcamps: 'bootcamps/index.md'
-        - AI for Science and Engineering:
-            - Introduction: 'bootcamps/ai/index.md'
-            - Preparation: 'bootcamps/ai/preparation.md'
-            - Hands-on: 'bootcamps/ai/handson.md'
-    - Hackathons:
-        - Hackathons: 'hackathons/index.md'
-        - High Performacne Data Analytics (HPDA):
-            - Introduction: 'hackathons/hpda/index.md'
-    - Events:
-        - Events: 'events/index.md'
+#     - Computational Chemistry:
+#         - Quantum Espresso:
+#           - Introduction: 'courses/openacc/index.md'
+#     - Julia:
+#         - Introduction: 'courses/julia/index.md'
+#     - Numerical Libraries:
+#         - Quantum Espresso:
+#           - Introduction: 'courses/openacc/index.md'
+#     - Other Accelerators:
+#         - Introduction: 'courses/openacc/index.md'
+  - Parallel programming:
+      - CPU:
+          - OpenMP:
+              - Introduction: 'courses/openmp/index.md'
+              - Preparation: 'courses/openmp/preparation.md'
+              - Hands-On:
+                  - Parallel Region: 'courses/openmp/exercise-1.md'
+                  - Data Sharing Attribute: 'courses/openmp/exercise-2.md'
+                  - Work Sharing Constructs(loop): 'courses/openmp/exercise-3.md'
+                  - Work Sharing Constructs(loop-scheduling): 'courses/openmp/exercise-4.md'
+                  - Worksharing Constructs(others): 'courses/openmp/exercise-5.md'
+                  - SIMD and Others: 'courses/openmp/exercise-6.md'
+                  - Profiling and Performance: 'courses/openmp/profiling.md'
+      - GPU:
+          - CUDA:
+              - Introduction: 'courses/cuda/index.md'
+              - Preparation: 'courses/cuda/preparation.md'
+              - Hands-on:
+                  - Hello world: 'courses/cuda/exercise-1.md'
+                  - Vector addition: 'courses/cuda/exercise-2.md'
+                  - Matrix multiplication: 'courses/cuda/exercise-3.md'
+                  - Shared memory: 'courses/cuda/exercise-4.md'
+                  - Unified memory: 'courses/cuda/exercise-5.md'
+                  - Profiling and performance: 'courses/cuda/profiling.md'
+          - OpenACC:
+              - Introduction: 'courses/openacc/index.md'
+              - Preparation: 'courses/openacc/preparation.md'
+              - Hands-on:
+                  - Compute constructs and parallelize loops: 'courses/openacc/exercise-1.md'
+                  - Data locality: 'courses/openacc/exercise-2.md'
+                  - Optimize loops: 'courses/openacc/exercise-3.md'
+                  - Unified memory: 'courses/openacc/exercise-4.md'
+                  - Profiling and performance: 'courses/openacc/profiling.md'
+  - Python in the HPC:
+      - Jupyter server and parallel libraries: 'courses/python/index.md'
+  - Electronic structure methods:
+      - Introduction: 'courses/electronic_structure_methods/index.md'
+      - Hartree-Fock calculations in PySCF: 'courses/electronic_structure_methods/Hartree-Fock_in_PySCF.md'
+      - DFT calculations in PySCF: 'courses/electronic_structure_methods/DFT_in_PySCF.md'
+  - Environment management and containers:
+      - Course description: 'courses/containerization/index.md'
+      - Introduction: 'courses/containerization/introduction.md'
+      - Containers: 'courses/containerization/containers.md'
+      - Environment managers: 'courses/containerization/conda.md'
+#     - Package management in R: 'courses/containerization/R.md'
+#         - Best practices in environment management: 'environment/best-practises.md'
+#         - Containers in HPC systems:
+  - Bootcamps:
+      - Bootcamps: 'bootcamps/index.md'
+      - AI for Science and Engineering:
+          - Introduction: 'bootcamps/ai/index.md'
+          - Preparation: 'bootcamps/ai/preparation.md'
+          - Hands-on: 'bootcamps/ai/handson.md'
+  - Hackathons:
+      - Hackathons: 'hackathons/index.md'
+      - High Performacne Data Analytics (HPDA):
+          - Introduction: 'hackathons/hpda/index.md'
+  - Events:
+      - Events: 'events/index.md'
 
 hooks:
   - scripts/extra.py
 
 extra_javascript:
-    - javascripts/feedback.js
-    - https://polyfill.io/v3/polyfill.min.js?features=es6
-    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/feedback.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 theme:
-    name: materialx
-    logo: 'figures/Logo_SC_Luxembourg.png'
-    features:
-        - navigation.footer
-        - navigation.instant
-        - navigation.tracking
-        - content.action.edit
-        - content.action.view
-        - navigation.tabs
-        - navigation.top
-        - navigation.indexes
-        - header.autohide
-        - toc.follow
-        - content.code.copy
-        - content.code.select
-        - content.code.annotate
-    language: en
-    palette:
-        # Palette toggle for light mode
-        - scheme: default
-          toggle:
-              icon: material/brightness-7
-              name: Switch to dark mode
-          primary: dark blue
-          accent: blue
-        # Palette toggle for dark mode
-        - scheme: slate
-          toggle:
-              icon: material/brightness-4
-              name: Switch to light mode
-          primary: dark blue
-          accent: blue
-    icon:
-        admonition:
-            note: octicons/tag-16
-            abstract: octicons/checklist-16
-            info: octicons/info-16
-            tip: octicons/squirrel-16
-            success: octicons/check-16
-            question: octicons/question-16
-            warning: octicons/alert-16
-            failure: octicons/x-circle-16
-            danger: octicons/zap-16
-            bug: octicons/bug-16
-            example: octicons/beaker-16
-            quote: octicons/quote-16
-        repo: fontawesome/brands/git-alt
-        edit: material/pencil
-        view: material/eye
+  name: materialx
+  logo: 'figures/Logo_SC_Luxembourg.png'
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - content.action.edit
+    - content.action.view
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - header.autohide
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: dark blue
+      accent: blue
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: dark blue
+      accent: blue
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil
+    view: material/eye
 
 markdown_extensions:
-    - meta
-    - attr_list
-    - md_in_html
-    - mdx_truly_sane_lists
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:pymdownx.superfences.fence_code_format
-    - pymdownx.highlight:
-        linenums_style: pymdownx.inline
-        anchor_linenums: true
-        line_spans: __span
-        pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
-    - tables
-    - footnotes
-    - admonition
-    - codehilite:
-        guess_lang: false
-    - pymdownx.betterem:
-        smart_enable: all
-    - pymdownx.caret
-    - pymdownx.critic
-    - pymdownx.emoji:
-        emoji_generator: !!python/name:pymdownx.emoji.to_svg
-    - pymdownx.magiclink
-    - pymdownx.mark
-    - pymdownx.smartsymbols:
-        fractions: false
-    - pymdownx.tasklist:
-        custom_checkbox: true
-    - pymdownx.tilde
-    - pymdownx.tabbed:
-        alternate_style: true
-    - pymdownx.details
-    - toc:
-        permalink: true
-    - pymdownx.keys
-    - pymdownx.arithmatex:
-        generic: true
-    - markdown_include.include:
-        base_path: docs
+  - meta
+  - attr_list
+  - md_in_html
+  - mdx_truly_sane_lists
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      linenums_style: pymdownx.inline
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - footnotes
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols:
+      fractions: false
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
+  - markdown_include.include:
+      base_path: docs
 
 plugins:
-    - search:
-#        prebuild_index: false
-    - rss:
-        date_from_meta:
-            datetime_format: "%Y-%m-%d %H:%M"
-        image: figures/Logo_SC_Luxembourg.png
-    - minify:
-        minify_html: true
+  - search:
+#    prebuild_index: false
+  - rss:
+      date_from_meta:
+        datetime_format: "%Y-%m-%d %H:%M"
+      image: figures/Logo_SC_Luxembourg.png
+  - minify:
+      minify_html: true
 #   - info
-    - glightbox
-    - document-dates:
-        position: bottom
-        type: datetime
-        date_format: "%d %B %Y"
-    - include-markdown
-    - site-urls
+  - glightbox
+  - document-dates:
+      position: bottom
+      type: datetime
+      date_format: "%d %B %Y"
+  - include-markdown
+  - site-urls
 
 # Extra stylesheets (incl. Twitter Bootstrap)
 extra_css:
-    - stylesheets/extra.css
+  - stylesheets/extra.css
 #   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
 #   - stylesheets/bootstrap.min.css
 #   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
 
 extra:
-    social:
-        - icon: fontawesome/brands/twitter
-          link: https://twitter.com/EuroCC_Lux
-        - icon: fontawesome/brands/linkedin
-          link: https://www.linkedin.com/company/eurocc-luxembourg/
-        - icon: fontawesome/solid/rss
-          link: /NCC-Trainings/feed_rss_updated.xml
-          name: RSS Feed
-    version:
-        provider: mike
-        default: stable
-    analytics:
-        provider: google
-        property: G-Q3V4FYR53V
-        feedback:
-            title: Was this page helpful?
-            ratings:
-                - icon: material/emoticon-happy-outline
-                  name: This page was helpful
-                  data: 1
-                  note: >-
-                      Thanks for your feedback!
-                - icon: material/emoticon-sad-outline
-                  name: This page could be improved
-                  data: 0
-                  note: >-
-                      Thanks for your feedback! Help us improve this page by
-                      using our <a href="https://github.com/NCCLUX/NCC-Trainings/issues/new?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/EuroCC_Lux
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/eurocc-luxembourg/
+    - icon: fontawesome/solid/rss
+      link: /NCC-Trainings/feed_rss_updated.xml
+      name: RSS Feed
+  version:
+    provider: mike
+    default: stable
+  analytics:
+    provider: google
+    property: G-Q3V4FYR53V
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/NCCLUX/NCC-Trainings/issues/new?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
 
 copyright: Copyright &copy; 2023-{current_year} <a href="https://supercomputing.lu/">SuperComputing Luxembourg</a>
 
