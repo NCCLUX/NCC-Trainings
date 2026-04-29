@@ -32,5 +32,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install --requirement requirements.txt
           properdocs --version
+      - name: Check ProperDocs YAML configuration
+        run: yamllint ./properdocs.yml
+        continue-on-error: false
       - name: build ULHPC documentation
         run: properdocs build --strict
