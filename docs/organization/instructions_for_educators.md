@@ -4,8 +4,8 @@ Please read the following instructions:
 
 The following are the website and Git repository for hosting the training events under EuroCC (Luxembourg).
 
-- Git repository: https://ncclux.github.io/NCC-Trainings
-- Website: https://github.com/NCCLUX/NCC-Trainings
+- Git [repository](https://github.com/NCCLUX/NCC-Trainings)
+- [Website](https://ncclux.github.io/NCC-Trainings)
 
 Please create your own repository and store your training materials there. We will merge with the main branch (or publish your training materials) close to the event or earlier, whenever you are ready.
 
@@ -32,26 +32,26 @@ Furthermore the following steps would summerize the steps for instructors.
 
 1. **Course Proposal:**
 
-   - Once you have gathered sufficient materials and formulated a planned timeline, submit the course title to [Leane BIONDINO](mailto:leane.biondino@uni.lu).
+   Once you have gathered sufficient materials and formulated a planned timeline, submit the course title to [Leane BIONDINO](mailto:leane.biondino@uni.lu).
 
 2. **Announcement:**
 
-   - After receiving approval, the course will be announced at Supercomputing Luxembourg through [LuxInnovation](https://www.luxinnovation.lu).
+   After receiving approval, the course will be announced at Supercomputing Luxembourg through [LuxInnovation](https://www.luxinnovation.lu).
 
 3. **Event Preparation:**
 
-   - Prepare the training event, which should typically last [half a day](https://ncclux.github.io/NCC-Trainings/education/introduction/). Use previous training event formats as inspiration.
+   Prepare the training event, which should typically last [half a day](https://ncclux.github.io/NCC-Trainings/education/introduction/). Use previous training event formats as inspiration.
 
 4. **Resource Management:**
 
-   - During preparation, ensure that all materials are uploaded to the [Git repository](https://github.com/NCCLUX/NCC-Trainings). The layout should conform to existing course formats.
+   During preparation, ensure that all materials are uploaded to the [Git repository](https://github.com/NCCLUX/NCC-Trainings). The layout should conform to existing course formats.
 
 5. **Participant Registration:**
 
-   - Confirm access to [Inwink](https://my.inwink.com/380dbc1f-23eb-4b94-9381-08dad4679721/tenant/0c9c1db9-92b7-47bf-9642-be6dac500df0) or check with [LuxInnovation](https://www.luxinnovation.lu) to obtain a list of registered participants.
+   Confirm access to [Inwink](https://my.inwink.com/380dbc1f-23eb-4b94-9381-08dad4679721/tenant/0c9c1db9-92b7-47bf-9642-be6dac500df0) or check with [LuxInnovation](https://www.luxinnovation.lu) to obtain a list of registered participants.
 
 6. **Technical Support:**
 
-   - Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts.
+   Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts.
 
 Make sure to follow these guidelines to ensure a successful training event.
