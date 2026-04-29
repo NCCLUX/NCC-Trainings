@@ -35,34 +35,5 @@ jobs:
           file_or_dir: properdocs.yml
           config_file: .yamllint.yml
         continue-on-error: false
-      - name: Build website
-        run: properdocs build --strict
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: site
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
-  report-build-status:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-    steps:
-      - name: Report Build Status
-        env:
-          GH_TOKEN: ${{ github.token }}
-          CONCLUSION: ${{ job.status }}
-        run: |
-          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
-            -F github_run_id="$GITHUB_RUN_ID" \
-            -F conclusion="$CONCLUSION"
+      - name: Build and deploy website
+        run: properdocs gh-deploy --strict
