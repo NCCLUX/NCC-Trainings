@@ -30,7 +30,10 @@ jobs:
           pip install --requirement requirements.txt
           properdocs --version
       - name: Check ProperDocs YAML configuration
-        run: yamllint ./properdocs.yml
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: properdocs.yml
+          config_file: .yamllint.yml
         continue-on-error: false
       - name: build ULHPC documentation
         run: properdocs build --strict && properdocs gh-deploy --force
