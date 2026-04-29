@@ -45,6 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      metadata: read
       pages: write
     steps:
       - name: Report Build Status
