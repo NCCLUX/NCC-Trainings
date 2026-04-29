@@ -36,4 +36,4 @@ jobs:
           config_file: .yamllint.yml
         continue-on-error: false
       - name: Build and deploy website
-        run: properdocs gh-deploy --strict --force
+        run: properdocs gh-deploy --strict
