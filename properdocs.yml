@@ -23,53 +23,53 @@ nav:
 #           - Introduction: 'courses/openacc/index.md'
 #     - Other Accelerators:
 #         - Introduction: 'courses/openacc/index.md'
-  - Parallel programming:
-      - CPU:
-          - OpenMP:
-              - Introduction: 'courses/openmp/index.md'
-              - Preparation: 'courses/openmp/preparation.md'
-              - Hands-On:
-                  - Parallel Region: 'courses/openmp/exercise-1.md'
-                  - Data Sharing Attribute: 'courses/openmp/exercise-2.md'
-                  - Work Sharing Constructs(loop): 'courses/openmp/exercise-3.md'
-                  - Work Sharing Constructs(loop-scheduling): 'courses/openmp/exercise-4.md'
-                  - Worksharing Constructs(others): 'courses/openmp/exercise-5.md'
-                  - SIMD and Others: 'courses/openmp/exercise-6.md'
-                  - Profiling and Performance: 'courses/openmp/profiling.md'
-      - GPU:
-          - CUDA:
-              - Introduction: 'courses/cuda/index.md'
-              - Preparation: 'courses/cuda/preparation.md'
-              - Hands-on:
-                  - Hello world: 'courses/cuda/exercise-1.md'
-                  - Vector addition: 'courses/cuda/exercise-2.md'
-                  - Matrix multiplication: 'courses/cuda/exercise-3.md'
-                  - Shared memory: 'courses/cuda/exercise-4.md'
-                  - Unified memory: 'courses/cuda/exercise-5.md'
-                  - Profiling and performance: 'courses/cuda/profiling.md'
-          - OpenACC:
-              - Introduction: 'courses/openacc/index.md'
-              - Preparation: 'courses/openacc/preparation.md'
-              - Hands-on:
-                  - Compute constructs and parallelize loops: 'courses/openacc/exercise-1.md'
-                  - Data locality: 'courses/openacc/exercise-2.md'
-                  - Optimize loops: 'courses/openacc/exercise-3.md'
-                  - Unified memory: 'courses/openacc/exercise-4.md'
-                  - Profiling and performance: 'courses/openacc/profiling.md'
-  - Python in the HPC:
-      - Jupyter server and parallel libraries: 'courses/python/index.md'
-  - Electronic structure methods:
-      - Introduction: 'courses/electronic_structure_methods/index.md'
-      - Hartree-Fock calculations in PySCF: 'courses/electronic_structure_methods/Hartree-Fock_in_PySCF.md'
-      - DFT calculations in PySCF: 'courses/electronic_structure_methods/DFT_in_PySCF.md'
-  - Environment management and containers:
-      - Course description: 'courses/containerization/index.md'
-      - Introduction: 'courses/containerization/introduction.md'
-      - Containers: 'courses/containerization/containers.md'
-      - Environment managers: 'courses/containerization/conda.md'
-#     - Package management in R: 'courses/containerization/R.md'
-#         - Best practices in environment management: 'environment/best-practises.md'
-#         - Containers in HPC systems:
+      - Parallel programming:
+          - CPU:
+              - OpenMP:
+                  - Introduction: 'courses/openmp/index.md'
+                  - Preparation: 'courses/openmp/preparation.md'
+                  - Hands-On:
+                      - Parallel Region: 'courses/openmp/exercise-1.md'
+                      - Data Sharing Attribute: 'courses/openmp/exercise-2.md'
+                      - Work Sharing Constructs(loop): 'courses/openmp/exercise-3.md'
+                      - Work Sharing Constructs(loop-scheduling): 'courses/openmp/exercise-4.md'
+                      - Worksharing Constructs(others): 'courses/openmp/exercise-5.md'
+                      - SIMD and Others: 'courses/openmp/exercise-6.md'
+                      - Profiling and Performance: 'courses/openmp/profiling.md'
+          - GPU:
+              - CUDA:
+                  - Introduction: 'courses/cuda/index.md'
+                  - Preparation: 'courses/cuda/preparation.md'
+                  - Hands-on:
+                      - Hello world: 'courses/cuda/exercise-1.md'
+                      - Vector addition: 'courses/cuda/exercise-2.md'
+                      - Matrix multiplication: 'courses/cuda/exercise-3.md'
+                      - Shared memory: 'courses/cuda/exercise-4.md'
+                      - Unified memory: 'courses/cuda/exercise-5.md'
+                      - Profiling and performance: 'courses/cuda/profiling.md'
+              - OpenACC:
+                  - Introduction: 'courses/openacc/index.md'
+                  - Preparation: 'courses/openacc/preparation.md'
+                  - Hands-on:
+                      - Compute constructs and parallelize loops: 'courses/openacc/exercise-1.md'
+                      - Data locality: 'courses/openacc/exercise-2.md'
+                      - Optimize loops: 'courses/openacc/exercise-3.md'
+                      - Unified memory: 'courses/openacc/exercise-4.md'
+                      - Profiling and performance: 'courses/openacc/profiling.md'
+      - Python in the HPC:
+          - Jupyter server and parallel libraries: 'courses/python/index.md'
+      - Electronic structure methods:
+          - Introduction: 'courses/electronic_structure_methods/index.md'
+          - Hartree-Fock calculations in PySCF: 'courses/electronic_structure_methods/Hartree-Fock_in_PySCF.md'
+          - DFT calculations in PySCF: 'courses/electronic_structure_methods/DFT_in_PySCF.md'
+      - Environment management and containers:
+          - Course description: 'courses/containerization/index.md'
+          - Introduction: 'courses/containerization/introduction.md'
+          - Containers: 'courses/containerization/containers.md'
+          - Environment managers: 'courses/containerization/conda.md'
+#         - Package management in R: 'courses/containerization/R.md'
+#             - Best practices in environment management: 'environment/best-practises.md'
+#             - Containers in HPC systems:
   - Bootcamps:
       - Bootcamps: 'bootcamps/index.md'
       - AI for Science and Engineering:
