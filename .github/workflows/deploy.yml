@@ -51,3 +51,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+  report-build-status:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for the telemetry endpoint
+      #pages: write     # Required for some official Pages actions
+      #id-token: write  # Required if using OIDC
+    steps:
+      - name: Report Build Status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONCLUSION: ${{ job.status }}
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
+            -F github_run_id="$GITHUB_RUN_ID" \
+            -F conclusion="$CONCLUSION"
