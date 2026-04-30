@@ -25,33 +25,43 @@ The term _container_ describes a wide and loose set of technologies that enable 
 Before working on containers for HPC systems let's explore how `chroot`, a fundamental technology for containers, works. You should run this example in your personal machine, as the `chroot` command requires super user privileges (`sudo`). Modern containers use more sophisticated methods to control the access to resources, so no special privileges are required for most operations.
 
 1. Create the root of the `chroot` file system:
+
    ```bash
    mkdir --parents ${HOME}/jail/{bin,lib,lib64,home/myusername}
    ```
+
 2. Copy the executables that should be available in the `chroot` system:
+
    ```bash
    for binary in /bin/bash /bin/ls /bin/cat; do
      cp ${binary} ${HOME}/jail/bin/
    done; unset binary
    ```
+
 3. Copy the linker:
+
    ```bash
    for linker in /lib64/ld-linux-x86-64.so*; do
      cp ${linker} ${HOME}/jail/lib64/
    done; unset linker
    ```
+
 4. Copy the libraries required by the executables:
+
    ```bash
    while IFS="" read -r library; do
      cp ${library} ${HOME}/jail/lib/
    done < <(ldd /bin/bash /bin/ls /bin/cat | grep -E '=>' | awk 'BEGIN {FS="(=>)|( +)"} {print $4}' | sort | uniq); unset library
    ```
+
 5. Create a text file to test the executables:
+
    ```bash
    echo 'Welcome to chroot jail!' > ${HOME}/jail/home/myusername/hello.txt
    ```
 
 Your isolated environment is now created in `${HOME}/jail`. You can change to the `jail` environment with the command:
+
 ```console
 $ sudo chroot ${HOME}/jail /bin/bash
 bash-5.2#
@@ -111,7 +121,6 @@ To run containers in HPC systems, you need access to Apptainer or Singularity ex
 Singularity based systems use SIF as their native format, but they can also load other container types such as Docker and OCI tarballs. On top of loading containers of multiple formats, SIF based container systems can also convert and store these containers in SIF format.
 
 Singularity container applications can also work with sandboxes. Sandboxes are expansions of the binary SIF image file into a regular directory of the file system. The user may access and modify the sandbox form the host system or can launch the sandbox as a container and modify it from withing. Sandboxes is the primary mean of creating and modifying SIF containers. The operation of building a SIF container from a sandbox is monolithic and creates a single layer in contrast to tarball containers like OCI that may be built in layers.
-
 
 ## Further resources
 

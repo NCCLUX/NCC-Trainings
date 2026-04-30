@@ -37,16 +37,16 @@ nav:
                       - SIMD and Others: 'courses/openmp/exercise-6.md'
                       - Profiling and Performance: 'courses/openmp/profiling.md'
           - GPU:
-              - CUDA:
-                  - Introduction: 'courses/cuda/index.md'
-                  - Preparation: 'courses/cuda/preparation.md'
-                  - Hands-on:
-                      - Hello world: 'courses/cuda/exercise-1.md'
-                      - Vector addition: 'courses/cuda/exercise-2.md'
-                      - Matrix multiplication: 'courses/cuda/exercise-3.md'
-                      - Shared memory: 'courses/cuda/exercise-4.md'
-                      - Unified memory: 'courses/cuda/exercise-5.md'
-                      - Profiling and performance: 'courses/cuda/profiling.md'
+#              - CUDA:
+#                  - Introduction: 'courses/cuda/index.md'
+#                  - Preparation: 'courses/cuda/preparation.md'
+#                  - Hands-on:
+#                      - Hello world: 'courses/cuda/exercise-1.md'
+#                      - Vector addition: 'courses/cuda/exercise-2.md'
+#                      - Matrix multiplication: 'courses/cuda/exercise-3.md'
+#                      - Shared memory: 'courses/cuda/exercise-4.md'
+#                      - Unified memory: 'courses/cuda/exercise-5.md'
+#                      - Profiling and performance: 'courses/cuda/profiling.md'
               - OpenACC:
                   - Introduction: 'courses/openacc/index.md'
                   - Preparation: 'courses/openacc/preparation.md'
@@ -66,7 +66,7 @@ nav:
           - Course description: 'courses/containerization/index.md'
           - Introduction: 'courses/containerization/introduction.md'
           - Containers: 'courses/containerization/containers.md'
-          - Environment managers: 'courses/containerization/conda.md'
+#         - Environment managers: 'courses/containerization/conda.md'
 #         - Package management in R: 'courses/containerization/R.md'
 #             - Best practices in environment management: 'environment/best-practises.md'
 #             - Containers in HPC systems:

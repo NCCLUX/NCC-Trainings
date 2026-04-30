@@ -12,7 +12,6 @@ The isolation methods can be categorized in methods using the
   <figcaption>Fig. 1: The linux application interface</figcaption>
 </figure>
 
-
 ## Terms
 
 _Environments_ modify the user space to provide access to different sets of executables and libraries without modifying globally installed tools. Environment management tools such as Environment Modules, Conda, and application specific tools such Python Virtual Environments (`venv`) rely on environment variables such as `PATH` and `LD_LIBRARY_PATH`.
