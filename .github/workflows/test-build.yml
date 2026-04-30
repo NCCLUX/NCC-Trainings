@@ -38,7 +38,7 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
         with:
           file_or_dir: properdocs.yml
-          config_file: .yamllint.yml
+          config_file: config/yamllint.yml
         continue-on-error: false
       - name: Build website
         run: properdocs build --strict
