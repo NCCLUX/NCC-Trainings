@@ -1,4 +1,4 @@
-#### <u>Parallel Construct</u>
+# Parallel Construct
 
 In this exercise, we will create a parallel region and execute the computational content in parallel.
 First, however, this exercise is to create a parallel region and understand the threads' behaviour in parallel.
@@ -39,15 +39,13 @@ At the same time, in order to enable OpenMP constructs, clauses, and environment
         use omp_lib
         ```
 
-
-#### <u>Compilers</u>
+## Compilers
 
 The following compilers would support the OpenMP programming model.
 
- - [GNU](https://gcc.gnu.org/) - It is an open source and can be used for Intel and AMD CPUs
- - [Intel](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html#gs.zd201n) - It is from Intel and only optimized for Intel CPUs
- - [AOOC](https://www.amd.com/content/dam/amd/en/documents/pdfs/developer/aocc/aocc-v4.0-ga-user-guide.pdf) - Suitable for AMD CPUs, especially “Zen” core architecture.
-
+- [GNU](https://gcc.gnu.org/) - It is an open source and can be used for Intel and AMD CPUs
+- [Intel](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html#gs.zd201n) - It is from Intel and only optimized for Intel CPUs
+- [AOOC](https://www.amd.com/content/dam/amd/en/documents/pdfs/developer/aocc/aocc-v4.0-ga-user-guide.pdf) - Suitable for AMD CPUs, especially "Zen" core architecture.
 
 !!! Info "Examples (GNU, Intel and AMD): Compilation"
 
@@ -70,8 +68,7 @@ The following compilers would support the OpenMP programming model.
         $ flang test.f90 -fopenmp
         ```
 
-### <u>Questions and Solutions</u>
-
+### Questions and Solutions
 
 ??? Example "Examples: Hello World"
 
@@ -98,7 +95,7 @@ The following compilers would support the OpenMP programming model.
 
         end program
         ```
-	
+
     === "OpenMP-version (C/C++)"
         ``` c
         #include<iostream>
@@ -200,49 +197,96 @@ The following compilers would support the OpenMP programming model.
 
 ??? question "Questions"
 
-     - What do you notice from those examples? Can you control parallel region printout, that is, how many times it should be printed or executed?
-     - What happens if you do not use the OpenMP library, `#include<omp.h> or use omp_lib`?
-
+    - What do you notice from those examples? Can you control parallel region printout, that is, how many times it should be printed or executed?
+    - What happens if you do not use the OpenMP library, `#include<omp.h> or use omp_lib`?
 
 Although creating a parallel region would allow us to do the parallel computation, however, at the same time, we should have control over the threads being created in the parallel region, for example, how many threads are needed for a particular computation, thread number, etc. For this, we need to know a few of the important environmental routines provided by OpenMP. The list below shows a few of the most important environment routines that the programmer should know about for optimised OpenMP coding.
 
-#### <u>Environment Routines (important)</u>
+## Environment Routines (important)
 
- - Define the number of threads to be used within the parallel region
+- Define the number of threads to be used within the parallel region
 
-        (C/C++): void omp_set_num_threads(int num_threads);
-        (FORTRAN): subroutine omp_set_num_threads(num_threads)
-        integer num_threads
+  - C/C++
 
- - To get the number of threads in the current parallel region
+    ``` c
+    void omp_set_num_threads(int num_threads);
+    ```
 
-        (C/C++): int omp_get_num_threads(void);
-        (FORTRAN): integer function omp_get_num_threads()
+  - FORTRAN
 
- - To get available maximum threads (system default)
+    ``` fortran
+    subroutine omp_set_num_threads(num_threads)
+      integer num_threads
+    end subroutine
+    ```
 
-        (c/c++): int omp_get_max_threads(void);
-        (FORTRAN): integer function omp_get_max_threads()
+- To get the number of threads in the current parallel region
 
- - To get thread numbers (e.g., 1, 4, etc.)
+  - C/C++
 
-        (c/c+): int omp_get_thread_num(void);
-        (FORTRAN): integer function omp_get_thread_num()
+     ``` c
+     int omp_get_num_threads(void);
+     ```
 
- - To know the number of processors available to the device
+  - FORTRAN
 
-        (c/c++): int omp_get_num_procs(void);
-        (FROTRAN): integer function omp_get_num_procs()
+    ``` fortran
+    integer function omp_get_num_threads()
+    end function
+    ```
 
+- To get available maximum threads (system default)
+  - C/C++
 
-### <u>Questions and Solutions</u>
+    ``` c
+    int omp_get_max_threads(void);
+    ```
 
+  - FORTRAN
+
+    ``` fortran
+    integer function omp_get_max_threads()
+    end function
+    ```
+
+- To get thread numbers (e.g., 1, 4, etc.)
+
+  - C/C+
+
+    ``` c
+    int omp_get_thread_num(void);
+    ```
+
+  - FORTRAN
+
+    ``` fortran
+    integer function omp_get_thread_num()
+    end function
+    ```
+
+- To know the number of processors available to the device
+
+  - C/C++
+
+    ``` c
+    int omp_get_num_procs(void);
+    ```
+
+  - FROTRAN
+
+    ``` fortran
+    integer function omp_get_num_procs()
+    end function
+    ```
+
+### Questions and Solutions
 
 ??? question "Questions"
 
-     - How can you identify the thread numbers within the parallel region?
-     - What happens if you not set `omp_set_num_threads()`, for example, `omp_set_num_threads(5)|call omp_set_num_threads(5)`, what do you notice?
-     Alternatively, you can also set the number of threads to be used in the application during the compilation `export OMP_NUM_THREADS`; what do you see?
+    - How can you identify the thread numbers within the parallel region?
+    - What happens if you not set `omp_set_num_threads()`, for example, `omp_set_num_threads(5)|call omp_set_num_threads(5)`, what do you notice?
+
+    Alternatively, you can also set the number of threads to be used in the application during the compilation `export OMP_NUM_THREADS`; what do you see?
 
     === "Question (C/C++)"
 
@@ -280,7 +324,7 @@ Although creating a parallel region would allow us to do the parallel computatio
 
         end program
         ```
-	
+
     === "Answer (C/C++)"
         ```c
         #include<iostream>
@@ -356,9 +400,7 @@ Although creating a parallel region would allow us to do the parallel computatio
         Hello world from thread id            1 from the team size of          10
         ```
 
-
-#### <u>Utilities</u>
-
+## Utilities
 
 The main aim is to do the parallel computation to speed up computation on a given parallel architecture. Therefore, measuring the timing and comparing the solution between serial and parallel code is very important. In order to measure the timing, OpenMP provides an environmental variable, `omp_get_wtime()`.
 
@@ -373,7 +415,7 @@ The main aim is to do the parallel computation to speed up computation on a give
         end = omp_get_wtime();
         printf("Work took %f seconds\n", end - start);
         ```
-	
+
     === "FORTRAN"
         ```
         DOUBLE PRECISION START, END
@@ -382,5 +424,3 @@ The main aim is to do the parallel computation to speed up computation on a give
         END = omp_get_wtime()
         PRINT *, "Work took", END - START, "seconds"
         ```
-
-

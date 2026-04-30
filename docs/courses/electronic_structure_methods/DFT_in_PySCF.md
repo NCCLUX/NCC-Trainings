@@ -14,15 +14,21 @@ non-developers, adapted from the PySCF website
 Please connect to meluxina and move to the `/project/home/p201028`
 directory:
 
-    cd /project/home/p201028
+```console
+cd /project/home/p201028
+```
 
 Then, request an interactive job on a CPU node for 1 hour:
 
-    salloc -A p201028 --reservation=cpudev -q dev -N 1 -t 1:0:0
+```console
+salloc -A p201028 --reservation=cpudev -q dev -N 1 -t 1:00:00
+```
 
 Install PySCF using `pip`:
 
-    pip install --prefer-binary pyscf
+```console
+pip install --prefer-binary pyscf
+```
 
 The `pip` package provides a precompiled PySCF code. For more options on
 how to install PySCF, please refer to the website:
@@ -96,7 +102,9 @@ The molecular geometry is specified in Cartesian coordinates, with
 Angstrom as the default unit. The unit can be set using the `unit`
 attribute to either \"Angstrom\" or \"Bohr\".
 
-    mol.unit = 'B'
+``` {.python language="Python"}
+mol.unit = 'B'
+```
 
 The attribute `mol.unit` is case-insensitive. Any string starting with
 \"B\" or \"AU\" is interpreted as Bohr; all other values are treated as
@@ -127,21 +135,25 @@ Assigning a basis set name (string) to `Mole.basis` applies it to all
 atoms. If different basis sets are needed for different elements,
 `Mole.basis` should be specified as a Python dictionary.
 
-    mol.basis = {'O': 'sto-3g', 'H': '6-31g'}
+``` {.python language="Python"}
+mol.basis = {'O': 'sto-3g', 'H': '6-31g'}
+```
 
 Custom basis sets can be defined with `gto.basis.parse()`, which parses
 a string in NWChem format (<https://www.basissetexchange.org/>).
 
-    mol.basis = {'O': gto.basis.parse('''
-    C    S
-         71.6168370              0.15432897
-         13.0450960              0.53532814
-          3.5305122              0.44463454
-    C    SP
-          2.9412494             -0.09996723             0.15591627
-          0.6834831              0.39951283             0.60768372
-          0.2222899              0.70011547             0.39195739
-    ''')}
+``` {.python language="Python"}
+mol.basis = {'O': gto.basis.parse('''
+C    S
+     71.6168370              0.15432897
+     13.0450960              0.53532814
+      3.5305122              0.44463454
+C    SP
+      2.9412494             -0.09996723             0.15591627
+      0.6834831              0.39951283             0.60768372
+      0.2222899              0.70011547             0.39195739
+''')}
+```
 
 As with geometry input, the basis sets dictionary can use either atomic
 symbols (case-insensitive) or atomic nuclear charges. Numbers or special
@@ -152,8 +164,10 @@ and looks up the plain atomic symbol.
 In the following example, the `6-31G` basis set will be assigned to the
 atom `H1`, but the `STO-3G` basis will be used for the atom `H2`:
 
-    mol.atom = ‘8 0 0 0; H1 0 1 0; H2 0 0 1’
-    mol.basis = {‘O’: ‘sto-3g’, ‘H’: ‘sto-3g’, ‘H1’: ‘6-31G’}
+``` {.python language="Python"}
+mol.atom = ‘8 0 0 0; H1 0 1 0; H2 0 0 1’
+mol.basis = {‘O’: ‘sto-3g’, ‘H’: ‘sto-3g’, ‘H1’: ‘6-31G’}
+```
 
 #### Basis sets format {#basis-sets-format .unnumbered}
 
@@ -161,12 +175,14 @@ Basis sets data should be supplied in NWChem format, either as a text
 file or a Python script. PySCF converts them in the internal format,
 which looks like:
 
-    [[angular, kappa, [[exp, c_1, c_2, ..],
-                       [exp, c_1, c_2, ..],
-                       ... ]],
-    [angular, kappa, [[exp, c_1, c_2, ..],
-                       [exp, c_1, c_2, ..]
-                       ... ]]]
+```text
+[[angular, kappa, [[exp, c_1, c_2, ..],
+                   [exp, c_1, c_2, ..],
+                   ... ]],
+[angular, kappa, [[exp, c_1, c_2, ..],
+                   [exp, c_1, c_2, ..]
+                   ... ]]]
+```
 
 where `angular` is the angular momentum, `kappa` are the Gaussian
 exponents and `c` the contraction coefficients. `kappa` can have values;
@@ -274,8 +290,10 @@ mf.xc = ',PBE'
 
 Install `geomeTRIC` and `PyBerny`.
 
-    pip install geometric
-    pip install pyberny
+```console
+pip install geometric
+pip install pyberny
+```
 
 ``` {.python language="Python"}
 from pyscf import gto, dft
@@ -323,7 +341,9 @@ Save the above commands in a plain text file. If you are not familiar
 with other text editors, you can use `vi`. You can open a new file, by
 typing `vi` and the name of the file:
 
-        vi job_script.sh
+```console
+vi job_script.sh
+```
 
 After hitting `enter` you will find yourself in `vi`. `vi` has three
 different working modes:

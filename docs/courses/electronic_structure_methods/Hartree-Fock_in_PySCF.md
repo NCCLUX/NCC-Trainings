@@ -135,7 +135,7 @@ mol.basis = {'O': 'sto-3g', 'H': 'sto-3g', 'H1': '6-31G'}
 
 Basis sets data should be supplied in NWChem format, either as a text file or a Python script. PySCF converts them in the internal format, which looks like:
 
-```
+```text
 [[angular, kappa, [[exp, c_1, c_2, ..],
                    [exp, c_1, c_2, ..],
                    ... ]],
@@ -167,7 +167,7 @@ Hartree-Fock is a self-consistent field method, therefore a self-consistent iter
 
 Even with a very good initial guess, making the SCF procedure converge is sometimes challenging. PySCF implements two kinds of approaches for SCF, namely, **direct inversion in the iterative subspace** (**DIIS**) and **second-order SCF** (**SOSCF**).
 
-### Let’s run our first Hartree-Fock calculation!
+### Let’s run our first Hartree-Fock calculation
 
 From now on, Hartree–Fock will be referred to as HF.
 
@@ -265,7 +265,7 @@ mol.spin = 1
 
 _Perform a restricted and unrestricted calculation of $H_{2}O$ molecule._
 
-_Restricted HF_
+_Restricted HF:_
 
 ```python
 from pyscf import gto, scf
@@ -284,7 +284,7 @@ mf = scf.RHF(mol)
 mf.kernel()
 ```
 
-_Unrestricted HF_
+_Unrestricted HF:_
 
 ```python
 from pyscf import gto, scf
@@ -305,7 +305,7 @@ mf.kernel()
 
 _Perform both restricted (RHF) and unrestricted (UHF) calculations for the $H_{2}$ molecule at different bond lengths, and compare the resulting energies. The coordinates for two representative geometries are given below:_
 
-```
+```text
 H 0.0 0.0 0.0
 H 0.0 0.0 0.7414
 
@@ -319,7 +319,7 @@ _Perform geometry optimization of $N_{2}$ molecule._
 
 Install `geomeTRIC` and `PyBerny`.
 
-```
+```console
 pip install geometric
 pip install pyberny
 ```
@@ -378,4 +378,3 @@ After hitting `enter` you will find yourself in `vi`. `vi` has three different w
 In your freshly opened file switch to insert mode by pressing `i`. Then copy-paste the above commands. To save the file, you have to exit the insert mode by pressing `Esc`. In escape mode, type `:w` to save the file, or type `:w job_script.sh` to save it under a filename called `job_script.sh`. You can exit `vi` by typing `:q`. If there were changes since your last save, type `:q!`, where the `!` forces `vi` to quit, without applying the changes.
 
 _To perform the geometry optimization via slurm rather than interactively, the PySCF commands should be saved in a `python` script file, as well. Try running the $H_{2}O$ example from above using slurm, too._
-

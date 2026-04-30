@@ -7,3 +7,5 @@ plugins:
     enabled: false
   no-duplicate-heading:
     siblings_only: true
+  code-block-style:
+    enabled: false
