@@ -7,7 +7,7 @@ Further more information can be found in the [official Bootcamp repository](http
 ### Day 1 – Thursday, February 9th 2023: 01:30 PM – 05:00 PM
 
 <figure markdown>
-[![](../../figures/AI-Day-1.png)](https://github.com/NCCLUX/NCC-Trainings/blob/273d67bdc0de2ed39e5b6c2fafa9f122b0a9617c/Courses/docs/Bootcamps/ai/AI-Day-1.pdf)
+[![](figures/AI-Day-1.png)](https://github.com/NCCLUX/NCC-Trainings/blob/273d67bdc0de2ed39e5b6c2fafa9f122b0a9617c/Courses/docs/Bootcamps/ai/AI-Day-1.pdf)
 <figcaption></figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ Further more information can be found in the [official Bootcamp repository](http
 ### Day 2 – Friday, February 10th  2023: 01:30 PM – 05:00 PM
 
 <figure markdown>
-[![](../../figures/AI-Practical.png)](https://github.com/NCCLUX/NCC-Trainings/blob/273d67bdc0de2ed39e5b6c2fafa9f122b0a9617c/Courses/docs/Bootcamps/ai/AI-Day-2.pdf)
+[![](figures/AI-Practical.png)](https://github.com/NCCLUX/NCC-Trainings/blob/273d67bdc0de2ed39e5b6c2fafa9f122b0a9617c/Courses/docs/Bootcamps/ai/AI-Day-2.pdf)
 <figcaption></figcaption>
 </figure>
 

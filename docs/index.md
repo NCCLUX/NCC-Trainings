@@ -42,7 +42,7 @@ Please follow the link below to register.
 [![](figures/LXI.png){width="200"}](https://luxinnovation.lu/)
 [![](figures/Luxprovide.png){width="200"}](https://www.luxprovide.lu/)
 [![](figures/logo-uni.png){width="200"}](https://www.uni.lu/fr/)
-[![](figures/EUROCC-EU.png){width="200"}](https://www.eurocc-access.eu/)
+[![](figures/EuroCC2-Logo-Banner.png){width="200"}](https://www.eurocc-access.eu/)
 </div>
 
 <div class="md-content-centered" markdown>
