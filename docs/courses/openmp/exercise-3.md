@@ -1,4 +1,4 @@
-#### <u>Serial version discussion</u>
+# Serial version discussion
 
 To begin to understand the work-sharing constructs,
 we need to learn how to parallelise the `for - C/C++` or `do - FORTRAN` loop.
@@ -44,7 +44,7 @@ Therefore, it is easy to parallelise.
     C/C++ array index starts from 0
     ```
 
-#### <u>Parallel version discussion</u>
+## Parallel version discussion
 
 Now we will look into the how to parallelise the `for - C/C++` or `do - FORTRAN` loops.
 For this, we just need to add below syntax (OpenMP directives).
@@ -52,7 +52,6 @@ For this, we just need to add below syntax (OpenMP directives).
 |__Functionality__ | __Syntax in C/C++__ | __Syntax in FORTRAN__|
 |-----------| -----------|-----------------|
 | Distribute iterations over the threads | #pragma omp for | !$omp do         |
-
 
 With the help of the above syntax, the loops can be easily parallelised.
 The figure below shows an example of how the loops are parallelised.
@@ -115,12 +114,9 @@ From understating loop parallelisation, we will continue with vector operations 
 It is very simple, and we just need to add the `#pragma omp parallel for` for C/C++, `!$omp parallel do` for FORTRAN.
 Could you please try this yourself? The serial code, templates, and compilation command have been provided below.
 
-
-### <u>Questions and Solutions</u>
-
+## Questions and Solutions
 
 ??? example "Examples: Vector Addition"
-
 
     === "Serial(C/C++)"
 
@@ -253,10 +249,7 @@ Could you please try this yourself? The serial code, templates, and compilation 
         deallocate(c)
 
         end program main
-
         ```
-
-
 
     === "Template(C/C++)"
 
@@ -301,7 +294,7 @@ Could you please try this yourself? The serial code, templates, and compilation 
           // Start measuring time
           clock_t start = clock();
 
-          // ADD YOUR PARALLEL REGION HERE	
+          // ADD YOUR PARALLEL REGION HERE
           // Executing vector addition function
           Vector_Add(a, b, c, N);
 
@@ -331,6 +324,7 @@ Could you please try this yourself? The serial code, templates, and compilation 
         ```
 
     === "Template(FORTRAN)"
+
         ```c
         module Vector_Addition_Mod
         implicit none
@@ -473,6 +467,7 @@ Could you please try this yourself? The serial code, templates, and compilation 
         ```
 
     === "Solution(FORTRAN)"
+
         ```c
         module Vector_Addition_Mod
         implicit none
@@ -539,64 +534,60 @@ Could you please try this yourself? The serial code, templates, and compilation 
         deallocate(c)
 
         end program main
-
         ```
-
-
 
 ??? "Compilation and Output"
 
     === "Serial(C/C++)"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ gcc Vector-addition-Serial.c -o Vector-addition-Serial
 
-        // execution
+        # execution
         $ ./Vector-addition-Serial
 
-        // output
+        # output
         $ ./Vector-addition-Serial
         ```
 
     === "Serial(FORTRAN)"
-        ```c
-        // compilation
+        ``` console
+        # compilation
         $ gfortran Vector-addition-Serial.f90 -o Vector-addition-Serial
 
-        // execution
+        # execution
         $ ./Vector-addition-Serial
 
-        // output
+        # output
         $ ./Vector-addition-Serial
         ```
 
 
     === "Solution(C/C++)"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ gcc -fopennmp Vector-addition-OpenMP-solution.c -o Vector-addition-Solution
 
-        // execution
+        # execution
         $ ./Vector-addition-Solution
 
-        // output
+        # output
         $ ./Vector-addition-Solution
         ```
 
     === "Solution(FORTRAN)"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ gfortran -fopenmp Vector-addition-OpenMP-solution.f90 -o Vector-addition-Solution
 
-        // execution
+        # execution
         $ ./Vector-addition-Solution
 
-        // output
+        # output
         $ ./Vector-addition-Solution
         ```
 
-
 ??? Question "Questions"
 
-      - Can you measure the performance speedup for parallelising loop? Do you see any speedup?
-      - For example, can you create more threads to speed up the computation? If yer or not, why?
+    - Can you measure the performance speedup for parallelising loop? Do you see any speedup?
+    - For example, can you create more threads to speed up the computation? If yer or not, why?

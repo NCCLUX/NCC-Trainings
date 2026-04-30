@@ -3,12 +3,9 @@
 <figcaption></figcaption>
 </figure>
 
-
 In this exercise, we will try to add the `simd` classes to our existing problems, for example, vector addition.
 
-
 ??? example "Examples and Question: SIMD - Vector Addition"
-
 
     === "Serial(C/C++)"
 
@@ -144,8 +141,6 @@ In this exercise, we will try to add the `simd` classes to our existing problems
 
         ```
 
-
-
     === "Template(C/C++)"
 
         ```c
@@ -190,7 +185,7 @@ In this exercise, we will try to add the `simd` classes to our existing problems
           // Start measuring time
           clock_t start = clock();
 
-          // ADD YOUR PARALLEL REGION HERE	
+          // ADD YOUR PARALLEL REGION HERE
           // Executing vector addition function
           Vector_Add(a, b, c, N);
 
@@ -385,7 +380,7 @@ In this exercise, we will try to add the `simd` classes to our existing problems
         real(8), dimension(:), allocatable :: c
         ! real(8) :: sum = 0
         double precision :: start, end
-	
+
         integer :: n, i
         print *, "This program does the addition of two vectors "
         print *, "Please specify the vector size = "
@@ -410,7 +405,7 @@ In this exercise, we will try to add the `simd` classes to our existing problems
         !$omp end parallel
         end = omp_get_wtime()
         PRINT *, "Work took", end - start, "seconds"
-	
+
         !!Verification
         do i = 1, n
           if (abs(c(i)-(a(i)+b(i)) == 0.00000)) then
@@ -429,13 +424,9 @@ In this exercise, we will try to add the `simd` classes to our existing problems
         ```
        - Please try the examples without the `simd` clause. Do you notice any performance differences?
 
-
-
-
-####<u>Critical, Single, and Master</u>
+## Critical, Single, and Master
 
 We will explore how single, master and critical are working in the OpenMP programming model. For this, we consider the following simple examples.
-
 
 ??? "Examples and Question: Critical, Single and Master"
 
@@ -481,4 +472,3 @@ We will explore how single, master and critical are working in the OpenMP progra
       - Try single clause
       - Try master clause
       - Try critical clause
-

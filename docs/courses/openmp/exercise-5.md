@@ -5,7 +5,8 @@ Most of the time, we end up having more than one loop, a nested loop, where two 
 <figcaption></figcaption>
 </figure>
 
-####<u>[Collapse](https://www.openmp.org/spec-html/5.2/openmpsu30.html)</u>
+## [Collapse](https://www.openmp.org/spec-html/5.2/openmpsu30.html)
+
 The collapse clause can be used for the nested loop; an entire part of the iteration will be divided by an available number of threads. If the outer loop is equal to the available threads, then the outer loop will be divided by the number of threads. The figure below shows an example of not using the `collapse` clause. Therefore, only the outer loop is parallelised; each outer loop index will have N number of inner loop iterations.
 
 <figure markdown>
@@ -20,7 +21,6 @@ This is not what we want. Instead, with the available threads, we would like to 
 <figcaption></figcaption>
 </figure>
 
-
 ??? Info "Collapse"
 
     === "C/C++"
@@ -30,7 +30,7 @@ This is not what we want. Instead, with the available threads, we would like to 
           for(int i = 0; i < N; i++)
              {
               for(int j = 0; j < N; j++)
-                {	
+                {
                  cout << " Thread id" << " " << omp_get_thread_num() << endl;
                 }
             }
@@ -48,7 +48,7 @@ This is not what we want. Instead, with the available threads, we would like to 
         ```
 
     === "FORTRAN"
-    	```c
+        ```c
         !$omp parallel
         !$omp do collapse(2)
         do i = 1, n
@@ -71,7 +71,6 @@ This is not what we want. Instead, with the available threads, we would like to 
         ```
 
 ??? example "Examples and Questions: Collapse"
-
 
     === "OpenMP(C/C++)"
         ```c
@@ -123,7 +122,7 @@ This is not what we want. Instead, with the available threads, we would like to 
 
 
     === "Output(FORTRAN)"
-        ```c
+        ```text
         Outer loop id            4 Inner loop id            2 Thread id          16
         Outer loop id            1 Inner loop id            4 Thread id           3
         Outer loop id            5 Inner loop id            1 Thread id          20
@@ -151,14 +150,14 @@ This is not what we want. Instead, with the available threads, we would like to 
         Outer loop id            5 Inner loop id            2 Thread id          21
         ```
     - Can you add any of the scheduling clauses here, such as static, dynamic, etc.?
-    - Is it really necessary to them when you use the `collapse`, or is it dependent on other factors, such as the nature of the	computation and available threads?
+    - Is it really necessary to them when you use the `collapse`, or is it dependent on other factors, such as the nature of the computation and available threads?
 
-####<u>[Reduction](https://www.openmp.org/spec-html/5.0/openmpsu107.html)</u>
+## [Reduction](https://www.openmp.org/spec-html/5.0/openmpsu107.html)
 
 The reduction clauses are data-sharing attribute clauses that can be used to perform some forms of repetition calculations in the parallel region.
 
- - it can be used for arithmetic reductions: +,*,-,max,min
- - and also with logical operator reductions in C: & && | || ˆ
+- it can be used for arithmetic reductions: +,*,-,max,min
+- and also with logical operator reductions in C: & && | || ˆ
 
 ??? Info "Reduction"
 
@@ -198,8 +197,6 @@ The reduction clauses are data-sharing attribute clauses that can be used to per
         end do
         !$omp end parallel do
         ```
-
-
 
 ??? example "Examples and Question: Reduction"
 
@@ -256,12 +253,9 @@ The reduction clauses are data-sharing attribute clauses that can be used to per
 
     - What happens if you do not use the reduction clause? Do we still get the correct answer?
 
-
-####<u>Matrix Multiplication</u>
-
+## Matrix Multiplication
 
 In this example, we consider a square matrix; `M=N` is equal for both `A` and `B` matrices. Even though we deal here with a 2D matrix, we create a 1D array to represent a 2D matrix. In this example,  we must use the `collapse` clause since matrix multiplication deals with 3 loops. The first 2 outer loops will take rows of the `A` matrix and columns of the `B` matrix. Therefore, these two loops can be easily parallelised.
-
 
 ??? "matrix multiplication function call"
 
@@ -295,13 +289,9 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         enddo
         ```
 
-
-
-### <u>Questions and Solutions</u>
-
+## Questions and Solutions
 
 ??? example "Examples: Matrix Multiplication"
-
 
     === "Serial(C/C++)"
         ```c
@@ -359,9 +349,9 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
               {
               for(int j = 0; j < N; j++)
                  {
-          	  printf("%f ", c[j]);
+                printf("%f ", c[j]);
 
-          	}
+              }
               printf("\n");
               }
 
@@ -375,9 +365,8 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
 
         ```
 
-
-
     === "Serial(FORTRAN)"
+
         ```c
         module Matrix_Multiplication_Mod
         implicit none
@@ -505,9 +494,9 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
               {
               for(int j = 0; j < N; j++)
                  {
-          	  printf("%f ", c[j]);
+                printf("%f ", c[j]);
 
-          	}
+              }
               printf("\n");
               }
 
@@ -596,7 +585,6 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
 
         ```
 
-
     === "Solution(C/C++)"
         ```c
         #include<stdio.h>
@@ -655,7 +643,7 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
               for(int j = 0; j < N; j++)
                  {
                   printf("%f ", c[j]);
-          	 }
+               }
                printf("\n");
               }
 
@@ -669,6 +657,7 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         ```
 
     === "Solution(FORTRAN)"
+
         ```c
         module Matrix_Multiplication_Mod
           implicit none
@@ -745,9 +734,6 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         end program main
         ```
 
-
-
-
 ??? "Compilation and Output"
 
     === "Serial-version(C/C++)"
@@ -768,6 +754,7 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         ```
 
     === "Serial-version(FORTRAN)"
+
         ```c
         // compilation
         $ gfortran Matrix-multiplication.f90 -o Matrix-Multiplication-Serial
@@ -785,6 +772,7 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         ```
 
     === "OpenMP(C/C++)"
+
         ```c
         // compilation
         $ gcc -fopenmp Matrix-multiplication-Solution.c -o Matrix-Multiplication-Solution
@@ -801,6 +789,7 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         ```
 
     === "OpenMP(FORTRAN)"
+
         ```c
         // compilation
         $ gfortran -fopenmp Matrix-multiplication-Solution.f90 -o Matrix-Multiplication-Solution
@@ -815,10 +804,10 @@ In this example, we consider a square matrix; `M=N` is equal for both `A` and `B
         8 8 8 8
         8 8 8 8
         ```
-	
+
 ??? Question "Questions"
 
-    - Right now, we are dealing with square matrices. Could you write a code for a different matrix size while still fulfilling the matrix multiplication condition?
+    Right now, we are dealing with square matrices. Could you write a code for a different matrix size while still fulfilling the matrix multiplication condition?
 
     <figure markdown>
     ![](figures/product.png){align=center width=500}

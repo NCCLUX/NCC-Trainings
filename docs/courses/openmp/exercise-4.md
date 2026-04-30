@@ -1,9 +1,6 @@
-### <u>[Loop scheduling](https://www.openmp.org/spec-html/5.0/openmpsu41.html#x64-1370002.9.2.1)</u>
+# [Loop scheduling](https://www.openmp.org/spec-html/5.0/openmpsu41.html#x64-1370002.9.2.1)
 
-   However, the above example is very simple.
-   Because, in most cases, we would end up doing a large list of arrays with complex computations within the loop.
-   Therefore, the workloading should be optimally distributed among the threads in those cases.
-   To handle those considerations, OpenMP has provided the following loop-sharing clauses. They are: `Static`, `Dynamic`, `Guided`, `Auto`, and `Runtime`.
+However, the above example is very simple. Because, in most cases, we would end up doing a large list of arrays with complex computations within the loop. Therefore, the workloading should be optimally distributed among the threads in those cases. To handle those considerations, OpenMP has provided the following loop-sharing clauses. They are: `Static`, `Dynamic`, `Guided`, `Auto`, and `Runtime`.
 
 <figure markdown>
 ![](figures/schedule.png){width="500", align=middle}
@@ -50,13 +47,13 @@
         !$omp end do
         !$omp end parallel
         ```
-	
-#### <u>Static</u>
 
- - The number of iterations are divided by chunksize.
- - If the chunksize is not provided, a number of iterations will be divided by the size of the team of threads.
-    - e.g., n=100, numthreads=5; each thread will execute the 20 iterations in parallel.
- - This is useful when the computational cost is similar to each iteration.
+## Static
+
+- The number of iterations are divided by chunksize.
+- If the chunksize is not provided, a number of iterations will be divided by the size of the team of threads.
+  - e.g., n=100, numthreads=5; each thread will execute the 20 iterations in parallel.
+- This is useful when the computational cost is similar to each iteration.
 
 ??? example "Examples and Question: static"
 
@@ -119,12 +116,12 @@
 
     - What happens if you would set the chunksize, for example, `schedule(static,4)`? What do you notice?
 
-#### <u>Dynamic</u>
+## Dynamic
 
- - The number of iterations are divided by chunksize.
- - If the chunksize is not provided, the default value will be considered 1.
- - This is useful when the computational cost is different in the iteration.
- - This will quickly place the chunk of data in the queue.
+- The number of iterations are divided by chunksize.
+- If the chunksize is not provided, the default value will be considered 1.
+- This is useful when the computational cost is different in the iteration.
+- This will quickly place the chunk of data in the queue.
 
 ??? example "Examples and Question: dynamic"
 
@@ -186,12 +183,12 @@
     - What happens if you would set the chunksize, for example, schedule(dynamic,4)? What do you notice?
     - Do you notice if the iterations are divided by the chunksize that we set?
 
-#### <u>Guided</u>
+## Guided
 
- - Similar to dynamic scheduling, the number of iterations are divided by chunksize.
- - But the chunk of the data size is decreasing, which is proportional to the number of unsigned iterations divided by the number of threads.
- - If the chunksize is not provided, the default value will be considered 1.
- - This is useful when there is poor load balancing at the end of the iteration.
+- Similar to dynamic scheduling, the number of iterations are divided by chunksize.
+- But the chunk of the data size is decreasing, which is proportional to the number of unsigned iterations divided by the number of threads.
+- If the chunksize is not provided, the default value will be considered 1.
+- This is useful when there is poor load balancing at the end of the iteration.
 
 ??? example "Examples and Question: guided"
 
@@ -252,9 +249,9 @@
 
     - Are there any differences between `auto` and `guided` or `dynamic`?
 
-#### <u>Auto</u>
+## Auto
 
- - Here the compiler chooses the best combination of the chunksize to be used.
+- Here the compiler chooses the best combination of the chunksize to be used.
 
 ??? example "Examples and Question: auto"
 
@@ -316,11 +313,9 @@
         ```
     - What would you choose for your application, auto, dynamic, guided, or static? If you are going to choose either one of them, then have a valid reason.
 
+## [Runtime](https://www.openmp.org/spec-html/5.0/openmpse49.html#x288-20520006.1)
 
-#### <u>[Runtime](https://www.openmp.org/spec-html/5.0/openmpse49.html#x288-20520006.1)</u>
-
-  - During the compilation, we simply set the loop scheduling concept.
-
+- During the compilation, we simply set the loop scheduling concept.
 
 ??? Info "Example: Loop scheduling clauses - runtime"
 
@@ -335,7 +330,7 @@
         export OMP_SCHEDULE="dynamic"
         export OMP_SCHEDULE="nonmonotonic:dynamic,4"
         ```
-	
+
 ??? example "Examples and Question: runtime"
 
     === "OpenMP(C/C++)"
@@ -379,7 +374,7 @@
 
         end program main
         ```
-	
+
     === "Compilation"
 
         ```c

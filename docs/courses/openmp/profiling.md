@@ -1,12 +1,12 @@
 Profiling is an important task to be considered when a computer code is written. Writing parallel code is less challenging, but making it more efficient on a given parallel architecture is challenging. Moreover,  from the programming and programmer’s perspective, we want to know where the code spends most of its time. In particular, we would like to know if the code (given algorithm) is compute bound, memory bound, cache misses, memory leak, proper vectorisation, cache misses, register spilling, or hot spot (time-consuming part in the code). Plenty of tools are available to profile a scientific code (computer code for doing arithmetic computing using processors). However, we will focus on a few of the widely used tools.
 
- - [AMD uProf](https://www.amd.com/content/dam/amd/en/documents/developer/uprof-v4.0-gaGA-user-guide.pdf)
- - [ARM Forge](https://developer.arm.com/documentation/101136/22-1-3/Performance-Reports?lang=en)
- - [Intel tools](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html)
+- [AMD uProf](https://www.amd.com/content/dam/amd/en/documents/developer/uprof-v4.0-gaGA-user-guide.pdf)
+- [ARM Forge](https://developer.arm.com/documentation/101136/22-1-3/Performance-Reports?lang=en)
+- [Intel tools](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html)
 
-####<u>[ARM Forge](https://developer.arm.com/documentation/101136/22-1-3/Performance-Reports?lang=en)</u>
+## [ARM Forge](https://developer.arm.com/documentation/101136/22-1-3/Performance-Reports?lang=en)
+
 Arm Forge is another standard commercial tool for debugging, profiling, and analysing scientific code on the massively parallel computer architecture. They have a separate toolset for each category with the common environment: DDT for debugging, MAP for profiling, and performance reports for analysis. It also supports the MPI, UPC, CUDA, and OpenMP programming models for different architectures with a variety of compilers. DDT and MAP will launch the GUI, where we can interactively debug and profile the code. Meanwhile, `perf-report` will provide the analysis results in `.html` and `.txt` files.
-
 
 ??? Info "Example: ARM Forge"
 
@@ -30,7 +30,7 @@ Arm Forge is another standard commercial tool for debugging, profiling, and anal
         ```
 
     === "FORTRAN"
-    	```c
+        ```c
         # compilation
         $ gfortran test.f90 -fopenmp
         # execute and profile the code
@@ -52,11 +52,11 @@ Arm Forge is another standard commercial tool for debugging, profiling, and anal
     <figcaption></figcaption>
     </figure>
 
-####<u>[Intel tools](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html)</u>
+## [Intel tools](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html)
 
-##### Intel Application Snapshot
-Intel Application Performance Snapshot tool helps to find essential performance factors and the metrics of CPU utilisation, memory access efficiency, and vectorisation.
-`aps -help` will list out profiling metrics options in APS
+### Intel Application Snapshot
+
+Intel Application Performance Snapshot tool helps to find essential performance factors and the metrics of CPU utilisation, memory access efficiency, and vectorisation. `aps -help` will list out profiling metrics options in APS
 
 <figure markdown>
 ![](figures/APS_OpenMP_flow_chart.png){align=center}
@@ -78,7 +78,7 @@ Intel Application Performance Snapshot tool helps to find essential performance 
         ```
 
     === "FORTRAN"
-    	```c
+        ```c
         # compilation
         $ ifort -qopenmp test.f90
 
@@ -94,7 +94,7 @@ Intel Application Performance Snapshot tool helps to find essential performance 
     <figcaption></figcaption>
     </figure>
 
-##### Intel Inspector
+### Intel Inspector
 
 Intel Inspector detects and locates the memory, deadlocks, and data races in the code.
 For example, memory access and memory leaks can be found.
@@ -115,7 +115,7 @@ For example, memory access and memory leaks can be found.
         ```
 
     === "FORTRAN"
-    	```c
+        ```c
         # compile the code
         $ ifort -qopenmp test.f90
         # execute and profile the code
@@ -127,12 +127,10 @@ For example, memory access and memory leaks can be found.
         === End: [2020/05/10 01:20:25] ===
         ```
 
-
-##### Intel Advisor
+### Intel Advisor
 
 Intel Advisor: a set of collection tools for the metrics and traces that can be used for further
 tuning in the code. `survey`: analyse and explore an idea about where to add efficient vectorisation.
-
 
 ??? Info "Example: Intel Advisor"
 
@@ -165,12 +163,10 @@ tuning in the code. `survey`: analyse and explore an idea about where to add eff
     <figcaption></figcaption>
     </figure>
 
+### Intel VTune
 
-##### Intel VTune
-
- - Identify the time-consuming part of the code.
- - Also, identify cache misses and latency.
-
+- Identify the time-consuming part of the code.
+- Also, identify cache misses and latency.
 
 ??? Info "Example: Intel VTune"
 
@@ -193,7 +189,7 @@ tuning in the code. `survey`: analyse and explore an idea about where to add eff
         $ amplxe-gui
         # open the GUI of the VTune amplifier
         ```
-	
+
     <figure markdown>
     ![](figures/Vtune.png){align=center}
     <figcaption></figcaption>
@@ -201,8 +197,8 @@ tuning in the code. `survey`: analyse and explore an idea about where to add eff
 
     `amplxe-cl` will list out the analysis types and `amplxe-cl -hlep` report will list out available reports in VTune.
 
+## [AMD uProf](https://www.amd.com/content/dam/amd/en/documents/developer/uprof-v4.0-gaGA-user-guide.pdf)
 
-####<u>[AMD uProf](https://www.amd.com/content/dam/amd/en/documents/developer/uprof-v4.0-gaGA-user-guide.pdf)</u>
 AMD uProf profiler follows a statistical sampling-based approach to collect profile data to identify
 the performance bottlenecks in the application.
 

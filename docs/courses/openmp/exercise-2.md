@@ -1,11 +1,11 @@
-#### <u>Shared variable</u>
+# Shared variable
 
- - All the threads have access to the shared variable.
- - By default, in the parallel region, all the variables are considered shared variables except the loop iteration counter variables.
+- All the threads have access to the shared variable.
+- By default, in the parallel region, all the variables are considered shared variables except the loop iteration counter variables.
 
 !!! Note
 
-	Shared variables should be handled carefully; otherwise, they cause race conditions in the program.
+    Shared variables should be handled carefully; otherwise, they cause race conditions in the program.
 
 <figure markdown>
 ![](figures/shared-white.png){align=center width=500}
@@ -47,7 +47,7 @@
           return 0;
         }
         ```
-	
+
     === "(FORTRAN)"
 
         ```c
@@ -86,22 +86,20 @@
 
 ??? question "Questions"
 
-     - Does the value of vector `a` change after the parallel loop, if not why, think?
-     - Do we really need to mention `shared(a)`, is it neccessary?
+    - Does the value of vector `a` change after the parallel loop, if not why, think?
+    - Do we really need to mention `shared(a)`, is it neccessary?
 
-#### <u>Private variable</u>
+## Private variable
 
- - Each thread will have its own copy of the private variable.
- - And the private variable is only accessible within the parallel region,
- not outside of the parallel region.
- - By default, the loop iteration counters are considered as a private.
- - A change made by one thread is not visible to other threads.
-
+- Each thread will have its own copy of the private variable.
+- And the private variable is only accessible within the parallel region,
+  not outside of the parallel region.
+- By default, the loop iteration counters are considered as a private.
+- A change made by one thread is not visible to other threads.
 
 <figure markdown>
 ![](figures/private-white.png){align=center width=500}
 </figure>
-
 
 ??? example "Examples: Private variable"
 
@@ -122,7 +120,7 @@
           float *a,b,c;
           b = 1.0;
           c = 2.0;
-	
+
           // Allocate the memory
           a  = (float*)malloc(sizeof(float) * N);
 
@@ -134,11 +132,11 @@
               cout << "value of c in the parallel region " << c << endl;
             }
 
-          cout << "value of c after the parallel region " << c << endl;	
+          cout << "value of c after the parallel region " << c << endl;
 
           return 0;
         }
-        ```	
+        ```
 
     === "(FORTRAN)"
 
@@ -169,7 +167,7 @@
           !$omp end do
           !$omp end parallel
           print*, 'value of c after the parallel region', c
-	
+
           ! Delete the memory
           deallocate(a)
 
@@ -178,17 +176,16 @@
 
 ??? question "Questions"
 
-     - What is the value of the variable `c` in the parallel region and after the parallel region?
-     - After the parallel region, has variable `c` been updated or not?
+    - What is the value of the variable `c` in the parallel region and after the parallel region?
+    - After the parallel region, has variable `c` been updated or not?
 
+## Lastprivate
 
-#### <u>Lastprivate</u>
-
- - lastprivate: is also similar to a private clause
- - But each thread will have an uninitialized copy of the variables passed
- as lastprivate
- - At the end of the parallel loop or sections, the final variable value will
- be the last thread accessed value in the section or in a parallel loop.
+- lastprivate: is also similar to a private clause
+- But each thread will have an uninitialized copy of the variables passed
+  as lastprivate
+- At the end of the parallel loop or sections, the final variable value will
+  be the last thread accessed value in the section or in a parallel loop.
 
 ??? example "Examples: Lastprivate variable"
 
@@ -215,7 +212,7 @@
 
           return 0;
         }
-        ```	
+        ```
 
 
     === "(FORTRAN)"
@@ -249,17 +246,16 @@
 
 ??? question "Questions"
 
-     - What is the value of the variable `var` in the parallel region and after the parallel region?
-     - Do you think the initial value of variable `var` is considered within the parallel region?
+    - What is the value of the variable `var` in the parallel region and after the parallel region?
+    - Do you think the initial value of variable `var` is considered within the parallel region?
 
+## Firstprivate
 
-#### <u>Firstprivate</u>
-
- - firstprivate: is similar to a private clause
- - But each thread will have an initialized copy of the variables passed
- as firstprivate
- - Available for parallel constructs, loops, sections and single
- constructs
+- `firstprivate`: is similar to a `private` clause.
+- But each thread will have an initialized copy of the variables passed
+  as firstprivate.
+- Available for parallel constructs, loops, sections and single
+  constructs.
 
 ??? example "Examples: Firstprivate variable"
 
@@ -286,8 +282,7 @@
 
           return 0;
         }
-        ```	
-
+        ```
 
     === "(FORTRAN)"
 
@@ -318,10 +313,7 @@
         end program main
         ```
 
-
 ??? question "Questions"
 
-     - What is the value of the variable `var` in the parallel region and after the parallel region?
-     - Is variable `var` has been updated after the parallel region, if not why, think?
-
-
+    - What is the value of the variable `var` in the parallel region and after the parallel region?
+    - Is variable `var` has been updated after the parallel region, if not why, think?
