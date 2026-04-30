@@ -1,4 +1,4 @@
-#### <u>Data Clauses</u>
+## Data Clauses
 
 Vector addition is a fundamental operation in linear algebra that involves summing two vectors element-wise. Each component of the resulting vector is the sum of the corresponding components from the two input vectors. This example of vector addition highlights two crucial constructs and clauses in OpenACC: compute constructs and data clauses. These include:
 
@@ -21,9 +21,6 @@ This comprehensive approach to data management enhances the efficiency of GPU co
 <figcaption></figcaption>
 </figure>
 
-
-
-
 !!! Info "Data Constructs"
 
     === "C/C++"
@@ -31,7 +28,7 @@ This comprehensive approach to data management enhances the efficiency of GPU co
         #pragma acc data [clause-list] new-line
            structured block
         ```
-	
+
     === "FORTRAN"
         ```
         !$acc data [clause-list]
@@ -58,8 +55,6 @@ This comprehensive approach to data management enhances the efficiency of GPU co
         default( none | present )
         ```
 
-
-
 To effectively implement the vector addition example using OpenACC, we need to focus on two specific data clauses.
 
 1. **Data Transfer for Input Vectors**: The two initialized vectors must be transferred from the host to the device. To achieve this, we will utilize the `copyin` clause, which ensures that the data from the host is available on the device.
@@ -83,78 +78,75 @@ Here are the steps for learning the vector addition example:
 <figcaption></figcaption>
 </figure>
 
- - Allocating the CPU memory for `a`, `b`, and `c` vector
-```c
-// Initialize the memory on the host
-float *restrict a, *restrict b, *restrict c;
+- Allocating the CPU memory for `a`, `b`, and `c` vector
 
-// Allocate host memory
-a = (float*)malloc(sizeof(float) * N);
-b = (float*)malloc(sizeof(float) * N);
-c = (float*)malloc(sizeof(float) * N);
-```
+  ```c
+  // Initialize the memory on the host
+  float *restrict a, *restrict b, *restrict c;
 
- - Now, we need to fill in the values for the
-    arrays `a` and `b`.
-```c
-// Initialize host arrays
-for(int i = 0; i < N; i++)
-  {
-    a[i] = 1.0f;
-    b[i] = 2.0f;
-  }
-```
+  // Allocate host memory
+  a = (float*)malloc(sizeof(float) * N);
+  b = (float*)malloc(sizeof(float) * N);
+  c = (float*)malloc(sizeof(float) * N);
+  ```
 
- - Vector addition kernel function call definition
+- Now, we need to fill in the values for the arrays `a` and `b`.
 
-    ??? "vector addition function call"
+  ```c
+  // Initialize host arrays
+  for(int i = 0; i < N; i++)
+    {
+      a[i] = 1.0f;
+      b[i] = 2.0f;
+    }
+  ```
 
-        === "Serial-version"
-            ```c
-            // CPU function that adds two vector
-            void Vector_Addition(float *a, float *b, float *c, int n)
-            {
-              for(int i = 0; i < n; i ++)
-                {
-                  c[i] = a[i] + b[i];
-                }
-            }
-            ```
+- Vector addition kernel function call definition
 
-        === "OpenACC-version"
-            ```c
-            // function that adds two vector
-            void Vector_Addition(float *restrict a, float *restrict b, float *restrict c, int n)
-            {
-            #pragma acc kernels loop copyin(a[0:n], b[0:n]) copyout(c[0:n])
+  ??? "vector addition function call"
+
+      === "Serial-version"
+          ```c
+          // CPU function that adds two vector
+          void Vector_Addition(float *a, float *b, float *c, int n)
+          {
             for(int i = 0; i < n; i ++)
               {
                 c[i] = a[i] + b[i];
               }
-            }	
-            ```
+          }
+          ```
 
-
-
+      === "OpenACC-version"
+          ```c
+          // function that adds two vector
+          void Vector_Addition(float *restrict a, float *restrict b, float *restrict c, int n)
+          {
+          #pragma acc kernels loop copyin(a[0:n], b[0:n]) copyout(c[0:n])
+          for(int i = 0; i < n; i ++)
+            {
+              c[i] = a[i] + b[i];
+            }
+          }
+          ```
 
 <figure markdown>
 ![](figures/vector_add-external-modified.svg)
 <figcaption></figcaption>
 </figure>
 
+- Deallocate the host memory
 
- - Deallocate the host memory
-```c
-// Deallocate host memory
-free(a);
-free(b);
-free(c);
-```
+  ```c
+  // Deallocate host memory
+  free(a);
+  free(b);
+  free(c);
+  ```
 
-### <u>Questions and Solutions</u>
+## Questions and Solutions
 
 ??? example "Examples: Vector Addition"
-
 
     === "Serial-version"
 
@@ -229,13 +221,13 @@ free(c);
 
         ```c
         // Vector-addition-template.c
-	
+
         #include <stdio.h>
         #include <stdlib.h>
         #include <math.h>
         #include <assert.h>
         #include <time.h>
-        #include <openacc.h>	
+        #include <openacc.h>
 
 
         #define N 5120
@@ -300,7 +292,7 @@ free(c);
           return 0;
         }
         ```
-	
+
     === "OpenACC-version"
 
         ```c
@@ -374,25 +366,21 @@ free(c);
         }
         ```
 
-
 ??? "Compilation and Output"
 
     === "Serial-version"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ gcc Vector-addition.c -o Vector-Addition-CPU
 
-        // execution
+        # execution
         $ ./Vector-Addition-CPU
-
-        // output
-        $ ./Vector-addition-CPU
         PASSED
         ```
 
     === "OpenACC-version"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ nvc -fast -acc=gpu -gpu=cc80 -Minfo=accel Vector-addition-openacc.c -o Vector-Addition-GPU
         Vector_Addition:
         12, Generating copyin(a[:n]) [if not already present]
@@ -402,16 +390,11 @@ free(c);
             Generating NVIDIA GPU code
             14, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
 
-        // execution
+        # execution
         $ ./Vector-Addition-GPU
-
-        // output
-        $ ./Vector-addition-GPU
         PASSED
         ```
 
-
 ??? Question "Question"
 
-    - Please try other data clauses for	different applications and get familiarised with them.
-
+    Please try other data clauses for different applications and get familiarised with them.

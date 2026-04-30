@@ -20,7 +20,6 @@ The following table summarizes the required steps for implementing the unified m
         nvfortran -fast -acc=gpu -gpu=cc80 -gpu=managed -Minfo=accel test.c
         ```
 
-
 |__Without unified memory__|__With unified memory__|
 |----------------------|-------------------|
 |Allocate the host memory|Allocate the host memory|
@@ -29,8 +28,7 @@ The following table summarizes the required steps for implementing the unified m
 |Do the computation using the GPU kernel|Do the computation using the GPU kernel|
 |Free host memory|Free host memory|
 
-
-### <u>Questions and Solutions</u>
+## Questions and Solutions
 
 ??? example "Examples: Vector Addition"
 
@@ -38,13 +36,13 @@ The following table summarizes the required steps for implementing the unified m
 
         ```c
         // Vector-addition-template.c
-	
+
         #include <stdio.h>
         #include <stdlib.h>
         #include <math.h>
         #include <assert.h>
         #include <time.h>
-        #include <openacc.h>	
+        #include <openacc.h>
 
 
         #define N 5120
@@ -109,7 +107,7 @@ The following table summarizes the required steps for implementing the unified m
           return 0;
         }
         ```
-	
+
     === "OpenACC-version"
 
         ```c
@@ -250,7 +248,7 @@ The following table summarizes the required steps for implementing the unified m
           deallocate(b)
           deallocate(c)
 
-        end program main		
+        end program main
         ```
 
 
@@ -324,12 +322,11 @@ The following table summarizes the required steps for implementing the unified m
         end program main
         ```
 
-
 ??? "Compilation and Output"
 
     === "OpenACC-version"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ nvc -fast -acc=gpu -gpu=cc80 -Minfo=accel -gpu=managed Vector-addition-openacc.c -o Vector-Addition-GPU
         Vector_Addition:
         12, Generating copyin(a[:n]) [if not already present]
@@ -339,17 +336,14 @@ The following table summarizes the required steps for implementing the unified m
             Generating NVIDIA GPU code
             14, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
 
-        // execution
+        # execution
         $ ./Vector-Addition-GPU
-
-        // output
-        $ ./Vector-addition-GPU
         PASSED
         ```
 
     === "OpenACC-version (FORTRAN)"
-        ```c
-        // compilation
+        ```console
+        # compilation
         $ nvfortran -fast -acc=gpu -gpu=cc80 -gpu=managed -Minfo=accel Vector-addition-openacc.f90 -o Vector-Addition-GPU
         vector_addition:
              12, Generating NVIDIA GPU code
@@ -357,19 +351,15 @@ The following table summarizes the required steps for implementing the unified m
              12, Generating implicit copyin(a(:n)) [if not already present]
                  Generating implicit copyout(c(:n)) [if not already present]
                  Generating implicit copyin(b(:n)) [if not already present
-                 	
-        // execution		
-        $ ./Vector-Addition-GPU
 
-        // output
+        # execution
+        $ ./Vector-Addition-GPU
         This program does the addition of two vectors
         Please specify the vector size =
         1000000
         PASS
         ```
 
-
 ??? Question "Questions"
 
-    - Have you noticed any performance improvements when using unified memory?
-
+    Have you noticed any performance improvements when using unified memory?
