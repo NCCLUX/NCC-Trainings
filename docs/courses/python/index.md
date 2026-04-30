@@ -23,8 +23,7 @@ The workshop is designed for individuals who are interested in advancing their s
 - Cython
 - Numba and final remarks
 
-
-##  Requirements
+## Requirements
 
 - Having an HPC account to access the cluster.
 - Basic knowledge on SLURM.
@@ -34,8 +33,9 @@ The workshop is designed for individuals who are interested in advancing their s
 - Familiarity with parallel programming.
 
 ### Course Organization and Registration
-Format - Online <br />
-Past Event: July, 2024 <br />
+
+Format - Online <br/>
+Past Event: July, 2024 <br/>
 Next Event: Two days - 30th (3h morning) - 31st (3h morning), January, 2025
 
 [Registration - 30-31st, January, 2025](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fevents.eurocc.lu%2Fintroduction-to-use-python-in-the-hpc&data=05%7C02%7Cezhilmathi.krishnasamy%40uni.lu%7C496380009d3f4a6cee6e08dd200e344b%7C445a9c950f9d49539db1bc4a45dd1220%7C0%7C0%7C638701967579068409%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=BXtx4mfiMdeZgTa%2FtXf3V1QisF0UMLOyJYQLn2gfLMw%3D&reserved=0){.md-button .md-button--primary}
