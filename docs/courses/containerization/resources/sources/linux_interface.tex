@@ -67,15 +67,31 @@
     ($(0,0) + (45:\OSOuterRadious+\filletradious)$) coordinate (user_space_connection_0)
       to[out=-45, in=-45] ($(0,0) + (45:\AppsInnerRadious-\filletradious)$) coordinate (user_space_connection_1)
       arc[start angle=45, end angle=135, radius={\AppsInnerRadious-\filletradious}] ($(0,0) + (135:\AppsInnerRadious-\filletradious)$) coordinate (user_space_connection_2)
-      to[out=-135, in=-135] ($(0,0) + (135:\OSOuterRadious+\filletradious)$) coordinate (user_space_connection_3)
+      to[out=-135, in=-135]
+        coordinate[pos=0.5] (os_interface_control_input)
+        ($(0,0) + (135:\OSOuterRadious+\filletradious)$) coordinate (user_space_connection_3)
       arc[start angle=135, end angle=45, radius={\OSOuterRadious+\filletradious}] (user_space_connection_0)
       -- cycle
     ($(0,0) + (45:\KernelRadious+\filletradious)$) coordinate (os_connection_0)
       to[out=-45, in=-45] ($(0,0) + (45:\OSInnerRadious-\filletradious)$) coordinate (os_connection_1)
       arc[start angle=45, end angle=135, radius={\OSInnerRadious-\filletradious}] ($(0,0) + (135:\OSInnerRadious-\filletradious)$) coordinate (os_connection_2)
-      to[out=-135, in=-135] ($(0,0) + (135:\KernelRadious+\filletradious)$) coordinate (os_connection_3)
+      to[out=-135, in=-135]
+        coordinate[pos=0.5] (kernel_interface_control_input)
+        ($(0,0) + (135:\KernelRadious+\filletradious)$) coordinate (os_connection_3)
       arc[start angle=135, end angle=45, radius={\KernelRadious+\filletradious}] (os_connection_0)
       -- cycle
+  ;
+  \def\OSControlOutAngle{146}
+  \path[draw, rounded corners, line width=2pt, >=latex, ->]
+    ($(0,0)+(\OSControlOutAngle:\OSOuterRadious)$)
+      -- ($(\OSControlOutAngle:0.505*(\OSOuterRadious+\AppsInnerRadious)$) 
+      to[out={\OSControlOutAngle-90}, in=-135] (os_interface_control_input)
+  ;
+  \def\KernelControlOutAngle{156}
+  \path[draw, rounded corners, line width=2pt, >=latex, ->]
+    ($(0,0)+(\KernelControlOutAngle:\KernelRadious)$)
+      -- ($(\KernelControlOutAngle:0.515*(\KernelRadious+\OSInnerRadious)$) 
+      to[out={\KernelControlOutAngle-90}, in=-135] (kernel_interface_control_input)
   ;
 
   \path[postaction={
