@@ -13,9 +13,11 @@
 
 ### The programme of the 2026 iteration
 
-The school covers the optimisation of computations on different types of hardware (CPU, GPU), presenting their respective characteristics, architectures and bottlenecks. It covers generic optimisation methods applicable to all types of hardware, as well as the various libraries, technologies and languages available to achieve the best possible performance. Ideally, the peak performance of the machine.
+The [Gray Scott school 2026](https://cc-fr.eu/gray-scott-school-2026/) covers the optimisation of computations on different types of hardware (CPU, GPU), presenting their respective characteristics, architectures and bottlenecks. It covers generic optimisation methods applicable to all types of hardware, as well as the various libraries, technologies and languages available to achieve the best possible performance. Ideally, the peak performance of the machine.
 
 Through hands-on sessions, lectures, and regular technical webinars, the school equips participants with the skills needed to design, optimize, and scale high-performance applications.
+
+The summer school is the in person component of the [Gray Scott School 2026](https://cta-lapp.pages.in2p3.fr/COURS/GRAY_SCOTT_REVOLUTIONS/GrayScott2026/index.html) that runs throughout the year. You can follow the weekly online seminars, [Gray Scott Thursdays](https://cta-lapp.pages.in2p3.fr/COURS/GRAY_SCOTT_REVOLUTIONS/GrayScott2026/1-28.html), throughout the year.
 
 ### Satellite site in Luxembourg
 
