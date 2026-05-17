@@ -1,15 +1,30 @@
 # The Linux environment
 
-Environment management in shared computing resources like HPC systems and workstations involves a collection of techniques that allow user processes to run in isolation from other user and system processes. The isolation allows
+Environment management in shared computing resources, like HPC systems and workstations, involves a collection of techniques that allow user processes to run in isolation from other user and system processes. This isolation allows
 
-- multiple processes to share the same system without interfering with each other and with system processes with respect to resource usage, and
-- each processes can configure its own software environment without interfering with the other user space and operating system processes.
+- non-kernel processes to setup software environments isolated from other processes, and
+- multiple processes to share system resources without interfering with each other.
 
-The isolation methods can be categorized in methods using the
+## The Linux process interface
+
+Processes in a Linux system can be categorized into
+
+- user processes,
+- operating system processes, and
+- the system kernel.
+
+A user process can interact with other process, through function calls ([fig. 1](#fig-1)) and interprocess communication methods, such as streams and message queues.
 
 <figure markdown="span">
-  ![Container architecture](resources/linux_interface.png){ align=left width="400" }
-  <figcaption>Fig. 1: The linux application interface</figcaption>
+  ![Linux process types and interactions](resources/linux_structure.png){ align=left width="400" }
+  <figcaption id="fig-1"><b>Fig. 1:</b> Linux process types and interactions</figcaption>
+</figure>
+
+The Linux kernel and operating systems provides mechanism that modify the interface exposed to processes. Containers and related methods utilize these mechanisms to modify the view that a process has of the system ([fig. 2](#fig-2)).
+
+<figure markdown="span">
+  ![Containerization techniques](resources/linux_interface.png){ align=left width="600" }
+  <figcaption>Fig. 2: Linux application interface and containerization techniques</figcaption>
 </figure>
 
 ## Terms
