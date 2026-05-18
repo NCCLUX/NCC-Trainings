@@ -15,7 +15,7 @@ For example:
 
 - 11:00-12:00 (dry-run),
 - 12:00-13:00 (lunch break),
-- 13:00-15:00 (lecture) and
+- 13:00-15:00 (lecture), and
 - 15:00-17:00 (hands-on exercise).
 
 It would be helpful to categorize the hands-on exercises, for example, from basic to intermediate (or advanced) topics. Examples from previous courses are available in the [official repository](https://ncclux.github.io/NCC-Trainings/docs/cuda/exercise-1/).
