@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg96"
+   width="19.75cm"
+   height="19cm"
+   viewBox="0 0 746.45671 718.11027"
+   sodipodi:docname="mat.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata102">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs100">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1461">
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#00e700;stroke-width:5.6692915;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1463"
+         width="765.96301"
+         height="717.09869"
+         x="-1.73497e-08"
+         y="-1.73497e-08" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3373"
+     inkscape:window-height="1385"
+     id="namedview98"
+     showgrid="false"
+     units="cm"
+     inkscape:zoom="1.1358251"
+     inkscape:cx="482.58382"
+     inkscape:cy="433.82535"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg96" />
+  <g
+     id="g1457"
+     transform="translate(-19.36918,1.0116129)"
+     clip-path="url(#clipPath1461)">
+    <rect
+       y="89.361206"
+       x="434.04572"
+       height="265.00558"
+       width="129.42134"
+       id="rect106"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.88976383;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <image
+       sodipodi:absref="/home/ezhilmathi/git/github.com/ezhilmathik/Training/Castiel-23-05-2022/figs/mat.png"
+       xlink:href="mat.png"
+       width="824"
+       height="762"
+       preserveAspectRatio="none"
+       id="image104"
+       x="0"
+       y="0"
+       style="fill:#ffffff" />
+    <rect
+       y="421.91977"
+       x="53.705452"
+       height="111.81296"
+       width="301.98312"
+       id="rect1451"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#00e700;stroke-width:5.6692915;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       y="89.361206"
+       x="434.04572"
+       height="265.00558"
+       width="129.42131"
+       id="rect112"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#00e700;stroke-width:5.6692915;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+</svg>
