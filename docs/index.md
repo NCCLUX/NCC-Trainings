@@ -25,7 +25,7 @@ Our upcoming events are listed below. For more information about our schedule an
 Please follow the link below to register.
 
 <div markdown class="md-content-button md-content-centered">
-[Register](https://events.eurocc.lu/introduction-to-openacc-heterogeneous-computing){ .md-button }
+[Register](https://events.eurocc.lu/introduction-to-gpu-programming-using-openacc){ .md-button }
 </div>
 
 ## [SCynergy 2026](site:events/scynergy_2026/)
