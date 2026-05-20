@@ -180,8 +180,8 @@ Max.\ warps\ per\ SM}$
         // Device code
         __global__ void MyKernel(int *d, int *a, int *b)
         {
-          int idx = threadIdx.x + blockIdx.x * blockDim.x;
-          d[idx] = a[idx] * b[idx];
+          int idx = threadIdx.x + blockIdx.x*blockDim.x;
+          d[idx] = a[idx]*b[idx];
         }
 
         // Host code
