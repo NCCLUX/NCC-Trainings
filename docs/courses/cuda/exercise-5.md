@@ -2,7 +2,7 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
 
 
 <figure markdown>
-![](figures/unified-memory-white.png)
+![](../figures/unified-memory-white.png)
 <figcaption></figcaption>
 </figure>
 
@@ -34,38 +34,38 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
         ```c
         //-*-C++-*-
         // Without-unified-memory.cu
-
+        
         #include <stdio.h>
         #include <stdlib.h>
         #include <math.h>
         #include <assert.h>
         #include <time.h>
-
+        
         #define N 5120
         #define MAX_ERR 1e-6
 
 
-        // GPU function that adds two vectors
-        __global__ void vector_add(float *a, float *b,
-                float *out, int n)
+        // GPU function that adds two vectors 
+        __global__ void vector_add(float *a, float *b, 
+                float *out, int n) 
         {
 
-          int i = blockIdx.x * blockDim.x * blockDim.y +
-           threadIdx.y * blockDim.x + threadIdx.x;
+          int i = blockIdx.x * blockDim.x * blockDim.y + 
+           threadIdx.y * blockDim.x + threadIdx.x;   
           // Allow the   threads only within the size of N
           if(i < n)
             {
               out[i] = a[i] + b[i];
             }
 
-          // Synchronize all the threads
+          // Synchronize all the threads 
           __syncthreads();
         }
-
+ 
         int main()
         {
           // Initialize the memory on the host
-          float *a, *b, *out;
+          float *a, *b, *out; 
 
           // Allocate host memory
           a = (float*)malloc(sizeof(float) * N);
@@ -78,7 +78,7 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
           // Allocate device memory
           cudaMalloc((void**)&d_a, sizeof(float) * N);
           cudaMalloc((void**)&d_b, sizeof(float) * N);
-          cudaMalloc((void**)&d_out, sizeof(float) * N);
+          cudaMalloc((void**)&d_out, sizeof(float) * N); 
 
           // Initialize host arrays
           for(int i = 0; i < N; i++)
@@ -91,11 +91,11 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
           cudaMemcpy(d_a, a, sizeof(float) * N, cudaMemcpyHostToDevice);
           cudaMemcpy(d_b, b, sizeof(float) * N, cudaMemcpyHostToDevice);
 
-          // Thread organization
+          // Thread organization 
           dim3 dimGrid(ceil(N/32), ceil(N/32), 1);
           dim3 dimBlock(32, 32, 1);
-
-          // Execute the CUDA kernel function
+           
+          // Execute the CUDA kernel function 
           vector_add<<<dimGrid, dimBlock>>>(d_a, d_b, d_out, N);
 
           // Transfer data back to host memory
@@ -116,19 +116,19 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
           cudaFree(d_out);
 
           // Deallocate host memory
-          free(a);
-          free(b);
+          free(a); 
+          free(b); 
           free(out);
-
+  
           return 0;
         }
         ```
 
     === "With Unified Memory - template"
-
+   
         ```c
         //-*-C++-*-
-
+        
         #include <stdio.h>
         #include <stdlib.h>
         #include <math.h>
@@ -139,19 +139,19 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
         #define MAX_ERR 1e-6
 
 
-        // GPU function that adds two vectors
-        __global__ void vector_add(float *a, float *b,
-                                   float *out, int n)
+        // GPU function that adds two vectors 
+        __global__ void vector_add(float *a, float *b, 
+                                   float *out, int n) 
         {
-          int i = blockIdx.x * blockDim.x * blockDim.y +
-            threadIdx.y * blockDim.x + threadIdx.x;
+          int i = blockIdx.x * blockDim.x * blockDim.y + 
+            threadIdx.y * blockDim.x + threadIdx.x;   
           // Allow the   threads only within the size of N
           if(i < n)
             {
               out[i] = a[i] + b[i];
             }
 
-          // Synchronize all the threads
+          // Synchronize all the threads 
           __syncthreads();
         }
 
@@ -160,19 +160,19 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
           /*
           // Initialize the memory on the host
           float *a, *b, *out;
-
+    
           // Allocate host memory
           a = (float*)malloc(sizeof(float) * N);
           b = (float*)malloc(sizeof(float) * N);
           c = (float*)malloc(sizeof(float) * N);
           */
-
+   
           // Initialize the memory on the device
           float *d_a, *d_b, *d_out;
 
           // Allocate device(unified) memory
           cudaMallocManaged......
-
+  
          // Initialize host arrays
          for(int i = 0; i < N; i++)
            {
@@ -186,21 +186,21 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
          cudaMemcpy(d_b, b, sizeof(float) * N, cudaMemcpyHostToDevice);
          */
 
-         // Thread organization
-         dim3 dimGrid...
+         // Thread organization 
+         dim3 dimGrid...    
          dim3 dimBlock...
 
-         // execute the CUDA kernel function
+         // execute the CUDA kernel function 
          vector_add<<<dimGrid, dimBlock>>>(d_a, d_b, d_out, N);
-
+         
          // synchronize if needed
          ......
-
+         
          /*
          // Transfer data back to host memory
          cudaMemcpy(out, d_out, sizeof(float) * N, cudaMemcpyDeviceToHost);
          */
-
+  
          // Verification
          for(int i = 0; i < N; i++)
            {
@@ -209,28 +209,28 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
 
          printf("out[0] = %f\n", d_out[0]);
          printf("PASSED\n");
-
+    
          // Deallocate device(unified) memory
          cudaFree...
-
+         
 
          /*
          // Deallocate host memory
-         free(a);
-         free(b);
+         free(a); 
+         free(b); 
          free(out);
          */
-
+  
          return 0;
         }
         ```
-
+        
     === "With Unified Memory-version"
-
+   
         ```c
         //-*-C++-*-
         // With-unified-memory.cu
-
+        
         #include <stdio.h>
         #include <stdlib.h>
         #include <math.h>
@@ -241,19 +241,19 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
         #define MAX_ERR 1e-6
 
 
-        // GPU function that adds two vectors
-        __global__ void vector_add(float *a, float *b,
-                                   float *out, int n)
+        // GPU function that adds two vectors 
+        __global__ void vector_add(float *a, float *b, 
+                                   float *out, int n) 
         {
-          int i = blockIdx.x * blockDim.x * blockDim.y +
-            threadIdx.y * blockDim.x + threadIdx.x;
+          int i = blockIdx.x * blockDim.x * blockDim.y + 
+            threadIdx.y * blockDim.x + threadIdx.x;   
           // Allow the   threads only within the size of N
           if(i < n)
             {
               out[i] = a[i] + b[i];
             }
 
-          // Synchronize all the threads
+          // Synchronize all the threads 
           __syncthreads();
         }
 
@@ -262,21 +262,21 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
           /*
           // Initialize the memory on the host
           float *a, *b, *out;
-
+    
           // Allocate host memory
           a = (float*)malloc(sizeof(float) * N);
           b = (float*)malloc(sizeof(float) * N);
           c = (float*)malloc(sizeof(float) * N);
           */
-
+   
           // Initialize the memory on the device
           float *d_a, *d_b, *d_out;
 
           // Allocate device memory
           cudaMallocManaged(&d_a, sizeof(float) * N);
           cudaMallocManaged(&d_b, sizeof(float) * N);
-          cudaMallocManaged(&d_out, sizeof(float) * N);
-
+          cudaMallocManaged(&d_out, sizeof(float) * N); 
+  
          // Initialize host arrays
          for(int i = 0; i < N; i++)
            {
@@ -293,15 +293,15 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
          // Thread organization
          dim3 dimGrid(ceil(N/32), ceil(N/32), 1);
          dim3 dimBlock(32, 32, 1);
-
-         // Execute the CUDA kernel function
+         
+         // Execute the CUDA kernel function 
          vector_add<<<dimGrid, dimBlock>>>(d_a, d_b, d_out, N);
          cudaDeviceSynchronize();
          /*
          // Transfer data back to host memory
          cudaMemcpy(out, d_out, sizeof(float) * N, cudaMemcpyDeviceToHost);
          */
-
+  
          // Verification
          for(int i = 0; i < N; i++)
            {
@@ -310,7 +310,7 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
 
          printf("out[0] = %f\n", d_out[0]);
          printf("PASSED\n");
-
+    
          // Deallocate device memory
          cudaFree(d_a);
          cudaFree(d_b);
@@ -318,11 +318,11 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
 
          /*
          // Deallocate host memory
-         free(a);
-         free(b);
+         free(a); 
+         free(b); 
          free(out);
          */
-
+  
          return 0;
         }
         ```
@@ -333,26 +333,26 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
         ```c
         // compilation
         $ nvcc -arch=compute_70 Without-unified-memory.cu -o Without-Unified-Memory
-
-        // execution
+        
+        // execution 
         $ ./Without-Unified-Memory
-
+        
         // output
         $ ./Without-Unified-Memory
         out[0] = 3.000000
         PASSED
         ```
-
+        
     === "With-unified-memory"
         ```c
         // compilation
         $ nvcc -arch=compute_70 With-unified-memory.cu -o With-Unified-Memory
-
+        
         // execution
         $ ./With-Unified-Memory
 
         // output
-        $ ./With-Unified-Memory
+        $ ./With-Unified-Memory 
         out[0] = 3.000000
         PASSED
         ```
@@ -362,5 +362,5 @@ Unified memory streamlines the data transfer process between the host (CPU) and 
 
     - Here in this example, we have used **`cudaDeviceSynchronize()`**; can you remove **`cudaDeviceSynchronize()`**
       and still get a correct solution? If not, why (think)?
-    - Please try using different thread blocks and array sizes.
+    - Please try using different thread blocks and array sizes. 
 

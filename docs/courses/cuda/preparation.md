@@ -3,14 +3,14 @@
 - 1.2 [Please take a look if you are using Linux/Mac](https://docs.lxp.lu/first-steps/connecting/)
 
 #### 2. Use your username to connect to MeluXina
-- 2.1 For example, the following example shows the user of `u100490`
+- 2.1 For example, the following example shows the user of `u100490` 
   ```
   $ ssh u100490@login.lxp.lu -p 8822
   ### or
-  $ ssh meluxina
+  $ ssh meluxina 
   ```
 #### 3. Once you have logged in
-- 3.1 Once you have logged in, you will be in a default home directory
+- 3.1 Once you have logged in, you will be in a default home directory 
   ```
   [u100490@login02 ~]$ pwd
   /home/users/u100490
@@ -21,16 +21,16 @@
   [u100490@login02 p200947]$ pwd
   /project/home/p200947
   ```
-
+  
 #### 4. And please create your own working folder under the project directory
 - 4.1 For example, here is the user with `u100490`:
   ```
   [u100490@login02 p200947]$ mkdir $USER
-  ### or
-  [u100490@login02 p200947]$ mkdir u100490
+  ### or 
+  [u100490@login02 p200947]$ mkdir u100490  
   ```
 #### 5. Now it is time to move into your home directory
-- 5.1 For example, with user home directory `u100490`
+- 5.1 For example, with user home directory `u100490` 
   ```
   [u100490@login02 p200947]$cd u100490
   ```
@@ -51,11 +51,11 @@
   ...
   ```
 #### 7. Until now, you are in the login node; now it is time to do the dry run test
-- 7.1 Reserve the interactive node for running/testing CUDA applications
+- 7.1 Reserve the interactive node for running/testing CUDA applications 
   ```
   $ salloc -A p200947 --res p200947-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
   ```
-
+  
   ??? "check if your reservation is allocated"
      ```
      [u100490@login03 ~]$ salloc -A p200947 --res p200947-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
@@ -66,7 +66,7 @@
      salloc: Waiting for resource configuration
      salloc: Nodes mel2131 are ready for job
      ```
-
+    
  - 7.2 You can also check if you got the interactive node for your computations, for example, here with the user `u100490`:
  ```
  [u100490@mel2131 ~]$ squeue -u u100490
@@ -78,7 +78,7 @@
  - 8.1 Go to folder `Dry-run-test`
 ```
 [u100490@login03 CUDA]$ cd Dry-run-test/
-[u100490@login03 Dry-run-test]$ ls
+[u100490@login03 Dry-run-test]$ ls 
 Hello-world.cu  module.sh
 ```
 
@@ -91,27 +91,27 @@ Hello-world.cu  module.sh
  ### or
  $ source module.sh
  ```
-
+ 
     ??? "check if the module is loaded properly"
         ```
         [u100490@mel2131 ~]$ module load env/staging/2023.1
         [u100490@mel2131 ~]$ module load OpenMPI/4.1.4-NVHPC-22.7-CUDA-11.7.0
         [u100490@mel2131 ~]$ export NVCC_APPEND_FLAGS='-allow-unsupported-compiler'
         [u100490@mel2131 ~]$ module list
-
+        
         Currently Loaded Modules:
         1) env/release/2022.1           (S)   6) numactl/2.0.14-GCCcore-11.3.0  11) libpciaccess/0.16-GCCcore-11.3.0  16) GDRCopy/2.3-GCCcore-11.3.0                  21) knem/1.1.4.90-GCCcore-11.3.0
         2) lxp-tools/myquota/0.3.1      (S)   7) CUDA/11.7.0                    12) hwloc/2.7.1-GCCcore-11.3.0        17) UCX-CUDA/1.13.1-GCCcore-11.3.0-CUDA-11.7.0  22) OpenMPI/4.1.4-NVHPC-22.7-CUDA-11.7.0
         3) GCCcore/11.3.0                     8) NVHPC/22.7-CUDA-11.7.0         13) OpenSSL/1.1                       18) libfabric/1.15.1-GCCcore-11.3.0
         4) zlib/1.2.12-GCCcore-11.3.0         9) XZ/5.2.5-GCCcore-11.3.0        14) libevent/2.1.12-GCCcore-11.3.0    19) PMIx/4.2.2-GCCcore-11.	3.0
         5) binutils/2.38-GCCcore-11.3.0      10) libxml2/2.9.13-GCCcore-11.3.0  15) UCX/1.13.1-GCCcore-11.3.0         20) xpmem/2.6.5-36-GCCcore-11.3.0
-
+        
         Where:
             S:  Module is Sticky, requires --force to unload or purge
         ```
 
 
-#### 10. Please compile and test your CUDA application
+#### 10. Please compile and test your CUDA application 
  - 10.1 For example, Dry-run-test
  ```
  // compilation
@@ -156,7 +156,7 @@ Hello-world.cu  module.sh
  [u100490@mel2063 CUDA]$ source module.sh
  [u100490@mel2063 CUDA]$ cd Hello-world
  // compilation
- [u100490@mel2063 CUDA]$ nvcc -arch=compute_70 Hello-world.cu -o Hello-World-GPU
+ [u100490@mel2063 CUDA]$ nvcc -arch=compute_70 Hello-world.cu -o Hello-World-GPU 
 
  // execution
  [u100490@mel2063 CUDA]$ ./Hello-World-GPU

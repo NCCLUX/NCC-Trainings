@@ -27,12 +27,12 @@ in the computation.
 
         #include<stdio.h>
         #include<cuda.h>
-
+        
         void c_function()
         {
           printf("Hello World!\n");
         }
-
+        
         int main()
         {
           c_function();
@@ -45,24 +45,24 @@ in the computation.
         ```c
         //-*-C++-*-
         // Hello-world.cu
-
+        
         #include<stdio.h>
         #include<cuda.h>
-
-        // device function will be executed on device (GPU)
+        
+        // device function will be executed on device (GPU) 
         __global__ void cuda_function()
         {
           printf("Hello World from GPU!\n");
-
+          
           // synchronize all the threads
           __syncthreads();
         }
-
+   
         int main()
         {
-          // call the kernel function
+          // call the kernel function 
           cuda_function<<<1,1>>>();
-
+          
           // synchronize the device kernel call
           cudaDeviceSynchronize();
           return 0;
@@ -75,22 +75,22 @@ in the computation.
         ```c
         // compilation
         $ gcc Hello-world.c -o Hello-World-CPU
-
-        // execution
+        
+        // execution 
         $ ./Hello-World-CPU
-
+        
         // output
         $ Hello World from CPU!
         ```
-
+        
     === "CUDA-version"
         ```c
         // compilation
         $ nvcc -arch=compute_70 Hello-world.cu -o Hello-World-GPU
-
+        
         // execution
         $ ./Hello-World-GPU
-
+        
         // output
         $ Hello World from GPU!
         ```
@@ -107,7 +107,7 @@ in the computation.
         //-*-C++-*-
         #include<stdio.h>
         #include<cuda.h>
-
+        
         __global__ void cuda_function()
         {
           printf("Hello World from GPU!\n");
@@ -122,14 +122,14 @@ in the computation.
           return 0;
         }
         ```
-
+    
     === "Answer"
-
+  
         ```c
         //-*-C++-*-
         #include<stdio.h>
         #include<cuda.h>
-
+        
         __global__ void cuda_function()
         {
           printf("Hello World from GPU!\n");
