@@ -54,50 +54,49 @@ Next, we will examine a basic example of matrix multiplication, a computation th
   Matrix_Multiplication(d_a, d_b, d_c, N);
   ```
 
-    ??? "matrix multiplication function call"
+??? "matrix multiplication function call"
 
-      === "Serial"
-          ```c
-          void Matrix_Multiplication(float *a, float *b, float *c, int width)
-          {
-            for(int row = 0; row < width ; ++row)
-              {
-                for(int col = 0; col < width ; ++col)
-                  {
-                    float temp = 0;
-                    for(int i = 0; i < width ; ++i)
-                      {
-                        temp += a[row*width+i] * b[i*width+col];
-                      }
-                    c[row*width+col] = float;
-                  }
-              }
-          }
-          ```
+    === "Serial"
+        ```c
+        void Matrix_Multiplication(float *a, float *b, float *c, int width)
+        {
+          for(int row = 0; row < width ; ++row)
+            {
+              for(int col = 0; col < width ; ++col)
+                {
+                  float temp = 0;
+                  for(int i = 0; i < width ; ++i)
+                    {
+                      temp += a[row*width+i] * b[i*width+col];
+                    }
+                  c[row*width+col] = float;
+                }
+            }
+        }
+        ```
 
-
-      === "OpenACC"
-          ```c
-          void Matrix_Multiplication(float *restrict a, float *restrict b, float *restrict c, int width)
-          {
-            int length = width*width;
-            float sum = 0;
-          #pragma acc parallel copyin(a[0:(length)], b[0:(length)]) copyout(c[0:(length)])
-          #pragma acc loop collapse(2) reduction (+:sum)
-           for(int row = 0; row < width ; ++row)
-              {
-                for(int col = 0; col < width ; ++col)
-                  {
-                    for(int i = 0; i < width ; ++i)
-                      {
-                        sum += a[row*width+i] * b[i*width+col];
-                      }
-                    c[row*width+col] = sum;
-                    sum=0;
-                  }
-              }
-          }
-          ```
+    === "OpenACC"
+        ```c
+        void Matrix_Multiplication(float *restrict a, float *restrict b, float *restrict c, int width)
+        {
+          int length = width*width;
+          float sum = 0;
+        #pragma acc parallel copyin(a[0:(length)], b[0:(length)]) copyout(c[0:(length)])
+        #pragma acc loop collapse(2) reduction (+:sum)
+         for(int row = 0; row < width ; ++row)
+            {
+              for(int col = 0; col < width ; ++col)
+                {
+                  for(int i = 0; i < width ; ++i)
+                    {
+                      sum += a[row*width+i] * b[i*width+col];
+                    }
+                  c[row*width+col] = sum;
+                  sum=0;
+                }
+            }
+        }
+        ```
 
 - Deallocate the host memory
 
@@ -244,7 +243,6 @@ Next, we will examine a basic example of matrix multiplication, a computation th
 
           // Device function call
           Matrix_Multiplication(a, b, c, N);
-
 
           // CPU computation for verification
           Matrix_Multiplication(a, b, host_check, N);

@@ -68,48 +68,48 @@ In this tutorial, we will explore the process of matrix multiplication, a fundam
   matrix_mul<<<dimGrid,dimBlock>>>(d_a, d_b, d_c, N);
   ```
 
-    ??? "matrix multiplication function call"
+??? "matrix multiplication function call"
 
-        === "serial"
-            ```c
-            float * matrix_mul(float *h_a, float *h_b, float *h_c, int width)
+    === "serial"
+        ```c
+        float * matrix_mul(float *h_a, float *h_b, float *h_c, int width)
+        {
+          for(int row = 0; row < width ; ++row)
             {
-              for(int row = 0; row < width ; ++row)
-                {
-                  for(int col = 0; col < width ; ++col)
-                    {
-                      float temp = 0;
-                      for(int i = 0; i < width ; ++i)
-                        {
-                          temp += h_a[row*width+i] * h_b[i*width+col];
-                        }
-                      h_c[row*width+col] = temp;
-                    }
-                }
-              return h_c;
-            }
-            ```
-        === "cuda"
-            ```c
-            __global__ void matrix_mul(float* d_a, float* d_b,
-            float* d_c, int width)
-            {
-              int row = blockIdx.x * blockDim.x + threadIdx.x;
-              int col = blockIdx.y * blockDim.y + threadIdx.y;
-
-              if ((row < width) && (col < width))
+              for(int col = 0; col < width ; ++col)
                 {
                   float temp = 0;
-                  // each thread computes one
-                  // element of the block sub-matrix
-                  for (int i = 0; i < width; ++i)
+                  for(int i = 0; i < width ; ++i)
                     {
-                      temp += d_a[row*width+i]*d_b[i*width+col];
+                      temp += h_a[row*width+i] * h_b[i*width+col];
                     }
-                  d_c[row*width+col] = temp;
+                  h_c[row*width+col] = temp;
                 }
             }
-            ```
+          return h_c;
+        }
+        ```
+    === "cuda"
+        ```c
+        __global__ void matrix_mul(float* d_a, float* d_b,
+        float* d_c, int width)
+        {
+          int row = blockIdx.x * blockDim.x + threadIdx.x;
+          int col = blockIdx.y * blockDim.y + threadIdx.y;
+
+          if ((row < width) && (col < width))
+            {
+              float temp = 0;
+              // each thread computes one
+              // element of the block sub-matrix
+              for (int i = 0; i < width; ++i)
+                {
+                  temp += d_a[row*width+i]*d_b[i*width+col];
+                }
+              d_c[row*width+col] = temp;
+            }
+        }
+        ```
 
 - Copy back computed value from GPU to CPU; transfer the data back to the GPU (from device to host). Here is the C matrix that contains the product of the two matrices.
 
