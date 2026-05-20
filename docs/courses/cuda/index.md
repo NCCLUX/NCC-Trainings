@@ -1,7 +1,7 @@
 # Introduction to GPU programming using CUDA
 
 <figure markdown>
-[![Introduction to CUDA programming](figures/CUDA-July-2025-Front-Page.png)](Training_CUDA_July_2025.pdf)
+[![Introduction to CUDA programming](figures/CUDA-May-2026-Front-Page.png)](Training-CUDA.pdf)
 <figcaption></figcaption>
 </figure>
 
