@@ -38,7 +38,7 @@ nav:
                       - Profiling and Performance: 'courses/openmp/profiling.md'
           - GPU:
               - CUDA:
-#                  - Introduction: 'courses/cuda/index.md'
+                  - Introduction: 'courses/cuda/index.md'
                   - Preparation: 'courses/cuda/preparation.md'
 #                  - Hands-on:
 #                      - Hello world: 'courses/cuda/exercise-1.md'
