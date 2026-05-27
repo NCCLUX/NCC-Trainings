@@ -441,9 +441,11 @@ In this hands-on session, we will delve into the fundamentals of vector addition
           cudaMemcpy(d_a, a, sizeof(float) * N, cudaMemcpyHostToDevice);
           cudaMemcpy(d_b, b, sizeof(float) * N, cudaMemcpyHostToDevice);
 
-          // Thread organization
-          dim3 dimGrid(ceil(N/32), ceil(N/32), 1);
-          dim3 dimBlock(32, 32, 1);
+	  // Thread organization: 256 threads per block (16x16), 1D grid sized to cover N
+	  dim3 dimBlock(16, 16, 1);
+	  int threadsPerBlock = dimBlock.x * dimBlock.y * dimBlock.z; // 256
+	  int numBlocks = (N + threadsPerBlock - 1) / threadsPerBlock;
+	  dim3 dimGrid(numBlocks, 1, 1);
 
           // Execute the CUDA kernel function
           vector_add<<<dimGrid, dimBlock>>>(d_a, d_b, d_out, N);
