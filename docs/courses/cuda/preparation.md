@@ -33,9 +33,9 @@ Once you have logged in, you will be in a default home directory.
 After that, go to the project directory.
 
 ```console
-[u100490@login02 ~]$ cd /project/home/p200947
-[u100490@login02 p200947]$ pwd
-/project/home/p200947
+[u100490@login02 ~]$ cd /project/home/p201350
+[u100490@login02 p201350]$ pwd
+/project/home/p201350
 ```
 
 ## 4. Create a working folders
@@ -45,13 +45,13 @@ Create your own working folder under the project directory
 For example, here is the process for user `u100490`.
 
 ```console
-[u100490@login02 p200947]$ mkdir ${USER}
+[u100490@login02 p201350]$ mkdir ${USER}
 ```
 
 Now move into the working directory. For example, for user `u100490`:
 
 ```console
-[u100490@login02 p200947]$ cd u100490
+[u100490@login02 p201350]$ cd u100490
 ```
 
 ## 6. Prepare the course material
@@ -59,15 +59,15 @@ Now move into the working directory. For example, for user `u100490`:
 Copy the folder which has examples and source files to your working directory. For example, the user home directory `u100490` executes:
 
 ```console
-[u100490@login03 u100490]$ cp -r /project/home/p200947/CUDA .
+[u100490@login03 u100490]$ cp -r /project/home/p201350/CUDA .
 [u100490@login03 u100490]$ cd CUDA/
 [u100490@login03 CUDA]$ pwd
-/project/home/p200947/u100490/CUDA
+/project/home/p201350/u100490/CUDA
 [u100490@login03 CUDA]$ ls -lthr
 total 20K
--rw-r-----. 1 u100490 p200947   51 Mar 13 15:50 module.sh
-drwxr-s---. 2 u100490 p200947 4.0K Mar 13 15:50 Vector-addition
-drwxr-s---. 2 u100490 p200947 4.0K Mar 13 15:50 Unified-memory
+-rw-r-----. 1 u100490 p201350   51 Mar 13 15:50 module.sh
+drwxr-s---. 2 u100490 p201350 4.0K Mar 13 15:50 Vector-addition
+drwxr-s---. 2 u100490 p201350 4.0K Mar 13 15:50 Unified-memory
 ...
 ...
 ```
@@ -77,12 +77,12 @@ drwxr-s---. 2 u100490 p200947 4.0K Mar 13 15:50 Unified-memory
 Until now, you are in the login node; now it is time to do the dry run test. Reserve the interactive node for running/testing CUDA applications.
 
 ```console
-salloc -A p200947 --res p200947-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
+salloc -A p201350 --res p201350-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
 ```
 
 ??? "check if your reservation is allocated"
     ```
-    [u100490@login03 ~]$ salloc -A p200947 --res p200947-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
+    [u100490@login03 ~]$ salloc -A p201350 --res p201350-training-morning --partition=gpu --qos default -N 1 -t 01:00:00
     salloc: Pending job allocation 296848
     salloc: job 296848 queued and waiting for resources
     salloc: job 296848 has been allocated resources
@@ -96,7 +96,7 @@ You can also check if you got the interactive node for your computations. For ex
 ```console
 [u100490@mel2131 ~]$ squeue -u u100490
             JOBID PARTITION     NAME     USER    ACCOUNT    STATE       TIME   TIME_LIMIT  NODES NODELIST(REASON)
-           304381       gpu interact  u100490    p200947  RUNNING       0:37     01:00:00      1 mel2131
+           304381       gpu interact  u100490    p201350  RUNNING       0:37     01:00:00      1 mel2131
 ```
 
 ## 8. Accessing the CUDA examples
@@ -164,12 +164,12 @@ Hello World from GPU!
 Similarly, for the hands-on session, we need reserve a node. For example:
 
 ```console
-salloc -A p200947 --res p200947-training-afternoon --partition=gpu --qos default -N 1 -t 02:15:00
+salloc -A p201350 --res p201350-training-afternoon --partition=gpu --qos default -N 1 -t 02:15:00
 ```
 
 ??? "check if your reservation is allocated"
     ```
-    [u100490@login03 ~]$ salloc -A p200947 --res p200947-training-afternoon --partition=gpu --qos default -N 1 -t 02:15:00
+    [u100490@login03 ~]$ salloc -A p201350 --res p201350-training-afternoon --partition=gpu --qos default -N 1 -t 02:15:00
     salloc: Pending job allocation 296848
     salloc: job 296848 queued and waiting for resources
     salloc: job 296848 has been allocated resources
@@ -184,7 +184,7 @@ We will continue with our Hands-on exercise. For example, in the `Hello World` e
 
 ```console
 [u100490@mel2063 CUDA]$ pwd
-/project/home/p200947/u100490/CUDA
+/project/home/p201350/u100490/CUDA
 [u100490@mel2063 CUDA]$ ls
 Dry-run-test  Matrix-multiplication  Profiling      Unified-memory
 Hello-world   module.sh              Shared-memory  Vector-addition
