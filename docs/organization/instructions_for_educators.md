@@ -28,11 +28,11 @@ For the training event, we usually accept 20-30 participants. However, as you mi
 
 During the event, you will be using the MeluXina HPC machine. Once you confirm the date for the event, we can request your account on MeluXina for training material preparation. Regarding participants, access to MeluXina will be granted before the event.
 
-Furthermore the following steps would summerize the steps for instructors.
+Furthermore the following steps would summarize the steps for instructors.
 
 1. **Course Proposal:**
 
-   Once you have gathered sufficient materials and formulated a planned timeline, submit the course title to [Leane BIONDINO](mailto:leane.biondino@uni.lu).
+   Once you have gathered sufficient materials and formulated a planned timeline, submit the course title to [Samir EL-AMRANY](mailto:samir.el-amrany@uni.lu).
 
 2. **Announcement:**
 
@@ -52,6 +52,6 @@ Furthermore the following steps would summerize the steps for instructors.
 
 6. **Technical Support:**
 
-   Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts.
+   Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts. Alternatively, you can forward the list of participants to the [Julie DEL DUCA](mailto:julie.delduca@lxp.lu), the project coordinator in LuxProvide to create the user accounts.
 
 Make sure to follow these guidelines to ensure a successful training event.
