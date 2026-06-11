@@ -14,6 +14,22 @@ source ~/environments/ncc/bin/activate
 uv pip install --requirements requirements.txt
 ```
 
+## Deploying the page locally
+
+The project is compiled and deployed locally with `properdocs`. Start by loading the development environment.
+
+```bash
+source ~/environments/ncc/bin/activate
+```
+
+The typeset and deploy the page with `properdocs`.
+
+```bash
+properdocs serve --strict
+```
+
+The `--strict` flag causes the deployment to fail in case of errors.
+
 ### Compiling the images in resource directories
 
 There is code for LaTeX generated figures in some sections. The source code is located in directories named `resources`. The compilation of the code requires [TeX Live](https://tug.org/texlive/) and the [`convert`](https://linux.die.net/man/1/convert) tool. Compile the images manually by running the command
