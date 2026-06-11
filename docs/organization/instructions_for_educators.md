@@ -52,6 +52,6 @@ Furthermore the following steps would summarize the steps for instructors.
 
 6. **Technical Support:**
 
-   Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts. Alternatively, you can forward the list of participants to the [Julie DEL DUCA](mailto:julie.delduca@lxp.lu), the project coordinator in LuxProvide to create the user accounts.
+   Use the [LXP service ticket system](https://servicedesk.lxp.lu/servicedesk/customer/portal/4) to request compute node resources, specifying the expected number of participants. Make these requests at least two weeks before the event starts. Alternatively, you can forward the list of participants to [Julie DEL DUCA](mailto:julie.delduca@lxp.lu), the project coordinator in LuxProvide to create the user accounts.
 
 Make sure to follow these guidelines to ensure a successful training event.
