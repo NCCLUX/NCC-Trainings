@@ -16,6 +16,7 @@ $(patsubst %, %.png, $(TARGETS)): %.png: sources/build/output/%.pdf
 sources/build/output/%.pdf: sources/%.tex
 	$(MAKE) --directory=sources $(patsubst sources/build/output/%.pdf, %, $@)
 	touch $@
+
 sources/build/output/%.tex:
 	;
 

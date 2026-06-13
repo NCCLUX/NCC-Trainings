@@ -1,0 +1,117 @@
+\documentclass[border=12pt]{standalone}
+  \usepackage{tikz}
+  \usepackage{xparse}
+  \usepackage{xcolor}
+  \usepackage[T1]{fontenc}
+
+  \usetikzlibrary{
+    shapes.symbols,
+    positioning,
+    calc
+  }
+
+\definecolor{hardwarecolor}{RGB}{64,64,64}
+\definecolor{hvcolor}{RGB}{185,185,185}
+\definecolor{appcolor}{RGB}{67,114,196}   % blue
+\definecolor{oscolor}{RGB}{82,153,53}     % green
+\definecolor{kernelcolor}{RGB}{192,39,39} % red
+
+\tikzset{
+  pics/container_app/.style args={#1,#2}{
+    code={
+      \path[draw,fill=appcolor]
+        (0,0) coordinate (topleft_app_#1_#2)
+          -- ++(2,0) coordinate (topright_app_#1_#2) 
+          -- ++(0,-1) coordinate (bottomright_app_#1_#2)
+          -- ++(-2,0) coordinate (bottomleft_app_#1_#2)
+          -- cycle
+      ;
+      \path[]
+        ($(topleft_app_#1_#2)!0.5!(bottomright_app_#1_#2)$) node[] (label_app_#1_#2) {Apps #1#2}
+      ;
+    }
+  }
+}
+
+\NewDocumentCommand\component{mmmmm}{
+  \path[draw,fill=#4]
+    let
+      \p{#1_crd_topleft} = ($(#2)+(0,-0.05)$),
+      \p{#1_crd_bottomright} = ($(#3)+(0,-1.05)$)
+    in
+    (\x{#1_crd_topleft}, \y{#1_crd_topleft}) coordinate (#1_topleft) --
+      (\x{#1_crd_bottomright},\y{#1_crd_topleft}) coordinate (#1_topright) --
+      (\x{#1_crd_bottomright},\y{#1_crd_bottomright}) coordinate (#1_bottomright) --
+      (\x{#1_crd_topleft},\y{#1_crd_bottomright}) coordinate (#1_bottomleft) --
+      cycle
+  ;
+  \path[]
+    ($(#1_topleft)!0.5!(#1_bottomright)$) node[label={#5}] (#1_label) {}
+  ;
+}
+
+\tikzset{
+  pics/container/.style args={#1,#2,#3}{
+    code={
+      \component{container_#1}{#2}{#3}{oscolor}{
+        [align=center]center:OS #1\\{\ttfamily\small (\textbackslash bin:\textbackslash lib)}
+      }
+    }
+  }
+}
+
+\tikzset{
+  pics/hostos/.style args={#1,#2}{
+    code={
+      \component{hostos}{#1}{#2}{oscolor}{
+        [align=center]center:Host OS \\{\ttfamily\small (\textbackslash bin:\textbackslash lib)}
+      }
+    }
+  }
+}
+
+\tikzset{
+  pics/kernel/.style args={#1,#2}{
+    code={
+      \component{kernel}{#1}{#2}{kernelcolor}{
+        [align=center]center:Host OS kernel
+      }
+    }
+  }
+}
+
+\tikzset{
+  pics/machine/.style args={#1,#2}{
+    code={
+      \component{machine}{#1}{#2}{hardwarecolor}{
+        [align=center]center:Infrastructure
+      }
+    }
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm]
+
+% Container 0
+\path[draw] (0,0) pic {container_app={A,0}};
+\path[draw] ($(topright_app_A_0)+(0.2,0)$) pic {container_app={A,1}};
+% Container 1
+\path[draw] ($(topright_app_A_1)+(0.2,0)$) pic {container_app={B,0}};
+\path[draw] ($(topright_app_B_0)+(0.2,0)$) pic {container_app={B,1}};
+\path[draw] ($(topright_app_B_1)+(0.2,0)$) pic {container_app={B,2}};
+
+\path[draw] (0,0) pic {container={A,bottomleft_app_A_0,bottomright_app_A_1}};
+\path[draw] (0,0) pic {container={B,bottomleft_app_B_0,bottomright_app_B_2}};
+
+%\path[draw] (0,0) pic {hostos={container_A_bottomleft,container_B_bottomright}};
+%
+%\path[draw] (0,0) pic {kernel={hostos_bottomleft,hostos_bottomright}};
+
+\path[draw] (0,0) pic {kernel={container_A_bottomleft,container_B_bottomright}};
+
+\path[draw] (0,0) pic {machine={kernel_bottomleft,kernel_bottomright}};
+
+\end{tikzpicture}
+\end{document}
+
