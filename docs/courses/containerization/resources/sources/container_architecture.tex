@@ -6,6 +6,7 @@
 
   \usetikzlibrary{
     shapes.symbols,
+    decorations.pathreplacing,
     positioning,
     calc
   }
@@ -111,6 +112,13 @@
 \path[draw] (0,0) pic {kernel={container_A_bottomleft,container_B_bottomright}};
 
 \path[draw] (0,0) pic {machine={kernel_bottomleft,kernel_bottomright}};
+
+\path[draw,decorate,decoration={brace,mirror}]
+  ($(topleft_app_A_0)+(-0.1,0)$) coordinate (note_top)
+     -- ($(container_A_bottomleft)+(-0.1,0)$) coordinate (note_bottom)
+;
+\coordinate (container_midpoint) at ($(note_top)!0.5!(note_bottom)$);
+\node[anchor=east,left=0.1 of container_midpoint] (container_annotation) {\Large Container};
 
 \end{tikzpicture}
 \end{document}
