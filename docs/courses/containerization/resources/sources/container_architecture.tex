@@ -94,16 +94,16 @@
 \begin{document}
 \begin{tikzpicture}[x=1cm, y=1cm]
 
-% Container 0
+% Container A
 \path[draw] (0,0) pic {container_app={A,0}};
 \path[draw] ($(topright_app_A_0)+(0.2,0)$) pic {container_app={A,1}};
-% Container 1
+% Container B
 \path[draw] ($(topright_app_A_1)+(0.2,0)$) pic {container_app={B,0}};
-\path[draw] ($(topright_app_B_0)+(0.2,0)$) pic {container_app={B,1}};
-\path[draw] ($(topright_app_B_1)+(0.2,0)$) pic {container_app={B,2}};
+%\path[draw] ($(topright_app_B_0)+(0.2,0)$) pic {container_app={B,1}};
+%\path[draw] ($(topright_app_B_1)+(0.2,0)$) pic {container_app={B,2}};
 
 \path[draw] (0,0) pic {container={A,bottomleft_app_A_0,bottomright_app_A_1}};
-\path[draw] (0,0) pic {container={B,bottomleft_app_B_0,bottomright_app_B_2}};
+\path[draw] (0,0) pic {container={B,bottomleft_app_B_0,bottomright_app_B_0}};
 
 %\path[draw] (0,0) pic {hostos={container_A_bottomleft,container_B_bottomright}};
 %
@@ -114,11 +114,11 @@
 \path[draw] (0,0) pic {machine={kernel_bottomleft,kernel_bottomright}};
 
 \path[draw,decorate,decoration={brace,mirror},line width=2pt]
-  ($(topleft_app_A_0)+(-0.1,0)$) coordinate (note_top)
-     -- ($(container_A_bottomleft)+(-0.1,0)$) coordinate (note_bottom)
+  ($(topleft_app_A_0)+(-0.2,0)$) coordinate (note_top)
+     -- ($(container_A_bottomleft)+(-0.2,0)$) coordinate (note_bottom)
 ;
 \coordinate (container_midpoint) at ($(note_top)!0.5!(note_bottom)$);
-\node[anchor=east,left=0.3 of container_midpoint,draw=black,fill=white] (container_annotation) {\Large Containers};
+\node[anchor=east,left=0.4 of container_midpoint,draw=black,fill=white] (container_annotation) {\Large Containers};
 
 \end{tikzpicture}
 \end{document}
