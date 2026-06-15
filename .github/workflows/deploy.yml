@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pymarkdownlnt==0.9.36
+          pip install $(cat config/requirements.txt | grep -E ^pymarkdownlnt)
       - name: Check ProperDocs YAML configuration
         uses: ibiqlik/action-yamllint@v3
         with:

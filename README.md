@@ -40,3 +40,25 @@ make
 
 inside the `resource` directories.
 
+### Linting
+
+To lint the documentation locally, install in the environment the linting packages.
+
+```console
+source ~/environments/ncc/bin/activate
+uv pip install --requirements config/requirements.txt
+```
+
+Then, lint the markdown files with the following command.
+
+```console
+pymarkdown \
+    --config config/pymarkdown.yml --strict-config scan \
+    --recurse docs
+```
+
+Lint the ProperDocs configuration with the following command.
+
+```console
+yamllint --config-file config/yamllint.yml properdocs.yml
+```

@@ -1,0 +1,2 @@
+pymarkdownlnt==0.9.38
+yamllint==1.38.0
