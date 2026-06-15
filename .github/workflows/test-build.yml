@@ -1,35 +1,35 @@
-    # documentation: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
-    #
-    name: Test build NCC course material website
-    on:
-      pull_request:
-      push:
-        branches-ignore:
-          - main
-          - production
-      workflow_dispatch:
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    jobs:
-      check:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v6
-            with:
-              lfs: true
-          - name: Read Python version
-            id: pyversion
-            run: echo "PYTHON_VERSION=$(cat .python)" >> $GITHUB_ENV
-          - name: Set up Python
-            uses: actions/setup-python@v6
-            with:
-              python-version: '${{ env.PYTHON_VERSION }}'
-              cache: 'pip'
-          - name: Install dependencies
-            run: |
+# documentation: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+#
+name: Test build NCC course material website
+on:
+  pull_request:
+    push:
+      branches-ignore:
+        - main
+        - production
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+      - name: Read Python version
+        id: pyversion
+        run: echo "PYTHON_VERSION=$(cat .python)" >> $GITHUB_ENV
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '${{ env.PYTHON_VERSION }}'
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install $(cat config/requirements.txt | grep -E ^pymarkdownlnt)
       - name: Check ProperDocs YAML configuration
