@@ -1,5 +1,8 @@
 # Environment management and containers for HPC systems
 
+> Author: [Gergios Kafanas](https://www.uni.lu/fstm-en/people/georgios-kafanas/)<br>
+> email: [georgios.kafanas@uni.lu](mailto:georgios.kafanas@uni.lu)
+
 Environment management and containerization in shared computing resources like HPC systems and workstations allow the installation and execution of programs in isolation of other system and user applications. Environment management and containerization encompass a collection of techniques base on features of the operating system and the kernel which are used for a diverse set of tasks such as
 
 - sourcing and installing software

@@ -1,7 +1,7 @@
 # Electronic structure methods used in industry from pharmaceuticals materials and beyond
 
-> Author: [Ariadni Boziki](https://www.uni.lu/fstm-en/people/ariadni-boziki/)<br>
-> email: [ariadni.boziki@uni.lu](mailto:ariadni.boziki@uni.lu)
+> Author: [Ariadni Boziki](https://researchportal.list.lu/scientific-community/detail/boziki-ariadni/)<br>
+> email: [ariadni.boziki@uni.lu](mailto:ariadni.boziki@list.lu)
 
 ## Lecture slides
 

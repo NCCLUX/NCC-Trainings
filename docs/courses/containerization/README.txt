@@ -283,3 +283,98 @@ echo 'Welcome to chroot jail!' > ${HOME}/jail/home/myusername/hello.txt
 ## Building a container
 * References [1, Shipping Your Machine: Building a Container in 50 Lines of Code](https://dev.to/yechielk/shipping-your-machine-building-a-container-in-60-lines-of-code-part-1-14ma), [2, Build Your Own Docker with Linux Namespaces, cgroups, and chroot: Hands-on Guide ](https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-namespaces-cgroups-and-chroot-handson-guide/)
 * 
+
+## Running Apptainer in Grid' 5000
+
+```console
+sudo-g5k
+sudo apt install libseccomp-dev squashfuse cryptsetup
+module use /home/gkafanas/ulhpc/easybuild/release/2025a/modules/all
+sudo mount -o remount,suid /srv/storage/ulhpc@storage1.luxembourg.grid5000.fr
+```
+
+## References
+
+- https://snarky.ca/how-virtual-environments-work/
+
+- Source of DIA-NN examples: https://mbite.mdhs.unimelb.edu.au/intro-to-proteomics/02diann.html
+
+- https://en.wikipedia.org/wiki/Linux_namespaces
+
+- https://www.redhat.com/en/blog/7-linux-namespaces
+- https://www.redhat.com/en/blog/pid-namespace
+- https://www.redhat.com/en/blog/linux-pid-namespaces
+
+- https://www.hackerstack.org/understanding-linux-namespaces/
+
+- https://www.toptal.com/developers/linux/separation-anxiety-isolating-your-system-with-linux-namespaces
+
+## Virtual environments
+
+### The `venv` in Python
+
+### The `renv` in R
+
+## Containers
+
+An [introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/advanced-containers.html) is available in a carpentry course.
+
+### Singularity type containers
+
+### Using Singularity containers
+
+#### Existing files and artifacts
+
+#### Fetching from SHPC registries
+
+- https://docs.alcf.anl.gov/crux/containers/containers/
+- https://github.com/argonne-lcf/container-registry/tree/main/containers/shpc
+
+### Building Singularity containers
+
+#### Builds that do not require elevated privileges
+
+#### Builds requiring `fakeroot` or id mapping
+
+- https://apptainer.org/docs/admin/latest/user_namespace.html
+- https://apptainer.org/docs/admin/latest/installation.html#fakeroot-with-uid-gid-mapping-on-network-filesystems
+- https://apptainer.org/docs/admin/latest/configfiles.html
+
+## Containerization
+
+### Creating a `chroot` environment
+
+### Modern containers and `namegroups`
+
+### Creating a containerized environment from first principle
+
+## Advanced containerization concepts
+
+### Connecting with system libraries
+
+#### MPI network libraries
+
+#### Offloading libraries and drivers
+
+### Reproducibility
+
+### Building a reproducible containers
+
+### Balancing reproducibility and usage of efficient system libraries
+
+For instance, imagine that there is an MPI library that ensures binary reproducibility. Your container could ensure binary reproducibility if it linked with this external MPI library, and still ensure native level MPI performance in every system that supports this MPI library.
+
+- Introductory example
+   - chroot base example
+   - the linux hier & file system exporters
+- containers in HPC
+   - basic usage
+   - building contaiers
+      - simple
+      - requiring root
+- modern containers
+   - namespaces and cgroups
+   - advanced bindings
+      - using mpi: container, native, on the fly compiled
+      - using accelerators
+- reproducible builds

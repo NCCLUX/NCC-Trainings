@@ -65,7 +65,10 @@ nav:
       - Environment management and containers:
           - Course description: 'courses/containerization/index.md'
           - Introduction: 'courses/containerization/introduction.md'
-          - Containers: 'courses/containerization/containers.md'
+          - Virtual environments: 'courses/containerization/virtual_environments.md'
+          - Containers:
+              - Basic principles: 'courses/containerization/containers.md'
+              - Containers in HPC systems: 'courses/containerization/containers_in_hpc_systems.md'
 #         - Environment managers: 'courses/containerization/conda.md'
 #         - Package management in R: 'courses/containerization/R.md'
 #             - Best practices in environment management: 'environment/best-practises.md'
