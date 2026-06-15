@@ -113,12 +113,12 @@
 
 \path[draw] (0,0) pic {machine={kernel_bottomleft,kernel_bottomright}};
 
-\path[draw,decorate,decoration={brace,mirror}]
+\path[draw,decorate,decoration={brace,mirror},line width=2pt]
   ($(topleft_app_A_0)+(-0.1,0)$) coordinate (note_top)
      -- ($(container_A_bottomleft)+(-0.1,0)$) coordinate (note_bottom)
 ;
 \coordinate (container_midpoint) at ($(note_top)!0.5!(note_bottom)$);
-\node[anchor=east,left=0.3 of container_midpoint,draw=black,fill=white] (container_annotation) {\Large Container};
+\node[anchor=east,left=0.3 of container_midpoint,draw=black,fill=white] (container_annotation) {\Large Containers};
 
 \end{tikzpicture}
 \end{document}
