@@ -34,7 +34,7 @@
   }
 }
 
-\NewDocumentCommand\component{mmmmm}{
+\NewDocumentCommand\component{mmmmmm}{
   \path[draw,fill=#4]
     let
       \p{#1_crd_topleft} = ($(#2)+(0,-0.05)$),
@@ -46,15 +46,15 @@
       (\x{#1_crd_topleft},\y{#1_crd_bottomright}) coordinate (#1_bottomleft) --
       cycle
   ;
-  \path[]
-    ($(#1_topleft)!0.5!(#1_bottomright)$) node[label={#5}] (#1_label) {}
+  \path[text=#5]
+    ($(#1_topleft)!0.5!(#1_bottomright)$) node[label={#6}] (#1_label) {}
   ;
 }
 
 \tikzset{
   pics/container/.style args={#1,#2,#3}{
     code={
-      \component{container_#1}{#2}{#3}{oscolor}{
+      \component{container_#1}{#2}{#3}{oscolor}{black}{
         [align=center]center:OS #1\\{\ttfamily\small (\textbackslash bin:\textbackslash lib)}
       }
     }
@@ -64,7 +64,7 @@
 \tikzset{
   pics/hostos/.style args={#1,#2}{
     code={
-      \component{hostos}{#1}{#2}{oscolor}{
+      \component{hostos}{#1}{#2}{oscolor}{black}{
         [align=center]center:Host OS \\{\ttfamily\small (\textbackslash bin:\textbackslash lib)}
       }
     }
@@ -74,7 +74,7 @@
 \tikzset{
   pics/kernel/.style args={#1,#2}{
     code={
-      \component{kernel}{#1}{#2}{kernelcolor}{
+      \component{kernel}{#1}{#2}{kernelcolor}{black}{
         [align=center]center:Host OS kernel
       }
     }
@@ -84,7 +84,7 @@
 \tikzset{
   pics/machine/.style args={#1,#2}{
     code={
-      \component{machine}{#1}{#2}{hardwarecolor}{
+      \component{machine}{#1}{#2}{hardwarecolor}{white}{
         [align=center]center:Infrastructure
       }
     }
