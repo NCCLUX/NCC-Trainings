@@ -61,7 +61,7 @@ Registries are data collections that can be accessed with programs designed to f
   apptainer pull ${HOME}/containers/cow.sif docker://rancher/cowsay:latest
   ```
 
-??? question "Managing container images"
+!!! question "Managing container images"
 
     === "Question"
 
