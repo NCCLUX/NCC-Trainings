@@ -309,6 +309,12 @@ sudo mount -o remount,suid /srv/storage/ulhpc@storage1.luxembourg.grid5000.fr
 
 - https://www.toptal.com/developers/linux/separation-anxiety-isolating-your-system-with-linux-namespaces
 
+- https://www.redhat.com/en/blog/behind-scenes-podman
+
+- The Scientific Filesystem: seems to be the precursor of shpc
+  - Demo: https://asciinema.org/a/156490?speed=2
+  - https://sci-f.github.io/
+
 ## Virtual environments
 
 ### The `venv` in Python
