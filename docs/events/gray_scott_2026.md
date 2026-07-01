@@ -306,3 +306,34 @@ An archived version of the course can be find in the IDRIS GitHub repo.
 
 - [ZLUDA](https://github.com/vosen/ZLUDA): a drop-in replacement for CUDA on non-NVIDIA GPUs.
 - [gfx1032_gray-scott-reaction](https://codeberg.org/jmcelroy/gfx1032_gray-scott-reaction): a version of the Gray Scott reaction, converted from CUDA to HIP.
+
+#### CI/CD with Pixi
+
+Three projects were used to demonstrate the construction of complete CI/CD workflows with [Pixi](https://pixi.prefix.dev/latest/).
+
+- [PhoenixMandelbrot](https://gitlab.in2p3.fr/CTA-LAPP/PHOENIX_LIBS2/example/PhoenixMandelbrot), build with:
+
+  ```bash
+  pixi init .
+  pixi workspace channel add https://prefix.dev/phoenix
+  pixi add phoenixmandelbrot
+  pixi run phoenix_mandelbrot -r 1080 -c 1920 -n 30 -o output_cpu
+  ```
+
+- [PhoenixMandelbrotCuda](https://gitlab.in2p3.fr/CTA-LAPP/PHOENIX_LIBS2/example/PhoenixMandelbrotCuda), build with:
+
+  ```bash
+  pixi init .
+  pixi workspace channel add https://prefix.dev/phoenix
+  pixi add phoenixmandelbrotcuda
+  pixi run phoenix_mandelbrot_cuda -r 1080 -c 1920 -n 30 -o output_gpu
+  ```
+
+- [RustyPhoenixMandelbrot](https://gitlab.in2p3.fr/CTA-LAPP/PHOENIX_LIBS2/example/RustyPhoenixMandelbrot), build with:
+
+  ```bash
+  pixi init .
+  pixi workspace channel add https://prefix.dev/phoenix
+  pixi add rustyphoenixmandlebrot
+  pixi run rustyphoenixmandlebrot -r 1080 -c 1920 -n 30 -o output_rust
+  ```
