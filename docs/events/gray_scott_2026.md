@@ -264,6 +264,7 @@ The source code and a container with all the tools to build the source code are 
 
 - [Gray Socc Fortran tutorial](https://gitlab.in2p3.fr/lafage/GrayScottFortranTuto)
 - [Binding to and from C/C++ - Jean Zay supercomputer documentation](http://www.idris.fr/en/docs/jean-zay/compilation/call_c2fortran/)
+- [HIPFort version of the course](https://codeberg.org/jmcelroy/gfx1032_HIPFort_Gray-Scott-2026)
 
 IDRIS provides a [set of courses](http://archive.idris.fr/formations/fortran/) and resources in Fortran.
 
@@ -287,6 +288,7 @@ An archived version of the course can be find in the IDRIS GitHub repo.
 - [Cheat Sheets for Kokkos](https://cexa-project.org/documents/)
 - [Installation cheat sheet for Kokkos](https://cexa-project.org/documents/cheat_sheet_install_for_kokkos.pdf)
 - [Kokkos documentation](https://kokkos.org/kokkos-core-wiki/)
+- [HIP version of the examples](https://codeberg.org/jmcelroy/gfx1032_Kokkos_Gray-Scott-2026)
 
 #### Numerical representation and accuracy
 
