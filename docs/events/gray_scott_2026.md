@@ -339,3 +339,10 @@ Three projects were used to demonstrate the construction of complete CI/CD workf
   pixi add rustyphoenixmandlebrot
   pixi run rustyphoenixmandlebrot -r 1080 -c 1920 -n 30 -o output_rust
   ```
+
+#### Historical retrospective and plans for 2027
+
+In 2027 there are 2 schools planned, one for developers in early summers, and one for system administrators in early autumn. The developer school will focus on MPI+accelerators, and the administrator school on orchestration and CI/CD operations.
+
+- [Gray Scott 2026-2027: Computing on heterogeneous hardware](https://indico.in2p3.fr/event/37547/contributions/167354/attachments/99110/152922/meeting_presentation_gray_scott_2026_2027.pdf)
+- [Gray Scott Schools: What’s next?](https://gitlab.in2p3.fr/CTA-LAPP/COURS/GRAY_SCOTT_REVOLUTIONS/GrayScott2026/-/wikis/uploads/GrayScottDay-9/9-webinar_gray_scott_schools_whats_next.pdf)
