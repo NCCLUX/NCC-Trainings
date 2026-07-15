@@ -59,3 +59,13 @@ build:
   artifacts:
     paths:
       - site/
+
+include:
+  - local: '.gitlab/deploy-stage.yml'
+    rules:
+      - if: $CI_COMMIT_BRANCH == "main"
+      - if: $CI_COMMIT_BRANCH == "production"
+      - if: $CI_PIPELINE_SOURCE == "web"
+  - local: '.gitlab/test-stage.yml'
+    rules:
+      - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
