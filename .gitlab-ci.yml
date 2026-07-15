@@ -1,5 +1,5 @@
 stages:
-  - load_env
+  - setup
   - check
   - build
   - deploy
@@ -9,7 +9,7 @@ variables:
   GIT_LFS_SKIP_SMUDGE: "0" # Enables Git LFS checkout
 
 load_env:
-  stage: load_env
+  stage: setup
   image: alpine:latest
   script:
     - echo "PYTHON_VERSION=$(cat .python)" >> variables.env
@@ -19,9 +19,6 @@ load_env:
 
 .python-instalation:
   image: python:$PYTHON_VERSION  # Automatically injected from variables.env
-  needs:
-    - job: load_env
-      artifacts: true
 
 check:
   stage: check
@@ -42,6 +39,7 @@ build:
   stage: build # Combined build and deploy into GitLab's native 'pages' job
   extends: .python-instalation
   dependencies:
+    - load_env
     - check
   cache:
     key: pip-cache
@@ -68,12 +66,15 @@ deploy:
       when: manual
   pages:
     publish: public
-  dependencies: build
+  dependencies:
+    - load_env
+    - build
   script:
     - mv site public # GitLab Pages requires the folder name to be 'public'
-    - echo "Site deployed"
-    - echo "> commit Hash: $CI_COMMIT_SHA"
-    - echo "> completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+    - |
+      echo "Site deployed"
+      echo "  commit Hash: $CI_COMMIT_SHA"
+      echo "  completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
 
 test:
   stage: test
@@ -81,7 +82,10 @@ test:
   rules:
     - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
   script:
-    - echo "Test passed"
-    - echo "> commit Hash: $CI_COMMIT_SHA"
-    - echo "> test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
-  dependencies: build
+    - |
+      echo "Test passed"
+      echo "  commit Hash: $CI_COMMIT_SHA"
+      echo "  test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+  dependencies:
+    - load_env
+    - build
