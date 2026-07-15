@@ -6,7 +6,7 @@ include:
       - if: $CI_PIPELINE_SOURCE == "web"
   - local: '.gitlab/test.yml'
     rules:
-      - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
+      - if: $CI_COMMIT_BRANCH != "main" && $CI_COMMIT_BRANCH != "production"
 
 variables:
   GIT_LFS_SKIP_SMUDGE: "0" # Enables Git LFS checkout
