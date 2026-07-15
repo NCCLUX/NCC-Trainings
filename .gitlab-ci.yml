@@ -60,6 +60,7 @@ build:
 
 deploy:
   stage: deploy
+  image: alpine:latest
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_COMMIT_BRANCH == "production"
@@ -71,14 +72,16 @@ deploy:
   script:
     - mv site public # GitLab Pages requires the folder name to be 'public'
     - echo "Site deployed"
-    - echo "- commit Hash: $CI_COMMIT_SHA"
-    - echo "- completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+    - echo "> commit Hash: $CI_COMMIT_SHA"
+    - echo "> completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
 
 test:
+  stage: test
+  image: alpine:latest
   rules:
     - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
   script:
     - echo "Test passed"
-    - echo "- commit Hash: $CI_COMMIT_SHA"
-    - echo "- test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+    - echo "> commit Hash: $CI_COMMIT_SHA"
+    - echo "> test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
   dependencies: build
