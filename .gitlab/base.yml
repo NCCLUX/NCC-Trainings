@@ -7,14 +7,15 @@ load_env:
     reports:
       dotenv: variables.env
 
-.python-instalation:
-  image: python:$PYTHON_VERSION  # Automatically injected from variables.env
-  dependencies:
-    - load_env
+.python_setup:
+  image: python:${PYTHON_VERSION} # Automatically injected from variables.env
+  dependency: load_env
 
 check:
   stage: check
-  extends: .python-instalation
+  image: !reference [.python_setup, image]
+  dependencies:
+    - !reference [.python_setup, dependency]
   cache:
     key: requirements-pip-cache
     paths:
@@ -23,14 +24,15 @@ check:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/requirements-pip"
   script:
     - python -m pip install --upgrade pip
-    - pip install --requirements config/requirements.txt
+    - pip install --cache-dir .cache/requirements-pip --requirement config/requirements.txt
     - yamllint --config-file config/yamllint.yml properdocs.yml
     - pymarkdown --config config/pymarkdown.yml --strict-config scan --recurse docs
 
 build:
-  stage: build # Combined build and deploy into GitLab's native 'pages' job
-  extends: .python-instalation
+  stage: build # properdocs setup requires git -> non-slim python container
+  image: !reference [.python_setup, image]
   dependencies:
+    - !reference [.python_setup, dependency]
     - check
   cache:
     key: pip-cache
@@ -40,7 +42,7 @@ build:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
   script:
     - python -m pip install --upgrade pip
-    - pip install --requirement requirements.txt
+    - pip install --cache-dir .cache/pip --requirement requirements.txt
     - properdocs --version
     - properdocs build --strict
   artifacts:
