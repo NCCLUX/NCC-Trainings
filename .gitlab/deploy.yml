@@ -5,7 +5,7 @@ stages:
   - deploy
 
 include:
-  - local: 'base.yml'
+  - local: '.gitlab/base.yml'
 
 deploy:
   stage: deploy

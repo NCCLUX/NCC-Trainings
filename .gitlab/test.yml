@@ -5,7 +5,7 @@ stages:
   - test
 
 include:
-  - local: 'base.yml'
+  - local: '.gitlab/base.yml'
 
 test:
   stage: test
