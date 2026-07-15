@@ -1,0 +1,84 @@
+stages:
+  - load_env
+  - check
+  - build
+  - deploy
+  - test
+
+variables:
+  GIT_LFS_SKIP_SMUDGE: "0" # Enables Git LFS checkout
+
+load_env:
+  stage: load_env
+  image: alpine:latest
+  script:
+    - echo "PYTHON_VERSION=$(cat .python)" >> variables.env
+  artifacts:
+    reports:
+      dotenv: variables.env
+
+.python-instalation:
+  image: python:$PYTHON_VERSION  # Automatically injected from variables.env
+  needs:
+    - job: load_env
+      artifacts: true
+
+check:
+  stage: check
+  extends: .python-instalation
+  cache:
+    key: requirements-pip-cache
+    paths:
+      - .cache/requirements-pip
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/requirements-pip"
+  script:
+    - python -m pip install --upgrade pip
+    - pip install --requirements config/requirements.txt
+    - yamllint -c config/yamllint.yml properdocs.yml
+    - pymarkdown --config config/pymarkdown.yml --strict-config scan --recurse docs
+
+build:
+  stage: build # Combined build and deploy into GitLab's native 'pages' job
+  extends: .python-instalation
+  dependencies:
+    - check
+  cache:
+    key: pip-cache
+    paths:
+      - .cache/pip
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  script:
+    - python -m pip install --upgrade pip
+    - pip install --requirement requirements.txt
+    - properdocs --version
+    - properdocs build --strict
+  artifacts:
+    paths:
+      - site/
+
+deploy:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "production"
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: manual
+  pages:
+    publish: public
+  dependencies: build
+  script:
+    - mv site public # GitLab Pages requires the folder name to be 'public'
+    - echo "Site deployed"
+    - echo "- commit Hash: $CI_COMMIT_SHA"
+    - echo "- completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+
+test:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
+  script:
+    - echo "Test passed"
+    - echo "- commit Hash: $CI_COMMIT_SHA"
+    - echo "- test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+  dependencies: build
