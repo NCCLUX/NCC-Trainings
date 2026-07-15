@@ -1,0 +1,18 @@
+stages:
+  - setup
+  - check
+  - build
+  - test
+
+test:
+  stage: test
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
+  script:
+    - |
+      echo "Test passed"
+      echo "  commit Hash: $CI_COMMIT_SHA"
+      echo "  test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
+  dependencies:
+    - build

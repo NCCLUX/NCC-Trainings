@@ -1,9 +1,13 @@
-stages:
-  - setup
-  - check
-  - build
-  - test
-  - deploy
+include:
+  - local: '.gitlab/deploy.yml'
+    rules:
+      - if: $CI_COMMIT_BRANCH == "main"
+      - if: $CI_COMMIT_BRANCH == "production"
+      - if: $CI_PIPELINE_SOURCE == "web"
+        when: manual
+  - local: '.gitlab/test.yml'
+    rules:
+      - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
 
 variables:
   GIT_LFS_SKIP_SMUDGE: "0" # Enables Git LFS checkout
@@ -56,35 +60,3 @@ build:
   artifacts:
     paths:
       - site/
-
-deploy:
-  stage: deploy
-  image: alpine:latest
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-    - if: $CI_COMMIT_BRANCH == "production"
-    - if: $CI_PIPELINE_SOURCE == "web"
-      when: manual
-  pages:
-    publish: public
-  dependencies:
-    - build
-  script:
-    - mv site public # GitLab Pages requires the folder name to be 'public'
-    - |
-      echo "Site deployed"
-      echo "  commit Hash: $CI_COMMIT_SHA"
-      echo "  completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
-
-test:
-  stage: test
-  image: alpine:latest
-  rules:
-    - if: $CI_COMMIT_BRANCH != "main" || $CI_COMMIT_BRANCH != "production"
-  script:
-    - |
-      echo "Test passed"
-      echo "  commit Hash: $CI_COMMIT_SHA"
-      echo "  test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
-  dependencies:
-    - build
