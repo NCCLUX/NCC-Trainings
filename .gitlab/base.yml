@@ -1,0 +1,48 @@
+load_env:
+  stage: setup
+  image: alpine:latest
+  script:
+    - echo "PYTHON_VERSION=$(cat .python)" >> variables.env
+  artifacts:
+    reports:
+      dotenv: variables.env
+
+.python-instalation:
+  image: python:$PYTHON_VERSION  # Automatically injected from variables.env
+  dependencies:
+    - load_env
+
+check:
+  stage: check
+  extends: .python-instalation
+  cache:
+    key: requirements-pip-cache
+    paths:
+      - .cache/requirements-pip
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/requirements-pip"
+  script:
+    - python -m pip install --upgrade pip
+    - pip install --requirements config/requirements.txt
+    - yamllint -c config/yamllint.yml properdocs.yml
+    - pymarkdown --config config/pymarkdown.yml --strict-config scan --recurse docs
+
+build:
+  stage: build # Combined build and deploy into GitLab's native 'pages' job
+  extends: .python-instalation
+  dependencies:
+    - check
+  cache:
+    key: pip-cache
+    paths:
+      - .cache/pip
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  script:
+    - python -m pip install --upgrade pip
+    - pip install --requirement requirements.txt
+    - properdocs --version
+    - properdocs build --strict
+  artifacts:
+    paths:
+      - site/
