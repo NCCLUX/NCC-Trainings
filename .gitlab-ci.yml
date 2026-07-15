@@ -2,8 +2,8 @@ stages:
   - setup
   - check
   - build
-  - deploy
   - test
+  - deploy
 
 variables:
   GIT_LFS_SKIP_SMUDGE: "0" # Enables Git LFS checkout
@@ -19,6 +19,8 @@ load_env:
 
 .python-instalation:
   image: python:$PYTHON_VERSION  # Automatically injected from variables.env
+  dependencies:
+    - load_env
 
 check:
   stage: check
@@ -39,7 +41,6 @@ build:
   stage: build # Combined build and deploy into GitLab's native 'pages' job
   extends: .python-instalation
   dependencies:
-    - load_env
     - check
   cache:
     key: pip-cache
@@ -67,7 +68,6 @@ deploy:
   pages:
     publish: public
   dependencies:
-    - load_env
     - build
   script:
     - mv site public # GitLab Pages requires the folder name to be 'public'
@@ -87,5 +87,4 @@ test:
       echo "  commit Hash: $CI_COMMIT_SHA"
       echo "  test completion time: $(date +'%Y-%m-%dT%H:%M:%S')"
   dependencies:
-    - load_env
     - build
